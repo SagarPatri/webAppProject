@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Important Notes" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Please check the following" allowed="~" module="P" clpercentage="" selected="YES" autoselect="">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<text id="" mandatory="YES" value="~">
+          <display id="" target="value,1" prelabel="General text message to cover all the conditions that is not accomodated in the rules&lt;br&gt;" control="textArea" type="textArea" default="" postlabel="" jscall="" />
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

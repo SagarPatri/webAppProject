@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+  <global>
+     <!-- regular expression for alpha numeric fields without spance-->
+    <constant>
+      <constant-name>alphaNumericWithoutSpace</constant-name>
+      <constant-value>^[a-zA-Z0-9]*$</constant-value>
+    </constant>
+    <!-- regular expression for alpha numeric fields -->
+    <constant>
+      <constant-name>alphaNumeric</constant-name>
+      <constant-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s]*$</constant-value>
+    </constant>
+    <!-- regular expression for phone number  fields -->
+    <constant>
+      <constant-name>checkPhoneNo</constant-name>
+      <constant-value>^[0-9\(]{1}[0-9\s\-\(\)\/\.]*$</constant-value>
+    </constant>
+    <!-- regular expression for policy/account number  fields -->
+    <constant>
+      <constant-name>checkNumber</constant-name>
+      <constant-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-\/\\]*$</constant-value>
+    </constant>
+    <!-- regular expression for organization names fields -->
+    <constant>
+      <constant-name>checkOrgName</constant-name>
+      <constant-value>^[a-zA-Z]{1}[a-zA-Z0-9\s\,\\\/\.\'\"\)\(\[\]\{\}\-\&amp;]*$</constant-value>
+    </constant>
+    <!-- regular expression for organization names fields which allows number as starting characters-->
+    <constant>
+      <constant-name>checkOrgNameNumber</constant-name>
+      <constant-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\,\\\/\.\'\"\)\(\[\]\{\}\-\&amp;]*$</constant-value>
+    </constant>
+    <!-- regular expression for person names fields --> 
+    <constant>
+      <constant-name>checkPersonName</constant-name>
+      <constant-value>^[a-zA-Z]{1}[a-zA-Z0-9\s\.\']*$</constant-value>
+    </constant> 
+    <!-- regular expression for person names fields --> 
+    <constant>
+      <constant-name>checkwbPersonName</constant-name>
+      <constant-value>^(([a-zA-Z0-9\s\,\\\/\.\'\)\(\[\]\{\}\?\-\@\#\!\$\^\*\%\&amp;]+[\w\s\,\\\/\.\'\)\(\[\]\{\}\?\-\@\#\!\$\^\*\%\&amp;]*)?)$|-</constant-value>
+      
+    </constant>   
+
+    <!--regular expression for alpha numeric fields -->
+    <constant>
+      <constant-name>decimalValue</constant-name>
+      <constant-value>^([0])*\d{0,8}(\.\d{1,2})?$</constant-value>
+    </constant>
+
+    <!--regular expression for interest fields -->
+    <constant>
+      <constant-name>interestValue</constant-name>
+      <constant-value>^([0])*\d{0,2}(\.\d{1,2})?$</constant-value>
+    </constant>
+
+    <!--regular expression for big decimal fields -->
+    <constant>
+      <constant-name>bigdecimalValue</constant-name>
+      <constant-value>^(([0])*[1-9]{1}\d{0,9}(\.\d{1,2})?)$|^[0]*\.\[1-9]{1}\d?$|^\s*$</constant-value>
+    </constant>
+     <constant>
+      <constant-name>bigdecimalValuewithzero</constant-name>
+      <constant-value>^([0-9]{1}\d{0,9}(\.\d{1,2})?)$|^[0]*\.\[1-9]{1}\d?$|^\s*$</constant-value>
+    </constant>
+    <constant>
+      <constant-name>bigdecimalwholeValue</constant-name>
+      <constant-value>^(([0])*[1-9]{1}\d{0,9}(\.[0]{1,2})?)$|^\s*$</constant-value>
+    </constant>
+    <!-- regular expression for alphabets -->
+    <constant>
+      <constant-name>alphabetic</constant-name>
+      <constant-value>^[a-zA-Z]*$</constant-value>
+    </constant>
+
+    <!--regular expression for  numeric fields -->
+    <constant>
+      <constant-name>numericValue</constant-name>
+      <constant-value>^[0-9]*$</constant-value>
+    </constant>
+
+    <!-- regular expression for Date in DD/MM/YYYY -->
+    <constant>
+      <constant-name>checkDate</constant-name>
+      <constant-value>^\d{2}\/\d{2}\/\d{4}$</constant-value>
+    </constant>
+    <!-- regular expression for Time in HH:MM -->
+    <constant>
+      <constant-name>checkTime</constant-name>
+      <constant-value>^(([0-9]|[0][0-9]|[0-1][0-2])\:([0-9]|[0-5][0-9]))$</constant-value>
+    </constant>
+    <!-- regular expression for E-mail-->
+    <constant>
+      <constant-name>checkEmail</constant-name>
+	  <constant-value>^(([a-zA-Z0-9]+[\w\s\.\,\?\-]*@\w+[\w\s\.\?,]*)?)$|-</constant-value>
+      <!--<constant-value>^([a-zA-Z]+[\w]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-zA-Z]{2,6}(?:\.[a-zA-Z]{2})?)$</constant-value>-->
+    </constant>
+    <!-- regular expression for commission-->
+    <constant>
+      <constant-name>commission</constant-name>
+      <constant-value>^\d{0,2}?(\.\d{0,2})?$</constant-value>
+    </constant>
+    <!-- regular expression for Simple Interest-->
+    <constant>
+      <constant-name>simpleInterest</constant-name>
+      <constant-value>^([0])*\d?(\.\d{1,2})?$</constant-value>
+    </constant>
+    <!-- regular expression for Clause Number t-->
+    <constant>
+      <constant-name>decimalAlphaNumeric</constant-name>
+      <constant-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\.]*$</constant-value>
+    </constant>
+  </global>
+
+  <formset>
+  <!-- validation for Online access form -->
+  <form name="/OnlineAccessAction">
+    <field property="loginType" depends="required">
+      <arg0 key="Login Type" resource="false"/>
+      <var>
+        <var-name>mask</var-name>
+        <var-value>${checkOrgName}</var-value>
+      </var>
+    </field>
+    <!--<field property="indPolicyNo" depends="validwhen">
+      <arg0 key="Policy No." resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIN") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="enrollmentId" depends="validwhen">
+      <arg0 key="Enrolment Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIN") or (*this* != null))</var-value>
+            </var>
+    </field>
+    --><field property="groupId" depends="validwhen">
+      <arg0 key="Group Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="corpPolicyNo" depends="validwhen">
+      <arg0 key="Policy No." resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="userId" depends="validwhen">
+      <arg0 key="User Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="password" depends="validwhen">
+      <arg0 key="Password" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="hrGroupId" depends="validwhen">
+      <arg0 key="Group Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OHR") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="hrUserId" depends="validwhen">
+      <arg0 key="User Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OHR") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="hrPassword" depends="validwhen">
+      <arg0 key="Password" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OHR") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="insCompCode" depends="validwhen">
+      <arg0 key="Ins. Company Code" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIU") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="insUserId" depends="validwhen">
+      <arg0 key="User Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIU") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="insPassword" depends="validwhen">
+      <arg0 key="Password" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIU") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="cityCertificateNbr" depends="validwhen">
+      <arg0 key="Certificate No." resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCI") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="citySchemeName" depends="validwhen">
+      <arg0 key="Scheme Name" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCI") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="cityEnrollmentId" depends="validwhen">
+      <arg0 key="Enrollment Id" resource="false"/>
+      <var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCI") or (*this* != null))</var-value>
+            </var>
+    </field>
+  </form>
+  <form name="/SavePasswordAction">
+	<field property="groupId" depends="required">
+	<arg0 key="Group Id" resource="false"/>
+	</field>
+	<field property="corpPolicyNo" depends="required">
+		<arg0 key="Policy No." resource="false"/>
+	</field>
+	<field property="userId" depends="required">
+		<arg0 key="User Id" resource="false"/>
+	</field>
+  </form>
+  <form name="/OnlineSavePasswordAction">
+   <field property="groupId" depends="validwhen">
+      <arg0 key="Group Id" resource="false"/>
+      		<var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+            </var>
+    </field>
+	<field property="corpPolicyNo" depends="validwhen">
+		<arg0 key="Policy No." resource="false"/>
+			<var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+         	</var>
+	</field>
+	<field property="userId" depends="validwhen">
+		<arg0 key="User Id" resource="false"/>
+			<var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OCO") or (*this* != null))</var-value>
+         	</var>
+	</field>
+	<field property="hrUserId" depends="validwhen">
+      <arg0 key="User Id" resource="false"/>
+      		<var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OHR") or (*this* != null))</var-value>
+            </var>
+    </field>
+    <field property="insUserId" depends="validwhen">
+      <arg0 key="User Id" resource="false"/>
+     		<var>
+               <var-name>test</var-name>
+               <var-value>((loginType != "OIU") or (*this* != null))</var-value>
+            </var>
+    </field>
+   	<field property="oldPassword" depends="required">
+				<arg0 key="Old Password " resource="false" />
+	</field>
+	<field property="newPassword" depends="required,minlength">
+		<arg0 key="New Password " resource="false" />
+		<arg1 key="${var:minlength}" name="minlength" resource="false" />
+		<var>
+			<var-name>minlength</var-name>
+			<var-value>6</var-value>
+		</var>
+	</field>
+	<field property="confirmPassword" depends="required,validwhen">
+		<arg0 key="Confirm Password" resource="false" />
+		<msg name="validwhen" key="error.myprofile.changepassword.confirmpassword" />
+		<var>
+			<var-name>test</var-name>
+			<var-value>(newPassword==confirmPassword)
+			</var-value>
+		</var>
+	</field>
+  </form>
+  <form name="/SaveChangepasswordAction">
+	<field property="userId" depends="required">
+	<arg0 key="User Id" resource="false"/>
+	</field>
+	<field property="oldPassword" depends="required">
+				<arg0 key="Old Password " resource="false" />
+	</field>
+	<field property="newPassword" depends="required,minlength">
+		<arg0 key="New Password " resource="false" />
+		<arg1 key="${var:minlength}" name="minlength" resource="false" />
+		<var>
+			<var-name>minlength</var-name>
+			<var-value>6</var-value>
+		</var>
+	</field>
+	<field property="confirmPassword" depends="required,validwhen">
+		<arg0 key="Confirm Password" resource="false" />
+		<msg name="validwhen" key="error.myprofile.changepassword.confirmpassword" />
+		<var>
+			<var-name>test</var-name>
+			<var-value>(newPassword==confirmPassword)
+			</var-value>
+		</var>
+	</field>
+  </form>
+  <!-- Administration module -->
+      <!-- tariff plan list screen -->
+      <!--<form name="/TariffPlanSearchAction">
+        <field property="sName" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Plan Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+      </form>-->
+
+      <!-- validation details of edit tariff plan screen -->
+      <form name="frmEditTariffPlan">
+        <field property="name" depends="required,mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Plan Name" resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${checkOrgName}</var-value>
+          </var>
+        </field>
+
+        <field property="description" depends="required,maxlength">
+          <arg0 key="Description" resource="false"/>
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+        </field>
+      </form>
+
+      <!-- plan package screen -->
+      <!--<form name="/TariffPlanPackageSearchAction">
+        <field property="sPackageName" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="package Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+      </form>		-->
+
+
+      <!-- WorkFlow Screen-->
+
+      <!-- User Management in Administration -->
+      <form name="/UserListSearchAction">
+        <field property="sUserId" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="User ID"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+        <field property="sName" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+        <field property="sHospitalName" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Hospital Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+        <field property="sEmpanelmentNO"	depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Empanelment No"  resource="false" />
+          <var>
+                      <var-name>mask</var-name>
+                      <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-]*$</var-value>
+                  </var>
+                </field>
+
+        <field property="sOfficeCode" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Office Code"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+
+        <field property="sGrpName" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Group Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+        <field property="sGrpID" depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Group Id"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>${alphaNumeric}</var-value>
+          </var>
+        </field>
+      </form>
+      <!--<form name="/AssociateUserSearchAction">
+          <field property="sName" depends="mask">
+            <arg0 key="Name "  resource="false" />
+            <msg name="mask" key="errors.alphanumeric"/>
+            <var>
+                          <var-name>mask</var-name>
+                          <var-value>${alphaNumeric}</var-value>
+                      </var>
+               </field>
+               <field property="sEmpNo" depends="mask">
+            <arg0 key="Emp No "  resource="false" />
+            <msg name="mask" key="errors.alphanumeric"/>
+            <var>
+                          <var-name>mask</var-name>
+                          <var-value>${alphaNumeric}</var-value>
+                      </var>
+               </field>
+      </form>-->
+
+    <!-- User Management -->
+      <!--<form name="/UserGroupSearchAction">
+          <field property="susergroup" depends="mask">
+            <arg0 key="User Group "  resource="false" />
+            <msg name="mask" key="errors.alphanumeric"/>
+            <var>
+                          <var-name>mask</var-name>
+                          <var-value>${alphaNumeric}</var-value>
+                      </var>
+               </field>
+      </form>-->
+      <form name="frmEditUserGroup">
+          <field property="userGroup" depends="required,mask">
+            <msg name="mask" key="errors.alphanumeric"/>
+            <arg0 key="User Group "  resource="false" />
+            <var>
+                          <var-name>mask</var-name>
+                          <var-value>${alphaNumeric}</var-value>
+                      </var>
+               </field>
+               <field property="description" depends="required">
+            <arg0 key="Description "  resource="false" />
+               </field>
+      </form>
+    <!-- Role Screen-->
+      <!--<form name="/RolesSearchAction">
+        <field property="roleName"	depends="mask">
+          <msg name="mask" key="errors.alphanumeric"/>
+          <arg0 key="Role"  resource="false" />
+            <var>
+              <var-name>mask</var-name>
+              <var-value>${alphaNumeric}</var-value>
+            </var>
+        </field>
+      </form>-->
+    <!-- End of User Management -->
+
+    <!-- Empanelment Module -->
+         <!--  Insurance Feedback Screen -->
+      <form name="frmEditInsFeedback">
+        <field property="recieveddate"
+            depends="required,date">
+              <arg0 key="Recieved Date"  resource="false" />
+              <var>
+                <var-name>datePatternStrict</var-name>
+                <var-value>dd/MM/yyyy</var-value>
+              </var>
+        </field>
+        <field property="descriptions"	depends="required,maxlength,minlength">
+              <arg0 key="Description"  resource="false" />
+              <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+              <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+
+              <var>
+                <var-name>maxlength</var-name>
+                <var-value>250</var-value>
+              </var>
+              <var>
+                <var-name>minlength</var-name>
+                <var-value>0</var-value>
+              </var>
+        </field>
+      </form>
+      <!-- End of Empanelment of Insurance -->
+
+      <!--Emapnelment of Hospital -->
+       <!--	<form name="/HospitalSearchAction">
+          <field property="sEmpanelmentNo"	depends="mask">
+              <arg0 key="Empanelment No"  resource="false" />
+              <var>
+                            <var-name>mask</var-name>
+                            <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-]*$</var-value>
+                        </var>
+          </field>
+          <field property="sHospitalName"	depends="mask">
+              <arg0 key="Hospital Name"  resource="false" />
+              <var>
+                            <var-name>mask</var-name>
+                             <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\,\.\'\"\)\(\[\]\{\}\-\&amp;]*$</var-value>
+                        </var>
+          </field>
+      </form>	-->
+
+      <form name="frmSearchUser">
+          <field property="sEmailId"	depends="email">
+              <arg0 key="Email "  resource="false" />
+          </field>
+          <field property="sFirstName"	depends="required">
+              <arg0 key="First Name "  resource="false" />
+          </field>
+      </form>
+
+
+       <!-- Hospital Validation Screen -->
+      <form name="frmEditHospValidation">
+          <field property="markedDate" depends="required,mask,date">
+                  <arg0 key="Marked Date"  resource="false" />
+                  <msg name="mask" key="errors.date"/>
+                  <var>
+                      <var-name>mask</var-name>
+                      <var-value>${checkDate}</var-value>
+                 </var>
+                 <var>
+                     <var-name>datePatternStrict</var-name>
+                     <var-value>dd/MM/yyyy</var-value>
+                </var>
+           </field>
+           <field property="validatedBy" depends="mask,validwhen">
+        <arg0 key="Validated By" resource="false"/>
+        <msg name="mask" key="errors.alphanumeric"/>
+        <var>
+                        <var-name>mask</var-name>
+                        <var-value>${alphaNumeric}</var-value>
+                </var>
+                <var>
+                <var-name>test</var-name>
+                <var-value>((visitDone != "Y") or (validatedBy != null))</var-value>
+             </var>
+      </field>
+      <field property="validatedDate" depends="mask,date,validwhen">
+                  <arg0 key="Validated Date"  resource="false" />
+                  <msg name="mask" key="errors.date"/>
+                  <var>
+                      <var-name>mask</var-name>
+                      <var-value>${checkDate}</var-value>
+                 </var>
+                 <var>
+                     <var-name>datePatternStrict</var-name>
+                     <var-value>dd/MM/yyyy</var-value>
+                </var>
+                <var>
+                <var-name>test</var-name>
+                <var-value>((visitDone != "Y") or (validatedDate != null))</var-value>
+             </var>
+           </field>
+           <field property="validatedTime" depends="validwhen,mask">
+                  <arg0 key="Validated Time"  resource="false" />
+                   <msg name="mask" key="errors.time"/>
+                  <var>
+                <var-name>test</var-name>
+                <var-value>((visitDone != "Y") or (validatedTime != null))</var-value>
+             </var>
+              <var>
+                <var-name>mask</var-name>
+                <var-value>${checkTime}</var-value>
+             </var>
+           </field>
+           <field property="validationStatus" depends="validwhen">
+        <arg0 key="Validation Status" resource="false"/>
+         <var>
+                <var-name>test</var-name>
+                <var-value>((visitDone != "Y") or (validationStatus != null))</var-value>
+             </var>
+      </field>
+      <field property="remarks" depends="maxlength,validwhen">
+          <arg0 key="Description"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+          <var>
+                <var-name>test</var-name>
+                <var-value>((visitDone != "Y") or (remarks != null))</var-value>
+                </var>
+      </field>
+    </form>
+    <!-- Hospital Feedback Screen -->
+    <form name="frmEditFeedback">
+      <field property="feedbackdate" depends="required,mask,date,dateCompare">
+            <arg0 key="Feedback Date"  resource="false" />
+            <msg name="mask" key="errors.date"/>
+            <var>
+              <var-name>mask</var-name>
+              <var-value>${checkDate}</var-value>
+            </var>
+            <var>
+              <var-name>datePatternStrict</var-name>
+              <var-value>dd/MM/yyyy</var-value>
+            </var>
+            <msg name="dateCompare" key="Feedback Date should be less than or equal to Current Date." resource="false"/>
+                <var>
+                    <var-name>secondProperty</var-name>
+                    <var-value>withServerDate</var-value>
+                </var>
+                <var>
+                  <var-name>operator</var-name>
+                  <var-value>lessThanEqual</var-value>
+                </var>
+      </field>
+      <field property="suggestions" depends="maxlength">
+          <arg0 key="suggestions"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+        </field>
+    </form>
+    <!-- Hospital Contact Screen -->
+    <!--	<form name="/HospitalContactSearchAction">
+      <field property="name"  depends="mask">
+        <arg0 key="Contact Name"  resource="false"/>
+        <msg name="mask" key="errors.alphanumeric"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-\/]*$</var-value>
+          </var>
+      </field>
+    </form>-->
+    <form name="/EditInsContactAction">
+      <field property="designationCode"	depends="required">
+          <arg0 key="Designation"  resource="false" />
+      </field>
+      <field property="phoneDetails"	depends="required">
+          <arg0 key="Atleast one Phone Number"  resource="false" />
+      </field>
+      <field property="priemailid" depends="email,minlength,maxlength">
+          <arg0 key="Primary Email "  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+      </field>
+      <field property="altemailid" depends="email,maxlength,minlength">
+          <arg0 key="Secondary Email "  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+      </field>
+
+      <field property="contactname" depends="required,mask,minlength,maxlength">
+          <arg0 key="Contact Name"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>60</var-value>
+          </var>
+          <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[0-9a-zA-Z\s]*$</var-value>
+                    </var>
+      </field>
+    </form>
+    <form name="/UpdateHospContactAction">
+
+      <field property="contacttype"	depends="required">
+          <arg0 key="Contact Type"  resource="false" />
+      </field>
+      <field property="phoneDetails"	depends="required">
+          <arg0 key="Atleast one Phone Number"  resource="false" />
+      </field>
+      <field property="priemailid"	depends="mask,minlength,maxlength">
+          <arg0 key="Enter valid Primary Email Id" resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+            <var>
+              <var-name>mask</var-name>
+              <var-value>${checkEmail}</var-value>
+            </var>
+            <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+        </field>
+        <field property="altemailid"	depends="mask,minlength,maxlength">
+          <arg0 key="Enter valid Alternate Email Id" resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+            <var>
+              <var-name>mask</var-name>
+              <var-value>${checkEmail}</var-value>
+            </var>
+            <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+        </field>
+      <field property="contactname" depends="required,mask,minlength,maxlength">
+          <arg0 key="Contact Name"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>60</var-value>
+          </var>
+          <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[0-9a-zA-Z\s]*$</var-value>
+                    </var>
+      </field>
+      <field property="regno"	depends="mask,maxlength,minlength">
+          <arg0 key="Registration No"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+
+          <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[0-9a-zA-Z\s]*$</var-value>
+                    </var>
+      </field>
+      <field property="qualification"	depends="mask,maxlength,minlength">
+          <arg0 key="Qualification"  resource="false" />
+          <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+          <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+          <var>
+            <var-name>minlength</var-name>
+            <var-value>0</var-value>
+          </var>
+          <var>
+            <var-name>maxlength</var-name>
+            <var-value>250</var-value>
+          </var>
+          <var>
+                        <var-name>mask</var-name>
+                        <var-value>^[0-9a-zA-Z\s]*$</var-value>
+                    </var>
+      </field>
+  </form>
+
+  <!-- Hospital Grading OverAll InfraStructure screen -->
+  <!--  Grading General            -->
+  <form name="frmGradingGeneral">
+    <field property="locationCode" depends="required">
+        <arg0 key="Location"  resource="false" />
+    </field>
+    <field property="categoryCode" depends="required">
+        <arg0 key="Category"  resource="false" />
+    </field>
+  </form>
+  <!--  Add Grading Details      -->
+  <form name="frmUserGrading">
+    <field property="gradeCode" depends="required">
+        <arg0 key="Hospital Grade"  resource="false" />
+    </field>
+    <field property="remarks" depends="required,maxlength,minlength">
+        <arg0 key="Remarks"  resource="false" />
+        <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+        <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+        <var>
+          <var-name>minlength</var-name>
+          <var-value>0</var-value>
+        </var>
+        <var>
+          <var-name>maxlength</var-name>
+          <var-value>250</var-value>
+        </var>
+    </field>
+  </form>
+  <form name="frmGradingInfraStr">
+    <field property="floorDetails" depends="mask">
+      <msg name="mask" key="errors.alphanumeric"/>
+      <arg0 key="Floor Details" resource="false"/>
+      <var>
+        <var-name>mask</var-name>
+        <var-value>${alphaNumeric}</var-value>
+      </var>
+    </field>
+    <field property="builtUpArea" depends="mask">
+      <arg0 key="Built up Area should be 8 digits followed by 2 decimal places." resource="false"/>
+      <var>
+        <var-name>mask</var-name>
+        <var-value>${decimalValue}</var-value>
+      </var>
+    </field>
+    <field property="openArea" depends="mask">
+      <arg0 key="Open Area should be 8 digits followed by 2 decimal places." resource="false"/>
+      <var>
+        <var-name>mask</var-name>
+        <var-value>${decimalValue}</var-value>
+      </var>
+    </field>
+
+    <field property="costOfArea" depends="mask">
+      <arg0 key="Cost Of Area should be 8 digits followed by 2 decimal places." resource="false"/>
+      <var>
+        <var-name>mask</var-name>
+        <var-value>${decimalValue}</var-value>
+      </var>
+    </field>
+  </form>
+  <!--Hospital Tariff screen -->
+  <form name="/SearchAssociatePlanAction">
+      <field property="planname"  depends="mask">
+        <msg name="mask" key="errors.alphanumeric"/>
+        <arg0 key="Plan Name"  resource="false"/>
+          <var>
+            <var-name>mask</var-name>
+            <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-\/]*$</var-value>
+          </var>
+      </field>
+  </form>
+  <form name="/UpdateHospitalTariffRevisePlanAction">
+    <field property="sPlanName" depends="required">
+      <arg0 key="Plan Name" resource="false"/>
+    </field>
+    <field property="planfromdate" depends="required">
+      <arg0 key="Start Date" resource="false"/>
+    </field>
+    <field property="discounts" depends="mask">
+      <arg0 key="Discount should be 2 digits followed by 2 decimal places." resource="false" />
+      <var>
+        <var-name>mask</var-name>
+        <var-value>^[0]*\d{0,2}(\.\d{0,2})?$</var-value>
+      </var>
+    </field>
+  </form>
+
+  <form name="/TariffSearchAction">
+    <field property="proPolNo"	depends="mask">
+      <arg0 key="Product / Policy No."  resource="false" />
+      <var>
+                <var-name>mask</var-name>
+                <var-value>^[a-zA-Z0-9]{1}[a-zA-Z0-9\s\-\/]*$</var-value>
+            </var>
+    </field>
+
+  </form>
+  <!-- Enrollment module -->
+  <form name="frmDomiciliary">
+    <field property="domiciliaryInfo" depends="limitInfo">
+      <var>
+        <var-name>subType</var-name>
+      <var-value>domiciliaryTypeID</var-value>
+      </var>
+      <var>
+        <var-name>numberFormat</var-name>
+        <var-value>${bigdecimalValue}</var-value>
+      </var>
+    </field>
+    </form>
+  <form name="frmPremiumInfo">
+    <field property="premiumInfo" depends="premiumInfo">
+      <var>
+          <var-name>subType</var-name>
+        <var-value>policySubTypeId</var-value>
+      </var>
+      <var>
+          <var-name>numberFormat</var-name>
+        <var-value>${bigdecimalValue}</var-value>
+      </var>
+    </field>
+  </form>
+  <form name="frmAssociateProduct">
+  <field property="headOfficeYN" depends="validwhen">
+  	<arg0 key="Atleast one Office Type" resource="false" />
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>(((headOfficeYN == "Y") or (regionalOfficeYN == "Y")) or ((divisionalOfficeYN == "Y") or (branchOfficeYN == "Y")))</var-value>
+  	</var>
+  </field>
+  <field property="headOfficeEffDate" depends="mask,date,validwhen">
+  	<arg0 key="Head Office Effective From Date" resource="false" />
+  	<msg name="mask" key="errors.date"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${checkDate}</var-value>
+  	</var>
+  	<var>
+  		<var-name>datePatternStrict</var-name>
+  		<var-value>dd/MM/yyyy</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((headOfficeYN != "Y") or (headOfficeEffDate != null))</var-value>
+  	</var>
+  </field>
+  <field property="regOfficeEffDate" depends="mask,date,validwhen">
+  	<arg0 key="Regional Office Effective From Date" resource="false" />
+  	<msg name="mask" key="errors.date"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${checkDate}</var-value>
+  	</var>
+  	<var>
+  		<var-name>datePatternStrict</var-name>
+  		<var-value>dd/MM/yyyy</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((regionalOfficeYN != "Y") or (regOfficeEffDate != null))</var-value>
+  	</var>
+  </field>
+  <field property="divOfficeEffDate" depends="mask,date,validwhen">
+  	<arg0 key="Divisional Office Effective From Date" resource="false" />
+  	<msg name="mask" key="errors.date"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${checkDate}</var-value>
+  	</var>
+  	<var>
+  		<var-name>datePatternStrict</var-name>
+  		<var-value>dd/MM/yyyy</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((divisionalOfficeYN != "Y") or (divOfficeEffDate != null))</var-value>
+  	</var>
+  </field>
+  <field property="branchOfficeEffDate" depends="mask,date,validwhen">
+  	<arg0 key="Branch Office Effective From Date" resource="false" />
+  	<msg name="mask" key="errors.date"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${checkDate}</var-value>
+  	</var>
+  	<var>
+  		<var-name>datePatternStrict</var-name>
+  		<var-value>dd/MM/yyyy</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((branchOfficeYN != "Y") or (branchOfficeEffDate != null))</var-value>
+  	</var>
+  </field>
+  <field property="individualYN" depends="validwhen">
+  	<arg0 key="Atleast one Policy type" resource="false" />
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>(((individualYN == "Y") or (individualAsGroupYN == "Y")) or ((corporateYN == "Y") or (nonCorporateYN == "Y")))</var-value>
+  	</var>
+  </field>
+  <field property="indServiceCharges" depends="mask,validwhen">
+  	<arg0 key="Individual Policy Service Charges" resource="false" />
+  	<msg name="mask" key="error.commission"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${commission}</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((individualYN != "Y") or (indServiceCharges != null))</var-value>
+  	</var>
+  </field>
+  <field property="ingServiceCharges" depends="mask,validwhen">
+  	<arg0 key="Individual as group Policy Service Charges" resource="false" />
+  	<msg name="mask" key="error.commission"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${commission}</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((individualAsGroupYN != "Y") or (ingServiceCharges != null))</var-value>
+  	</var>
+  </field>
+  <field property="corServiceCharges" depends="mask,validwhen">
+  	<arg0 key="Corporate Policy Service Charges" resource="false" />
+  	<msg name="mask" key="error.commission"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${commission}</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((corporateYN != "Y") or (corServiceCharges != null))</var-value>
+  	</var>
+  </field>
+  <field property="ncrServiceCharges" depends="mask,validwhen">
+  	<arg0 key="Non-Corprorate Policy Service Charges" resource="false" />
+  	<msg name="mask" key="error.commission"/>
+  	<var>
+  		<var-name>mask</var-name>
+  		<var-value>${commission}</var-value>
+  	</var>
+  	<var>
+  		<var-name>test</var-name>
+  		<var-value>((nonCorporateYN != "Y") or (ncrServiceCharges != null))</var-value>
+  	</var>
+  </field>
+  
+  </form>
+  <form name="frmDocOpinion">
+  	<field property="docOpinion" depends="maxlength,minlength">
+  	<arg0 key="Doctor Opinion "  resource="false" />
+    <arg1 key="${var:maxlength}" name="maxlength" resource="false"/>
+    <arg1 key="${var:minlength}" name="minlength" resource="false"/>
+      <var>
+          <var-name>maxlength</var-name>
+          <var-value>2000</var-value>
+        </var>
+      <var>
+          <var-name>minlength</var-name>
+          <var-value>0</var-value>
+      </var>
+    </field>
+  </form>
+  
+  </formset>
+</form-validation>

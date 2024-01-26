@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reports>
+	<module name="HR">
+		<reporttype name="HR Reports">
+			<!--  Commented as per KOC 1265<report id="EmpCredential" name="Employee Credential" pdfxml="onlinereports/hr/EmployeeCredentialPDF.jrxml" xlsxml="onlinereports/hr/EmployeeCredentialXLS.jrxml" ACL=""/>	-->		
+			<report id="ClmRegd" name="Claims Registered" pdfxml="onlinereports/hr/ClaimsRegisteredPDF.jrxml" xlsxml="onlinereports/hr/ClaimsRegisteredXLS.jrxml" ACL=""/>			
+			<report id="BiilsPend" name="Cashless Bills pending" pdfxml="onlinereports/hr/CashlessBillsPendingPDF.jrxml" xlsxml="onlinereports/hr/CashlessBillsPendingXLS.jrxml" ACL=""/>			
+			<report id="ListEmpDepPeriod" name="List of Employees and Dependents (Added/Cancelled) for a Period" pdfxml="onlinereports/hr/EmpDependentListPerPDF.jrxml"  xlsxml="onlinereports/hr/EmpDependentListPerXLS.jrxml" ACL=""/>						
+			<report id="ListEmpDepTill" name="List of Employees and Dependents (Added/Cancelled) Till Date" pdfxml="onlinereports/hr/EmpDependentListTillPDF.jrxml"  xlsxml="onlinereports/hr/EmpDependentListTillXLS.jrxml" ACL=""/>
+			<report id="GrpEnrollRpt" name="Group Enrollment Detail Report"  pdfxml="onlinereports/hr/HRAccentureDetailReport.jrxml"  xlsxml="onlinereports/hr/HRAccentureDetailReport.jrxml" ACL=""/>
+			<report id="GrpPreAuthRpt" name="Group Cashless Detail Report"  pdfxml="onlinereports/hr/HRPreAuthReport.jrxml"  xlsxml="onlinereports/hr/HRPreAuthReport.jrxml" ACL=""/>
+			<report id="GrpOnlineTATRpt" name="Group Online TAT Report" pdfxml="onlinereports/hr/OnlineTATReportPDF.jrxml"  xlsxml="onlinereports/hr/OnlineTATReport.jrxml" ACL=""/>
+			<report id="OnlineSummaryRpt" name="Summary Report" pdfxml="onlinereports/hr/OnlineSummaryReportFamily.jrxml"  xlsxml="onlinereports/hr/OnlineSummaryReportFamily.jrxml" ACL=""/>	<!-- Summary CR KOC1224 -->
+	   </reporttype>		
+	</module>
+	<module name="Insurance Company">
+		<reporttype name="Insurance Company Reports">
+			<report id="OnlinePreAuthRpt" name="Cashless" pdfxml="onlinereports/inscomp/PreAuthRptPDF.jrxml"  xlsxml="onlinereports/inscomp/PreAuthRptXLS.jrxml" ACL=""/>						
+			<report id="ClmRegSummary" name="Claim Register - Summary" pdfxml="onlinereports/inscomp/ClaimRegSummaryPDF.jrxml"  xlsxml="onlinereports/inscomp/ClaimRegSummaryXLS.jrxml" ACL=""/>									
+			<report id="ClmRegDetail" name="Claim Register - Detail" pdfxml="onlinereports/inscomp/ClaimsRegDetailPDF.jrxml"  xlsxml="onlinereports/inscomp/ClaimsRegDetailXLS.jrxml" ACL=""/>
+			<report id="ClaimsIntimations" name="Claims Intimation List" pdfxml="onlinereports/inscomp/ClaimsIntimations.jrxml" xlsxml="onlinereports/inscomp/ClaimsIntimations.jrxml" ACL=""/><!--KOC 1339 for mail-->
+			<report id="AppRejClaimsList" name="ApprovedRejected - Claims List" pdfxml="onlinereports/inscomp/ApproveRejectClaimsPDF.jrxml" xlsxml="onlinereports/inscomp/ApproveRejectClaimsXLS.jrxml" ACL=""/><!-- 1274A -->
+			<report id="AppRejPreAuthList" name="Approved Rejected - Cashless list" pdfxml="onlinereports/inscomp/ApproveRejectPreAuthPDF.jrxml" xlsxml="onlinereports/inscomp/ApproveRejectPreAuthXLS.jrxml" ACL=""/><!-- 1274A -->
+			<report id="INSPaymentReport" name="Payment Report" csvxml="onlinereports/inscomp/INSPaymentReportCSV.jrxml" ACL=""/><!-- KOC 1353 for payment report -->
+			<report id="PreauthReport" name="Cashless Report" pdfxml="onlinereports/inscomp/CignaPreAuthDetailXLS.jrxml" xlsxml="onlinereports/inscomp/CignaPreAuthDetailXLS.jrxml" ACL=""/><!-- KOCPreauthreport -->
+			<report id="ClaimReport" name="Claim Report" pdfxml="onlinereports/inscomp/CignaClaimsDetailXLS.jrxml" xlsxml="onlinereports/inscomp/CignaClaimsDetailXLS.jrxml" ACL=""/><!-- KOCPreauthreport -->
+			<report id="PolicyReport" name="Scheme Report" pdfxml="onlinereports/inscomp/CignaPolicyDetailXLS.jrxml" xlsxml="onlinereports/inscomp/CignaPolicyDetailXLS.jrxml" ACL=""/><!-- KOCPreauthreport -->
+</reporttype>		
+	</module>
+	
+	<!-- kocb -->
+	<module name="View Reports">
+		<reporttype name="Reports">
+			<report id="OnlinePreAuthBroRpt" name="Cashless - Detail" pdfxml="onlinereports/broker/PreAuthRptBroPDF.jrxml"  xlsxml="onlinereports/broker/PreAuthRptBroXLS.jrxml" ACL=""/>
+			<report id="PreAuthBroSummary" name="Cashless - Summary" pdfxml="onlinereports/broker/PreAuthSummaryBroPDF.jrxml"  xlsxml="onlinereports/broker/PreAuthSummaryBroXLS.jrxml" ACL=""/>						
+			<report id="ClmRegBroSummary" name="Claim Register - Summary" pdfxml="onlinereports/broker/ClaimRegSummaryBroPDF.jrxml"  xlsxml="onlinereports/broker/ClaimRegSummaryBroXLS.jrxml" ACL=""/>									
+			<report id="ClmRegBroDetail" name="Claim Register - Detail" pdfxml="onlinereports/broker/ClaimsRegDetailBroPDF.jrxml"  xlsxml="onlinereports/broker/ClaimsRegDetailBroXLS.jrxml" ACL=""/>
+			<report id="ListBroEmpDepPeriod" name="List of Employees and Dependents (Added/Cancelled) for a Period" pdfxml="onlinereports/broker/EmpDependentperPeriod.jrxml"  xlsxml="onlinereports/hr/EmpDependentListPerXLS.jrxml" ACL=""/>											
+		</reporttype>		
+	</module>	
+	<!-- Hospital Login  -->
+	<module name="Hospital">
+		<reporttype name="Hospital Reports">
+		<report id="HospitalBillsPend" name="Bills pending" pdfxml="onlinereports/hospital/CashlessBillsPendingPDF.jrxml" xlsxml="onlinereports/hospital/CashlessBillsPendingXLS.jrxml" ACL=""/>			
+		<report id="HospitalClmRegd" name="Claims Registered" pdfxml="onlinereports/hospital/ClaimsRegisteredPDF.jrxml" xlsxml="onlinereports/hospital/ClaimsRegisteredXLS.jrxml" ACL=""/>			
+		<report id="HospitalOnlineSummaryRpt" name="Summary Report" pdfxml="onlinereports/hospital/OnlineSummaryReportClaimPDF.jrxml"  xlsxml="onlinereports/hospital/OnlineSummaryReportClaimXLS.jrxml" ACL=""/> 
+	</reporttype>		
+	</module>			
+</reports>

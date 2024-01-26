@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortfall>
+  <section name="Medical">     
+     <subsection name="Shortfalls">
+     	 <query id="Shortfalls.1" postlabel="Kindly provide duration of the ailment"  control="input" type="checkbox"  value="YES" received="NO"/>
+     	 <query id="Shortfalls.2" postlabel="Kindly provide etiology"  control="input" type="checkbox"  value="YES" received="NO"  />
+     	 <query id="Shortfalls.3" postlabel="Kindly provide details of treatment"  control="input" type="checkbox"  value="YES"  />
+         <query id="Shortfalls.4" postlabel="Kindly provide details of medical management"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="Shortfalls.5" postlabel="Kindly provide investigation reports"   control="input" type="checkbox"  value="YES" />
+         <query id="Shortfalls.6" postlabel="Kindly provide justification for prolonged stay in the facility"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="Shortfalls.7" postlabel="Kindly provide interim case summary"   control="input" type="checkbox"  value="YES" />
+         <query id="Shortfalls.8" postlabel="Kindly revert with active line of treatment justifying the hospitalisation.any h/o trauma  detailed circumstances leading to injury  any h/o rta if"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="Shortfalls.9" postlabel="Kindly provide correct diagnosis codes" control="input" type="checkbox"  value="YES" received="NO"   />
+         <query id="Shortfalls.10" postlabel="Kindly provide correct procedure codes"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="Shortfalls.11" postlabel="Kindly provide correct dental codes"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="Shortfalls.12" postlabel="Kindly provide cost estimate for the procedure"   control="input" type="checkbox"  value="YES" received="NO" />
+       </subsection>      
+  </section>  
+  <section name="Others">
+    <subsection name="Other Queries">
+	 <query id="Others.1" postlabel=""  control="textArea" type="text"  value=""  />
+   </subsection>
+  </section>
+</shortfall>

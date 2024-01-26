@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Exclusions and Limits" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="PED Excluded" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.ailments" op="IN" value="" clfactor="10" dynValue="get_member_PED()" mandatory="YES" method="get_request_ailments()" source="PACKAGE" module="P" fieldData="" unit="" result="" >
+          <display id="" target="" prelabel="Requested Ailments" operator="text" control="" type="" postlabel="member's PED" default="" jscall="" />
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Benign Prostatic Hypertrophy" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N40">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.bphamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N40')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N40')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="BPH charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hysterectomy" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.10">
+        <condition id="" field="member.sex" op="EQ" value="FEM" clfactor="10" mandatory="YES" method="MEMBER.SEX" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Gender of the member" operator="text" control="" type="" default="" postlabel="Female" jscall="" />
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hysterectomyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.10')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.10')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hysterectomy charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hernia" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K46.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.herniaamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K46.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('K46.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hernia charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hydrocele" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N43.3">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hydroceleamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N43.3')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N43.3')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hydrocele charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Fistula In Anus And Piles" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K60.3:I84.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.fistulaamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K60.3:I84.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('K60.3:I84.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Fistula charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Sinusitis" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=J32.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.sinusitisamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J32.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J32.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Sinusitis charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Congenial internal disease" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.3">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.internalcongenialamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.3')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.3')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Congenial internal disease charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Psychiatric,mental or nervous conditions,insanity" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=F99">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.psychiatricamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','F99')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('F99')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Psychiatric charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Total knee/hip replacement" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=M17.1:M16.1">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.kneehipamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M17.1:M16.1')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('M17.1:M16.1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Knee/hip replacement charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <text>
+          Root Canal Treatment and others. Corrective, cosmetic or aesthetic dental surgery or treatment IS NOT PAYABLE.
+        </text>
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges per member" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges per family" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for self" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalselfamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','NSF')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalspouseamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','YSP')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalparentsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','NFR,YMO')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for parent-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalparentinlawsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','YFL,YML')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalbrotheramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','NB1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalsisteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','NL1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for son" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentalsonamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','NS1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Dental Treatment charges for daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K08.8">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dentaldaughteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K08.8','ND1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('K08.8')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Dental Treatment charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges per member" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges per family" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for self" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensselfamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NSF')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensspouseamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','YSP')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensparentsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NFR,YMO')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for parent-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensparentinlawsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','YFL,YML')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensbrotheramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NB1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlenssisteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NL1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for son" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlenssonamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NS1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Contact lens charges for daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.contactlensdaughteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','ND1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Contact lens charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges per member" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges per family" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for self" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidselfamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','NSF')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidspouseamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','YSP')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidparentsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','NFR,YMO')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for parent-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidparentinlawsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','YFL,YML')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidbrotheramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','NB1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidsisteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','NL1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for son" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaidsonamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','NS1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hearing aid charges for daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H91.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hearingaiddaughteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H91.9','ND1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H91.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hearing aid charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cosmetic/Plastic Surgery like Facial Corrections etc" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=S00.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.facialcorrectionsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','S00.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('S00.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Facial corrections charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles per member" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclememberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles per family" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclefamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for self" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectacleselfamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NSF')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclespouseamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','YSP')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectacleparentsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NFR,YMO')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for parent-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectacleparentinlawsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','YFL,YML')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclebrotheramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NB1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclesisteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NL1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for son" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectaclesonamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','NS1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cost of spectacles for daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spectacledaughteramount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9','ND1')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of spectacles (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Circumcision" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N47">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.circumcisionamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N47')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N47')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Circumcision charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Walkers, crutches, wheel chairs" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.27">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.wheelchairamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.27')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.27')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Walkers, crutches, wheel chair charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="AIDS" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=B24">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.aidsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','B24')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('B24')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="AIDS charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Sterility" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N97.9:N46">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.sterilityamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N97.9:N46')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N97.9:N46')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Sterility charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Family Planning" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=Z30.2">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.flyplanningamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','Z30.2')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('Z30.2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Family Planning charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Infertility" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N97.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.infertilityamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N97.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N97.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Infertility charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Vineral diseases" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=A64">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.vineralamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','A64')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('A64')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Vineral diseases charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Congenital external diseases" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.31">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.externalcongenialamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.31')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.31')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Congenital external diseases charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Drugs, alchohol, intoxication" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=F10.0">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.intoxicationamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','F10.0')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('F10.0')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Drugs, alchohol, intoxication charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Self injury" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=T14.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.selfinjuryamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','T14.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('T14.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Self injury charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Convalescence" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=Z54.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.convalescenceamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','Z54.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('Z54.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Convalescence charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Obesity" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=E66.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.obesityamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','E66.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('E66.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Obesity charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Sleep Disorders" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=G47.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.sleepdisordersamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','G47.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('G47.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Sleep Disorders charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Abortion" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=O06.9">
+        <condition id="" field="member.sex" op="EQ" value="FEM" clfactor="10" mandatory="YES" method="MEMBER.SEX" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Gender of the member" operator="text" control="" type="" default="" postlabel="Female" jscall="" />
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.abortionamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','O06.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('O06.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Abortion charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Child birth miscarriage" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=O03.9">
+        <condition id="" field="member.sex" op="EQ" value="FEM" clfactor="10" mandatory="YES" method="MEMBER.SEX" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Gender of the member" operator="text" control="" type="" default="" postlabel="Female" jscall="" />
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.miscarriageamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','O03.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('O03.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Child birth miscarriage charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Arthritis, gout, rheumatism" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.37">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.arthritisamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.37')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.37')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Arthritis, gout, rheumatism charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cholecystectomy" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=K80.2">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.cholecystectomyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','K80.2')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('K80.2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cholecystectomy charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Renal stones" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=N20.0">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.renalstonesamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','N20.0')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('N20.0')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Renal stones charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Benign tumors" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=D48.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.benigntumorsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','D48.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('D48.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Benign tumors charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Surgical correction of eye sight" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=H53.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.surgicalsightamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','H53.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('H53.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of surgical correction of eye sight (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Incision and drainage (Local And GA)" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.42">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.incisionamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.42')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.42')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of incision and drainage (Local And GA)(Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Burns" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=T30.0">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.burnsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','T30.0')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('T30.0')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Burns charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Angioplasty" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=125.1">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.angioplastyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','125.1')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('125.1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Angioplasty charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Skin grafting for a wound" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.45">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.skingraftingamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.45')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.45')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Skin grafting charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Deviated nasal septum" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=J34.2">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.deviatednasalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J34.2')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J34.2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Deviated nasal septum charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Valves, grafts, stents, nails, screws" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.47">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.valvesgraftsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.47')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.47')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of valves, grafts, stents, nails, screws (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Autoimmune diseases" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=M35.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.autoimmuneamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M35.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('M35.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Autoimmune diseases charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="MLC/Criminal cases" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.49">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.criminalcaseamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.49')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.49')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="MLC/Criminal case charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cardiovascular diseases" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=100.1.50">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.cardiovascularamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.50')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.50')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cardiovascular disease charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Vaccination or Inoculation" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=T88.1">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.vaccinationamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','T88.1')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('T88.1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Vaccination or Inoculation charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Vitamins and Tonics" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=D64.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.vitaminsamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','D64.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('D64.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Vitamins and Tonics charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Aviation Injuries" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=T14.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.aviationinjuriesamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','T14.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('T14.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Aviation Injuries charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Pregnancy termination on doctor's advise" allowed="NO" module="P" clpercentage="" selected="" autoselect="ICD=O04.9">
+        <condition id="" field="member.sex" op="EQ" value="FEM" clfactor="10" mandatory="YES" method="MEMBER.SEX" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Gender of the member" operator="text" control="" type="" default="" postlabel="Female" jscall="" />
+        </condition>
+        <condition id="" field="request.pregnancyterminationamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','O04.9')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('O04.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Pregnancy termination charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

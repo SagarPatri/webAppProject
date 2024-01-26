@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Maternity" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Maternity Coverage" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ICD('O80.9')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.sex" op="EQ" opType="text" value="FEM" clfactor="10" mandatory="YES" method="MEMBER.SEX" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Gender of the member" control="" type="" default="" postlabel="Female" jscall="" />
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="employee.elapsedperiod" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_employee_elapsedperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the date of joining" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="(applicable only for corporate policy)" jscall="" />
+        </condition>
+        <condition id="" field="member.children" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Total Number of living children allowed" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="fieldData,1" prelabel="Number of children"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="member.surgeries" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Number of surgeries allowed" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="fieldData,1" prelabel="Number of surgeries"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.maternityamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','DLC|BAB')" clfactor="10" mandatory="NO" method="get_account_amount('DLC|BAB')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maternity Limit Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.totaldeliveryamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','DLC')" clfactor="10" mandatory="NO" method="get_account_amount('DLC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Overall Delivery Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.normaldeliveryamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','NDL')" clfactor="10" mandatory="NO" method="get_account_amount('NDL')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Normal Delivery Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.ceseriandeliveryamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','CDL')" clfactor="10" mandatory="NO" method="get_account_amount('CDL')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Ceserian Delivery Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <!-- New Born conditions -->
+        <condition id="" field="member.newbornperiod" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="New Born Age (Days)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="fieldData,1" prelabel="New Born Age (Days)"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.babyamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','BAB')" clfactor="10" mandatory="NO" method="get_account_amount('BAB')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="New Born Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <!-- Pre Natal conditions -->
+        <condition id="" field="request.prenatalamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PRN')" clfactor="10" mandatory="NO" method="get_account_amount('PRN')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Prenatal Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <!-- Post Natal conditions -->
+        <condition id="" field="request.postnatalamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PON')" clfactor="10" mandatory="NO" method="get_account_amount('PON')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Postnatal Charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

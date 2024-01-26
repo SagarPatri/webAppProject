@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortfall>
+  <section name="Addressing Documents">
+     <subsection name="Addressing Documents">
+ 	 <query id="Addressing Documents.1" postlabel="Clarification from the Insured for Non-intimation" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.1" postlabel="Clarification from the Insured for Non-intimation" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.2" postlabel="Clarification from the Insured for Delay in Intimation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.2" postlabel="Clarification from the Insured for Delay in Intimation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.3" postlabel="Clarification from the Insured for Delay in Submission of Claims"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.3" postlabel="Clarification from the Insured for Delay in Submission of Claims"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.4" postlabel="Copy of Vidal ID Card"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.4" postlabel="Copy of Vidal ID Card"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.5" postlabel="Any other ID proof like voter ID/ DL/ Passport etc - copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.5" postlabel="Any other ID proof like voter ID/ DL/ Passport etc - copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.6" postlabel="Age Proof in respect of the Patient"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.6" postlabel="Age Proof in respect of the Patient"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.7" postlabel="Know Your Customer Details"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.7" postlabel="Know Your Customer Details"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.8" postlabel="Copy of the Current Insurance Policy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.8" postlabel="Copy of the Current Insurance Policy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.9" postlabel="Copy of the previous years' Insurance Policies"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.9" postlabel="Copy of the previous years' Insurance Policies"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.10" postlabel="Address correction Endorsement from the Insurer"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.10" postlabel="Address correction Endorsement from the Insurer"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>      
+     <query id="Addressing Documents.11" postlabel="Insurer's approval letter condoning delay in Intimation" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.11" postlabel="Insurer's approval letter condoning delay in Intimation" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.12" postlabel="Insurer's approval letter condoning Non-Intimation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.12" postlabel="Insurer's approval letter condoning Non-Intimation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.13" postlabel="Insurer's approval letter condoning delay in Claim Submission"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.13" postlabel="Insurers' approval letter condoning delay in Claim Submission"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.14" postlabel="Clarification from Insurer -  Since when is the patient covered conitinuously"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.14" postlabel="Clarification from Insurer -  Since when is the patient covered conitinuously"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.15" postlabel="Clarification from Insurer -  Has the original sum insured been enhanced at any time?  If so details thereof."  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.15" postlabel="Clarification from Insurer -  Has the original sum insured been enhanced at any time?  If so details thereof."  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.16" postlabel="Clarification from Insurer -   Are there any Special Exclusion other than Standard Exclusions on his/her policy?"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.16" postlabel="Clarification from Insurer -   Are there any Special Exclusion other than Standard Exclusions on his/her policy?"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.17" postlabel="Clarification from Insurer -  Are there any restrictions for amount payable for any disease? "  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.17" postlabel="Clarification from Insurer -  Are there any restrictions for amount payable for any disease?"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.18" postlabel="Clarification from Insurer -  details of any previous claims settled/denied"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.18" postlabel="Clarification from Insurer -  details of any previous claims settled/denied"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.19" postlabel="Copy of the Proposal Form from the Insurer"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.19" postlabel="Copy of the Proposal Form from the Insurer"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.20" postlabel="ECS Form with cancelled Cheque &amp; copy of the Bank Passbook page containing Name/ Address / Account No &amp; IFSC"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.20" postlabel="ECS Form with cancelled Cheque &amp; copy of the Bank Passbook page containing Name/ Address / Account No &amp; IFSC"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>     
+      <query id="Addressing Documents.21" postlabel="Claim Form-partA duly completed &amp; signed by the insured on the prescribed format  original" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.21" postlabel="Claim Form-partA duly completed &amp; signed by the insured on the prescribed format  original" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+        <query id="Addressing Documents.22" postlabel="Claim Form-partB duly completed &amp; signed by the insured on the prescribed format  original" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.22" postlabel="Claim Form-partB duly completed &amp; signed by the insured on the prescribed format  original" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+      <query id="Addressing Documents.23" postlabel="Medical Cdrtificate Form (Prescribed one) completed and signed by the hospital authorities authenticated with Rubber"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.23" postlabel="Medical Cdrtificate Form (Prescribed one) completed and signed by the hospital authorities authenticated with Rubber"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.24" postlabel="Authorisation Letter addressed to Hospital for seeking necessary hospitalisation information and documents"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.24" postlabel="Authorisation Letter addressed to Hospital for seeking necessary hospitalisation information and documents"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.25" postlabel="Vidal Cashless Request Form  - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.25" postlabel="Vidal Cashless Request Form  - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.26" postlabel="Vidal Cashless Approval Letter  - Copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.26" postlabel="Vidal Cashless Approval Letter  - Copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.27" postlabel="Vidal Cashless Enhancement Approval Letter  - Copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.27" postlabel="Vidal Cashless Enhancement Approval Letter  - Copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.28" postlabel="Detailed Discharge Summary from the Hospital on the Hospital Letter-head - Original authenticated with Rubber Stamp"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.28" postlabel="Detailed Discharge Summary from the Hospital on the Hospital Letter-head - Original authenticated with Rubber Stamp"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.29" postlabel="Date-wise Treatment Summary for Dialysis (in the place of Discharge Summary)"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.29" postlabel="Date-wise Treatment Summary for Dialysis (in the place of Discharge Summary)"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.30" postlabel="Date-wise Treatment Summary for Chemotherapy/ Radiotherapy (in the place of Discharge Summary)"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.30" postlabel="Date-wise Treatment Summary for Chemotherapy/ Radiotherapy (in the place of Discharge Summary)"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+     <query id="Addressing Documents.31" postlabel="Death Summary (instead of Discharge Summary) in case the patient has passed away during hospitalisation - original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.31" postlabel="Death Summary (instead of Discharge Summary) in case the patient has passed away during hospitalisation - original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>       
+       <query id="Addressing Documents.32" postlabel="Referral Letter, if any, to hospital from Consulting Physician - certified copy" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.32" postlabel="Referral Letter, if any, to hospital from Consulting Physician - certified copy" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.33" postlabel="First Consultation Papers - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.33" postlabel="First Consultation Papers - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.34" postlabel="OPD Consultation Papers prior to Hospitalisation - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.34" postlabel="OPD Consultation Papers prior to Hospitalisation - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.35" postlabel="Admission Notes from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.35" postlabel="Admission Notes from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.36" postlabel="Treatment Chart from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.36" postlabel="Treatment Chart from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.37" postlabel="Indoor Case Papers from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.37" postlabel="Indoor Case Papers from the Hospital - certified copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.38" postlabel="Hospital Main Inpatient Bill - original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.38" postlabel="Hospital Main Inpatient Bill - original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.39" postlabel="Printed/ Serially Numbered Receipt for the amount paid against the Hospital Main Inpatient Bill - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.39" postlabel="Printed/ Serially Numbered Receipt for the amount paid against the Hospital Main Inpatient Bill - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.40" postlabel="Advance Receipt, paid if any - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.40" postlabel="Advance Receipt, paid if any - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+    <query id="Addressing Documents.41" postlabel="Break-up bill for the Hospital Main Inpatient Bill - Original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.41" postlabel="Break-up bill for the Hospital Main Inpatient Bill - Original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>    
+       <query id="Addressing Documents.42" postlabel="Break up Bill for the Pharmacy/ Consumables / OT Materials" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.42" postlabel="Break up Bill for the Pharmacy/ Consumables / OT Materials" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.43" postlabel="Detailed bill for the non-admissible amounts collected from the patient"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.43" postlabel="Detailed bill for the non-admissible amounts collected from the patient"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.44" postlabel="Receipt for the amount collected from the patient"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.44" postlabel="Receipt for the amount collected from the patient"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.45" postlabel="Pharmacy Bills in original for medicines purchased during hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.45" postlabel="Pharmacy Bills in original for medicines purchased during hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.46" postlabel="Prescriptions with Duration &amp; Dosage for medicines purchased during hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.46" postlabel="Prescriptions with Duration &amp; Dosage for medicines purchased during hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.47" postlabel="Investigation reports - in original for investigations done during hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.47" postlabel="Investigation reports - in original for investigations done during hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.48" postlabel="Histopathology report, if any, in original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.48" postlabel="Histopathology report, if any, in original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.49" postlabel="Echo report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.49" postlabel="Echo report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.50" postlabel="Angiogram (CAG) Report "  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.50" postlabel="Angiogram (CAG) Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+      <query id="Addressing Documents.51" postlabel="USG report - pre operative"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.51" postlabel="USG report - pre operative"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>   
+      <query id="Addressing Documents.52" postlabel="USG report - post operative" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.52" postlabel="USG report - post operative" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.53" postlabel="MRI  Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.53" postlabel="MRI  Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.54" postlabel="CT Scan  Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.54" postlabel="CT Scan  Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.55" postlabel="ECG  Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.55" postlabel="ECG  Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.56" postlabel="X-ray Plates/ Films"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.56" postlabel="X-ray Plates/ Films"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.57" postlabel="X-ray Reports"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.57" postlabel="X-ray Reports"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.58" postlabel="All Laboratory/ Investigation Reports"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.58" postlabel="All Laboratory/ Investigation Reports"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.59" postlabel="Report confirming Diagnosis"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.59" postlabel="Report confirming Diagnosis"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.60" postlabel="Blood Alcohol Report at the time of accident/ admission"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.60" postlabel="Blood Alcohol Report at the time of accident/ admission"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+     <query id="Addressing Documents.61" postlabel="Bill &amp; Receipt for the Investigations conducted during hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.61" postlabel="Bill &amp; Receipt for the Investigations conducted during hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+      <query id="Addressing Documents.62" postlabel="Certificate from treating Doctor on Any risk factors contributing to present ailment" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.62" postlabel="Certificate from treating Doctor on Any risk factors contributing to present ailment" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.63" postlabel="Details of previous treatment taken "  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.63" postlabel="Details of previous treatment taken"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.64" postlabel="Certificate from treating Doctor on Relevance of past history to present problem inhis/her expert opinion"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.64" postlabel="Certificate from treating Doctor on Relevance of past history to present problem inhis/her expert opinion"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.65" postlabel="Obstetric history  / Gravida Status from the Hospital"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.65" postlabel="Obstetric history  / Gravida Status from the Hospital"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.66" postlabel="Copy of Registration Certificate of Hospital Nursing Home issued by City Municipality/ Corporation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.66" postlabel="Copy of Registration Certificate of Hospital Nursing Home issued by City Municipality/ Corporation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.67" postlabel="Details of Number of Beds/ ICU/ OT &amp; Round the clock Doctor &amp; Nursing Facility"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.67" postlabel="Details of Number of Beds/ ICU/ OT &amp; Round the clock Doctor &amp; Nursing Facility"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.68" postlabel="Certified copy of operation theatre (OT) notes - where surgery is performed"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.68" postlabel="Certified copy of operation theatre (OT) notes - where surgery is performed"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.69" postlabel="MLC report/ FIR for accident cases - certified copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.69" postlabel="MLC report/ FIR for accident cases - certified copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>            
+       <query id="Addressing Documents.70" postlabel="Clarification from the hospital for not raising MLC/ Not reporting to Police"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.70" postlabel="Clarification from the hospital for not raising MLC/ Not reporting to Police"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+    <query id="Addressing Documents.71" postlabel="Detailed Clarification on the circumstances of the accident &amp; the Injury/ First Aid obtained etc in case no Police"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.71" postlabel="Detailed Clarification on the circumstances of the accident &amp; the Injury/ First Aid obtained etc in case no Police"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>      
+       <query id="Addressing Documents.72" postlabel="Certifiate from the hospital confirming Date &amp; Time of Admission and Date &amp; Time of Discharge" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.72" postlabel="Certifiate from the hospital confirming Date &amp; Time of Admission and Date &amp; Time of Discharge" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.73" postlabel="Certificate from the Treating Doctor on the Etiology/ Cause"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.73" postlabel="Certificate from the Treating Doctor on the Etiology/ Cause"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.74" postlabel="Certificate from treating Doctor on Duration of the ailments"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.74" postlabel="Certificate from treating Doctor on Duration of the ailments"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.75" postlabel="Certificate from treating Doctor on Duration/ History of Diabetes"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.75" postlabel="Certificate from treating Doctor on Duration/ History of Diabetes"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.76" postlabel="Certificate from treating Doctor on Duration/ History of Hypertension"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.76" postlabel="Certificate from treating Doctor on Duration/ History of Hypertension"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.77" postlabel="Certificate from treating Doctor on Duration/ History of Heart Disease"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.77" postlabel="Certificate from treating Doctor on Duration/ History of Heart Disease"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.78" postlabel="Certificate from treating Doctor on Duration/ History of Bronchial Asthma"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.78" postlabel="Certificate from treating Doctor on Duration/ History of Bronchial Asthma"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.79" postlabel="Certificate from treating Doctor on Duration/ History of COPD"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.79" postlabel="Certificate from treating Doctor on Duration/ History of COPD"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.80" postlabel="Certificate from treating Doctor on Duration/ History of Osteoarthritis"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.80" postlabel="Certificate from treating Doctor on Duration/ History of Osteoarthritis"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+    <query id="Addressing Documents.81" postlabel="Certificate from treating Doctor on Duration/ History of Any other ailment/s"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.81" postlabel="Certificate from treating Doctor on Duration/ History of Any other ailment/s"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>         
+       <query id="Addressing Documents.82" postlabel="Certificate from treating Doctor on Any other significant past history given by patient" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.82" postlabel="Certificate from treating Doctor on 'Any other significant past history given by patient'" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.83" postlabel="Certificate from the treating Doctor on the degree of refractive Error supported by the Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.83" postlabel="Certificate from the treating Doctor on the degree of refractive Error supported by the Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.84" postlabel="Sticker for the implants used - original"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.84" postlabel="Sticker for the implants used - original"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.85" postlabel="Invoice for the implants used - Copy"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.85" postlabel="Invoice for the implants used - Copy"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.86" postlabel="PTCA Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.86" postlabel="PTCA Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.87" postlabel="CABG Report"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.87" postlabel="CABG Report"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.88" postlabel="Confirmation from the hospital for non-utilisation of the cashless facility, if any sanctioned"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.88" postlabel="Confirmation from the hospital for non-utilisation of the cashless facility, if any sanctioned"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.89" postlabel="Consultation Bill/ Cash Receipt - for Pre/ Post-Hospitalisation Treatment"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.89" postlabel="Consultation Bill/ Cash Receipt - for Pre/ Post-Hospitalisation Treatment"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.90" postlabel="Prescription with Duration &amp; Dosage for medicines purchased prior to &amp; post - hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.90" postlabel="Prescription with Duration &amp; Dosage for medicines purchased prior to &amp; post - hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.91" postlabel="Pharmacy bills for medicines purchased prior to &amp; post - hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.91" postlabel="Pharmacy bills for medicines purchased prior to &amp; post - hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>            
+      <query id="Addressing Documents.92" postlabel="Investigation reports - in original - for investigations done prior to admission" control="input" type="checkbox"  value="YES" received="NO" /> 
+ 	  <display id="Check.Addressing Documents.92" postlabel="Investigation reports - in original - for investigations done prior to admission" control="input" type="checkbox"  value="YES" enable="NO"  received="NO"/>  	
+     <query id="Addressing Documents.93" postlabel="Cash bills for the investigations done prior to hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.93" postlabel="Cash bills for the investigations done prior to hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+     <query id="Addressing Documents.94" postlabel="Reference letter for investigation conducted prior to hospitalisation"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.94" postlabel="Reference letter for investigation conducted prior to hospitalisation"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/> 
+       <query id="Addressing Documents.95" postlabel="Investigation reports - in original - for investigations done - post-discharge, if any"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.95" postlabel="Investigation reports - in original - for investigations done - post-discharge, if any"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.96" postlabel="Cash bills for the investigations done - post-discharge"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.96" postlabel="Cash bills for the investigations done - post-discharge"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.97" postlabel="Reference letter for investigation conducted - post-discharge"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.97" postlabel="Reference letter for investigation conducted - post-discharge"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.98" postlabel="Need to know the area of Specialisation of treating Doctor with Rubber Stamp containing Qualification or Visiting Card"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.98" postlabel="Need to know the area of Specialisation of treating Doctor with Rubber Stamp containing Qualification or Visiting Card"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>              
+       <query id="Addressing Documents.99" postlabel="OPD Consultation Paper with details of presenting complaints/ Diagnosis"  control="input" type="checkbox"  value="YES" received="NO" />  
+     <display id="Check.Addressing Documents.99" postlabel="OPD Consultation Paper with details of presenting complaints/ Diagnosis"  control="input" type="checkbox"  value="YES" enable="NO" received="NO"/>                                                      
+     </subsection>  
+  </section>
+  <section name="Others">
+    <subsection name="Other Queries">
+	 <query id="Others.1" postlabel=""  control="textArea" type="text"  value=""  />
+   </subsection>
+  </section>
+</shortfall>

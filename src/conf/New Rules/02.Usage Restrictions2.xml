@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Usage Restrictions" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Cashless in preferred hospitals" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Claimtype_ProviderStatus('CNH','PRF')">
+		<display id="" target="allowed,1" prelabel="" control="radiogroup" type="single" default="2" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cashless in restricted hospitals" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Claimtype_ProviderStatus('CNH','NPR')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="MR in restricted hospitals" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Claimtype_ProviderStatus('CTM','NPR')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Network Hospitals" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_HospitalType('NW')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+       <coverage id="" name="Non-Network Hospitals" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_HospitalType('NN')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Copayment to hospital" allowed="2" module="P" clpercentage="" selected="" autoselect="">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Apply,Don't Apply" altText="Apply,Don't Apply" optVal="1,2" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <text id="" mandatory="YES" value="Please check if copayment is required for the hospital." />
+		<action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

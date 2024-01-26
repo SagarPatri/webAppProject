@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Geographical locations" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Geographical locations covered" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.country" op="IN" value="~" clfactor="10"	mandatory="YES" method="get_request_country()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Countries allowed for hospitalisation" operator="text" control="input" type="text" default="" postlabel="" jscall="" disabled="true" />
+          <display id="" target="" prelabel="" operator="" control="image" type="image" imagepath="" default="" postlabel="" jscall="onclick=openList('ID','CON')" />
+        </condition>
+        <condition id="" field="request.state" op="IN" value="~" clfactor="10"	mandatory="YES" method="get_request_state()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="States allowed for hospitalisation" operator="text" control="input" type="text" default="" postlabel="" jscall="" disabled="true" />
+          <display id="" target="" prelabel="" operator="" control="image" type="image" imagepath="" default="" postlabel="" jscall="onclick=openList('ID','STA')" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

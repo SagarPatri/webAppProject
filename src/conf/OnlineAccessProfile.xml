@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>                                                                                                                                                                  
+<SecurityProfile ActiveLink="" ActiveSubLink="" ActiveTab="">                                                                                                                                           
+    <Link name="Online Information" displayname="Online Information" tooltip="Online Information" applicable="Y"> 
+      <SubLink name="Home" displayname="Home" tooltip="Home" applicable="N">                                                                                                                         
+        <Tab name="Home" displayname="Home" applicable="N">
+          <ACL>
+            <permission name="Online Information.Home.Home" displayname="View" applicable="N"/>
+            <permission name="Online Information.Home.Home.Edit" displayname="Edit" applicable="N"/>
+          </ACL>
+        </Tab>
+      </SubLink>
+      <SubLink name="Enrollment" displayname="Enrollment" tooltip="Add/Edit Member" applicable="Y">                                                                                                                         
+        <Tab name="Members" displayname="Members" applicable="N">                                                                                                                                 
+          <ACL>                                                                                                                                                                                 
+            <permission name="Online Information.Enrollment.Members" displayname="View" applicable="Y"/>
+            <permission name="Online Information.Enrollment.Members.Policy Information" displayname="Scheme Information" applicable="Y"/>
+            <permission name="Online Information.Enrollment.Members.Employee Details" displayname="Employee Details" applicable="Y"/>                                                                 
+            <permission name="Online Information.Enrollment.Members.Member Details" displayname="Member Details" applicable="Y"/>    
+            <permission name="Online Information.Enrollment.Members.Member Details.Sum Insured Details" displayname="Sum Insured Details" applicable="Y"/>                                                                 
+            <permission name="Online Information.Enrollment.Members.Delete" displayname="Delete" applicable="Y"/>  
+            <permission name="Online Information.Enrollment.Members.Cancel Enrollment" displayname="Cancel Enrollment" applicable="Y"/>    
+            <permission name="Online Information.Enrollment.Members.ChangePassword" displayname="Change Password" applicable="N"/>
+	        <permission name="Online Information.Enrollment.Members.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Enrollment.Members.Edit" displayname="Edit" applicable="Y"/> 
+          </ACL>                                                                                                                                                                                
+        </Tab>                                                                                                                                                                                     
+      </SubLink>
+      <SubLink name="Pre-Auth" displayname="Cashless" tooltip="Cashless Mediclaim" applicable="Y">                                                                                                                         
+	    <Tab name="Members" displayname="Members" applicable="N">                                                                                                                                 
+	      <ACL>                                                                                                                                                                                 
+	        <permission name="Online Information.Pre-Auth.Members" displayname="View" applicable="Y"/>
+	        <permission name="Online Information.Pre-Auth.Members.Policy Information" displayname="Scheme Information" applicable="Y"/>
+	    	<permission name="Online Information.Pre-Auth.Members.Employee Details" displayname="Employee Details" applicable="Y"/> 
+	    	<permission name="Online Information.Pre-Auth.Members.PreAuth Intimation" displayname="Pre-Auth Intimation" applicable="Y"/>
+	    	<permission name="Online Information.Pre-Auth.Members.PreAuth Intimation.PreAuth Intimation Details" displayname="Pre-Auth Intimation Details" applicable="Y"/>
+	    	<permission name="Online Information.Pre-Auth.Members.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Pre-Auth.Members.Edit" displayname="Edit" applicable="Y"/>
+            <permission name="Online Information.Pre-Auth.Members.Delete" displayname="Delete" applicable="Y"/> 
+	  	  </ACL>                                                                                                                                                                                
+		</Tab>                                                                                                                                                                                     
+      </SubLink>
+      <SubLink name="Claims" displayname="Claims" tooltip="Claims" applicable="Y">                                                                                                                         
+		<Tab name="Members" displayname="Members" applicable="N">                                                                                                                                 
+	  	  <ACL>                                                                                                                                                                                 
+	    	<permission name="Online Information.Claims.Members" displayname="View" applicable="Y"/>
+	    	<permission name="Online Information.Claims.Members.Policy Information" displayname="Scheme Information" applicable="Y"/>
+	    	<permission name="Online Information.Claims.Members.Employee Details" displayname="Employee Details" applicable="Y"/>
+	    	<permission name="Online Information.Claims.Members.Claims Intimation" displayname="Claims Intimation" applicable="Y"/>
+	    	<permission name="Online Information.Claims.Members.Claims Intimation.Claims Intimation Details" displayname="Claims Intimation Details" applicable="Y"/>
+	    	<permission name="Online Information.Claims.Members.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Claims.Members.Edit" displayname="Edit" applicable="Y"/>
+            <permission name="Online Information.Claims.Members.Delete" displayname="Delete" applicable="Y"/> 
+	  	  </ACL>                                                                                                                                                                                
+		</Tab>                                                                                                                                                                                     
+      </SubLink>
+      <SubLink name="Pre-Auth Intimation" displayname="Cashless Intimation" tooltip="Cashless Intimation" applicable="Y">                                                                                                                         
+	    <Tab name="Pre-Auth Intimation" displayname="Pre-Auth Intimation" applicable="N">                                                                                                                                 
+	      <ACL>                                                                                                                                                                                 
+	        <permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation" displayname="View" applicable="Y"/>
+	        <permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation.Pre-Auth Intimation Details" displayname="Pre-Auth Intimation Details" applicable="Y"/>
+	        <permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation.HospitalList" displayname="Select Hospital" applicable="Y"/>
+	    	<permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation.Edit" displayname="Edit" applicable="Y"/>
+            <permission name="Online Information.Pre-Auth Intimation.Pre-Auth Intimation.Delete" displayname="Delete" applicable="Y"/> 
+	  	  </ACL>                                                                                                                                                                                
+		</Tab>                                                                                                                                                                                     
+      </SubLink>
+      <SubLink name="Claims Intimation" displayname="Claims Intimation" tooltip="Pre-Auth Intimation" applicable="Y">                                                                                                                         
+	   <Tab name="Claims Intimation" displayname="Claims Intimation" applicable="N">                                                                                                                                 
+	      <ACL>                                                                                                                                                                                 
+	        <permission name="Online Information.Claims Intimation.Claims Intimation" displayname="View" applicable="Y"/>
+	        <permission name="Online Information.Claims Intimation.Claims Intimation.Claims Intimation Details" displayname="Claims Intimation Details" applicable="Y"/>
+	    	<permission name="Online Information.Claims Intimation.Claims Intimation.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Claims Intimation.Claims Intimation.Edit" displayname="Edit" applicable="Y"/>
+            <permission name="Online Information.Claims Intimation.Claims Intimation.Delete" displayname="Delete" applicable="Y"/> 
+	  	  </ACL>                                                                                                                                                                                
+		</Tab>                                                                                                                                                                                     
+      </SubLink>
+      <SubLink name="Online Assistance" displayname="Online Assistance" tooltip="Online Assistance" applicable="Y">                                                                                                                         
+       <Tab name="Queries" displayname="Queries" applicable="N">
+          <ACL>
+            <permission name="Online Information.Online Assistance.Queries" displayname="View" applicable="Y"/>
+            <permission name="Online Information.Online Assistance.Queries.QueryDetails" displayname="Query Details" applicable="Y"/>
+            <permission name="Online Information.Online Assistance.Queries.Add" displayname="Add" applicable="Y"/>  
+            <permission name="Online Information.Online Assistance.Queries.Edit" displayname="Edit" applicable="Y"/>
+          </ACL>
+       </Tab>
+      </SubLink>
+      <SubLink name="Change Password" displayname="Change Password" tooltip="Change Password" applicable="N">
+        <Tab name="Change Password" displayname="Change Password" applicable="N">
+          <ACL>
+            <permission name="Online Information.Change Password.Change Password" displayname="View" applicable="N"/>
+            <permission name="Online Information.Change Password.Change Password.Edit" displayname="Edit" applicable="N"/>
+          </ACL>
+        </Tab>
+      </SubLink>    
+    </Link>
+</SecurityProfile>

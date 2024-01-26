@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/jboss/dtds/jasperreport.dtd">
+<jasperReport
+		 name="GeneralTermsAndConditions2"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="40"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="399"
+						y="3"
+						width="134"
+						height="35"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/vidal_AE_Logo.PNG"]]></imageExpression>
+				</image>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="703"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="8"
+						y="5"
+						width="523"
+						height="23"
+						forecolor="#000000"
+						key="staticText-2"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[ Exclusions & Conditions]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8"
+						y="28"
+						width="109"
+						height="304"
+						forecolor="#000000"
+						key="staticText-3"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="117"
+						y="28"
+						width="414"
+						height="304"
+						forecolor="#000000"
+						key="staticText-4"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8"
+						y="332"
+						width="109"
+						height="365"
+						forecolor="#000000"
+						key="staticText-7"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="117"
+						y="332"
+						width="414"
+						height="365"
+						forecolor="#000000"
+						key="staticText-8"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="140"
+						y="337"
+						width="384"
+						height="357"
+						key="staticText-9"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[Injuries or illnesses suffered by the Insured Person as a result of military operations of whatever type.
+Injuries or illnesses suffered by the Insured Person as a result of wars or acts of terror of whatever type.
+Healthcare services for injuries and accidents arising from nuclear or chemical contamination.
+Injuries resulting from natural disasters, including but not limited to: earthquakes, tornados and any other type of natural disaster.
+Injuries resulting from criminal acts or resisting authority by the Insured Person.
+Healthcare services for work related illnesses and injuries as per Federal Law No. 8 of 1980 concerning the Regulation of Work Relations, its amendments, and applicable laws in this respect.
+All cases resulting from the use of alcoholic drinks, controlled substances and drugs and hallucinating substances.
+Any investigation or treatment not prescribed by a doctor.
+Injuries resulting from attempted suicide or self-inflicted injuries.
+Diagnosis and treatment services for complications of exempted illnesses.
+All healthcare services for internationally and/or locally recognized epidemics.
+Healthcare services for patients suffering from (and related to the diagnosis and treatment of) HIV – AIDS and its complications and all types of hepatitis except virus A hepatitis.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="337"
+						width="20"
+						height="17"
+						key="staticText-10"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="360"
+						width="20"
+						height="17"
+						key="staticText-11"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="382"
+						width="20"
+						height="17"
+						key="staticText-12"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="443"
+						width="20"
+						height="17"
+						key="staticText-13"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="404"
+						width="20"
+						height="17"
+						key="staticText-14"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="424"
+						width="20"
+						height="17"
+						key="staticText-15"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="472"
+						width="20"
+						height="17"
+						key="staticText-16"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="498"
+						width="20"
+						height="17"
+						key="staticText-17"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="512"
+						width="20"
+						height="17"
+						key="staticText-18"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="520"
+						width="20"
+						height="17"
+						key="staticText-19"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[10.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="532"
+						width="20"
+						height="17"
+						key="staticText-20"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[11.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="120"
+						y="543"
+						width="20"
+						height="17"
+						key="staticText-21"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<text><![CDATA[12.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11"
+						y="32"
+						width="101"
+						height="296"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Excluded (non-basic) healthcare services.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11"
+						y="337"
+						width="100"
+						height="357"
+						key="staticText-32"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Healthcare services outside the scope of health insurance.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="120"
+						y="30"
+						width="411"
+						height="298"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["37.Any inpatient treatment, investigations or other procedures, which \n      can be carried out on outpatient basis without jeopardizing the \n      Insured Person’s health.\n 38.Any investigations or health services conducted for non-medical \n      purposes such as investigations related to employment, travel, licensing \n      or insurance purposes.\n 39. All supplies which are not considered as medical treatments including \n      but not limited to: mouthwash, toothpaste, lozenges, antiseptics, \n      milk formulas, food supplements, skin care products, shampoos and \n      multivitamins (unless prescribed as replacement therapy for known\n      vitamin deficiency conditions);and all equipment not primarily intended to\n      improve a medical condition or injury, including but not limited to: air \n      conditioners or air purifying systems, arch supports, exercise equipment\n      and sanitary supplies.\n 40.More than one consultation or follow up with a medical specialist in a \n      single day unless referred by the treating physician.\n 41.Health services and associated expenses for organ and tissue\n      transplants,irrespective of whether the Insured Person is a donor or a \n      recipient.\n 42.Services and educational programs for handicaps."]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="34"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="8"
+						y="3"
+						width="179"
+						height="27"
+						forecolor="#666666"
+						key="staticText-5"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-BoldOblique" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[© Vidal Health.  All rights reserved.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="482"
+						y="3"
+						width="51"
+						height="27"
+						forecolor="#999999"
+						key="staticText-6"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[20]]></text>
+				</staticText>
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

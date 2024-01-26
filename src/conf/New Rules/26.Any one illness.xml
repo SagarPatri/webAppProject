@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Any one illness" allowed="NO" type="rule" execution="CLA">
+      <coverage id="" name="Any one illness condition" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_AnyoneIllness()">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />	          
+        <condition id="" field="request.ailmentrelapseperiod" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_req_ailm_max_relapseperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Anyone illness will be deemed to mean continuous period of illness, if illness relapse within" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="from the date of Discharge from the Hospital" jscall="" />
+        </condition>
+        <condition id="" field="request.ailmentamount" op="LE" opType="numeric" value="" dynValue="get_ailment_limit(~,~,'~','~')" clfactor="10" mandatory="NO" method="get_anyone_illness_amount()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max.expenses allowed per illness (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.stay" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Number of days allowed per admission" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <clause id="" name="Global" type="rule" allowed="YES" execution="PRE,CLA">
+      <coverage id="" name="Any coverage" allowed="3" module="P" clpercentage="" selected="YES" autoselect="">
+        <condition id="" field="member.inceptiondate" op="LE" opType="date" value="" module="P" dynValue="get_hospitalization_start_date()" clfactor="10" mandatory="YES" method="MEMBER.INCEPTION_DATE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Member inception date"  control="" type="" default="" postlabel="admission date" jscall="" />
+        </condition>
+		<condition id="" field="policy.startdate" op="LE" opType="date" value="" module="P" dynValue="get_hospitalization_start_date()" clfactor="10" mandatory="YES" method="MEMBER.EFFECTIVE_FROM_DATE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Policy start date" control="" type="" default="" postlabel="admission date" jscall="" />
+        </condition>
+        <condition id="" field="policy.enddate" op="GE" opType="date" value="" module="P" dynValue="get_hospitalization_start_date()" clfactor="10" mandatory="YES" method="MEMBER.EFFECTIVE_TO_DATE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Policy end date" control="" type="" default="" postlabel="admission date" jscall="" />
+        </condition>
+        <condition id="" field="member.status" op="EQ" opType="text" value="POA" module="P" clfactor="10" mandatory="YES" method="MEMBER.MEM_STATUS"	source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Member status"  control="select" type="" default="POA" optText="Active" altText="Active" optVal="POA" postlabel="" jscall="" lookup="policyStatus" />
+        </condition>
+        <condition id="" field="request.amount" op="LE" opType="numeric" value="" module="P" dynValue="get_available_sumassured()" clfactor="10" mandatory="YES" method="get_approved_amount()" source="PACKAGE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Approved amount" control="" type="" default="" postlabel="available Sum Insured" jscall="" />
+        </condition>
+        <condition id="" field="request.amount" op="GE" opType="numeric" value="" module="P" dynValue="get_approved_amount()" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Requested amount"  control="" type="" default="" postlabel="Approved amount" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

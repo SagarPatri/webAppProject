@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortfall>
+  <section name="Medical">
+     <subsection name="Maternity">
+ 	 <query id="Maternity.1" postlabel="Is it Normal or Caesarian?" control="input" type="checkbox"  value="YES"   />
+         <query id="Maternity.2" postlabel="How many children do you have?"  control="input" type="checkbox"  value="YES"  />
+     </subsection>
+     <subsection name="Ailment">
+          <query id="Ailment.1" postlabel="Duration of the following ailments?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.2" postlabel="Duration of the Diabetes?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.3" postlabel="Duration of the Hypertension?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.4" postlabel="Duration of the Heart Disease?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.5" postlabel="Duration of the Bronchial Asthma?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.6" postlabel="Duration of the COPD?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.7" postlabel="Duration of the Osteoarthritis?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.8" postlabel="Duration of the Any other ailments?"  control="input" type="checkbox"  value="YES"  />
+          <query id="Ailment.9" postlabel="Any other significant past history given by patient?"   control="input" type="checkbox"  value="YES" />
+         <query id="Ailment.10" postlabel="Details of treatment in hospital?"   control="input" type="checkbox"  value="YES" />
+         <query id="Ailment.11" postlabel="Any risk factors contributing to present ailment"   control="input" type="checkbox"  value="YES" />
+         <query id="Ailment.12" postlabel="Details of previous treatment taken"   control="input" type="checkbox"  value="YES" />
+         <query id="Ailment.13" postlabel="Relevance of past history to present problem in your expert opinion" control="input" type="checkbox"  value="YES"   />
+         <query id="Ailment.14" postlabel="Obstetric history" control="input" type="checkbox"  value="YES"   />
+         <query id="Ailment.15" postlabel="Doctor certificate regarding duration of ailment"   control="input" type="checkbox"  value="YES" />
+         <query id="Ailment.16" postlabel="First consultation papers"   control="input" type="checkbox"  value="YES" />
+     </subsection>
+  </section>
+  <section name="Insurance">
+    <subsection name="Insurance">
+         <query id="Insurance.1" postlabel="Since when is this person a Scheme holder with continuous Scheme?"  control="input" type="checkbox"  value="YES" />
+         <query id="Insurance.2" postlabel="Has the original sum insured been enhanced at any time?" control="input" type="checkbox"  value="YES"  />
+         <query id="Insurance.3" postlabel="Are there any exclusion on his/her policy?" control="input" type="checkbox"  value="YES"  />
+         <query id="Insurance.4" postlabel="Are there any restrictions for amount payable for any disease?" control="input" type="checkbox"  value="YES"  />
+         <query id="Insurance.5" postlabel="Please give us details of any previous claims settled/denied?"  control="input" type="checkbox"  value="YES" />
+         <query id="Insurance.6" postlabel="Need clarification regarding age of the claimant"  control="input" type="checkbox"  value="YES" />
+      </subsection>
+  </section>
+  <section name="personal">
+     <subsection name="Personal">
+         <query id="Personal.1" description=""  control="textarea" />
+     </subsection>
+  </section>
+  <section name="Missing Documents">
+       <subsection name="Missing Documents">
+           <query id="Missing Documents.1" postlabel="Copy of Vidal Health  ID Card"  control="input" type="checkbox"  value="YES" />
+           <query id="Missing Documents.2" postlabel="Copy of Insurance Policy"  control="input" type="checkbox"  value="YES" />
+       </subsection>
+  </section>
+  <section name="Others">
+    <subsection name="Other Queries">
+	 <query id="Others.1" postlabel=""  control="textArea" type="text"  value=""  />
+   </subsection>
+  </section>
+</shortfall>

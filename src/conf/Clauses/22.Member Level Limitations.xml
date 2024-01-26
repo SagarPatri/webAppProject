@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Member Level Limitations" allowed="NO" type="validation" execution="MEM">
+	<coverage id="" name="Relationships" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.relationship" op="IN" value="~" clfactor="10" mandatory="YES" method="get_member_relationship()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Member relationship" operator="text" control="input" type="text" default="" postlabel="" jscall="" disabled="true" />
+          <display id="" target="" prelabel="" operator="" control="image" type="image" imagepath="" default="" postlabel="" jscall="onclick=openList('ID','REL')" />
+        </condition>
+        <action id="" name="validationaction" Message="Relationships violated:" />
+    </coverage>
+	<coverage id="" name="Age limitations for Fresh Policy" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age for Fresh Policy " operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age for Fresh Policy " operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Member age for Fresh Policy violated:" />
+      </coverage>
+      <coverage id="" name="Age limitations for renewal" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.renewal" op="EQ" value="Y" clfactor="10" mandatory="YES" method="MEMBER.RENEWAL" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Member renewal status" operator="numeric" control="" type="" default="" postlabel="true" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="member.age" op="LE" value="" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age at renewal" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Member age for Renewal Policy violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits per Member" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Member violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Self" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=NSF">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','NSF')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Self violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=YSP">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','YSP')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Spouse violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=NFR,YMO">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','NFR,YMO')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Parents violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Parent-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=YFL,YML">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','YFL,YML')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Parent-in-laws violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=NB1">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','NB1')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Brother violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=NL1">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','NL1')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Sister violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Son" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=NS1">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','NS1')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Son violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured Limits for Daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="REL=ND1">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.suminsured" op="LE" value="" dynValue="get_suminsured_limit(~,~,'~','~','ND1')" clfactor="10" mandatory="YES" method="MEMBER.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Sum Insured Limits for Daughter violated:" />
+      </coverage>
+    </clause>

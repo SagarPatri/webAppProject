@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Pre Existing Disease Exclusion" allowed="NO" type="rule" execution="PRE,CLA">
+    <coverage id="" name="PED Excluded" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_PED()">
+	<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+	    <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Policy Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="Years,Days,Months" altText="Years,Days,Months" optVal="YY,DD,MM" postlabel="" jscall="" />
+        </condition>
+		<text id="" mandatory="YES" value="Member inception date should be after the date of first inception of disease" />
+        <text id="" mandatory="YES" value="" dynValue="get_ped_enrollment()"/>
+		<text id="" mandatory="YES" value="" dynValue="get_ped_pat_claim()"/>
+		<text id="" mandatory="YES" value="" dynValue="get_ped_common()"/>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

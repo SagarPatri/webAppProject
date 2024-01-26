@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/tipsint/dtds/jasperreport.dtd">
+<jasperReport
+		 name="CignaShortfallRemainderAdv"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="1200"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="10"
+		 bottomMargin="10"
+		 whenNoDataType="BlankPage"
+		 isFloatColumnFooter="true"
+		 isTitleNewPage="true"
+		 isSummaryNewPage="true"
+		 isIgnorePagination="true">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="CLAIM_NUMBER" class="java.lang.String"/>
+	<field name="PATIENT_NAME" class="java.lang.String"/>
+	<field name="CM_NAME" class="java.lang.String"/>
+	<field name="HOSPITAL_ADDRESS" class="java.lang.String"/>
+	<field name="CLAIM_REGISTRATION_DATE" class="java.lang.String"/>
+	<field name="HOSPITAL_NAME" class="java.lang.String"/>
+	<field name="REPORT_GEN_DATE" class="java.lang.String"/>
+	<field name="AILMENT_FOR_WHICH_ADMITTED" class="java.lang.String"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="MEMBER_STATE_NAME" class="java.lang.String"/>
+	<field name="MEMBER_CITY_NAME" class="java.lang.String"/>
+	<field name="POLICY_NO" class="java.lang.String"/>
+	<field name="DATE_1" class="java.lang.String"/>
+	<field name="DATE_2" class="java.lang.String"/>
+	<field name="DATE_3" class="java.lang.String"/>
+	<field name="ADVISOR_NAME" class="java.lang.String"/>
+	<field name="REGARDS_NAME" class="java.lang.String"/>
+	<field name="PLAN_NAME" class="java.lang.String"/>
+	<field name="ADDRESS_1" class="java.lang.String"/>
+	<field name="ADDRESS_2" class="java.lang.String"/>
+	<field name="ADDRESS_3" class="java.lang.String"/>
+	<field name="MEMBER_PIN_CODE" class="java.math.BigDecimal"/>
+	<field name="POLICY_HOLDER_NAME" class="java.lang.String"/>
+	<field name="CLM_REG_DATE" class="java.lang.String"/>
+	<field name="clm_int_num" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="150"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2"
+						y="0"
+						width="2535"
+						height="150"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/header.png"]]></imageExpression>
+				</image>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="802"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="16"
+						y="400"
+						width="503"
+						height="14"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[When do the documents have to be submitted?]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="423"
+						width="503"
+						height="25"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[The additional documents need to be submitted at the earliest, preferably within 10 working days of receipt of this letter.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="454"
+						width="503"
+						height="14"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Where do the additional documents need to be submitted?]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="474"
+						width="503"
+						height="32"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[The documents need to be submitted at the nearest CignaTTK Health Insurance Branch or at our Corporate Office.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="515"
+						width="370"
+						height="14"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[We are here to help:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="536"
+						width="492"
+						height="41"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[You can reach us on our Healthline: 1-800-10-24462, write to us on customercare@cignattk.in or visit our nearest CignaTTK Health Insurance Branch and you will be assisted for any information you may require.
+
+We appreciate your support and would always work with you to provide the very best to our customers.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="693"
+						width="498"
+						height="104"
+						key="staticText-8"/>
+					<box leftPadding="1" rightPadding="1" topPadding="1" bottomPadding="1">					<pen lineWidth="0.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[5 easy ways to speed up the claims process!]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="110"
+						y="716"
+						width="321"
+						height="16"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[1.        Adhere to checklist of documents required ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="110"
+						y="731"
+						width="321"
+						height="16"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[2.        Submit all documents within 15 days of discharge from the hospital]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="110"
+						y="746"
+						width="321"
+						height="16"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[3.        Provide  correct and accurate bank details for NEFT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="110"
+						y="761"
+						width="321"
+						height="16"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[4.        Do not conceal any personal medical information ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="110"
+						y="776"
+						width="321"
+						height="16"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[5.        Call our Healthline Number 1-800-10-24462 for any assistance]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18"
+						y="582"
+						width="490"
+						height="14"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[We appreciate your support and would always work with you to provide the very best to our customers.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7"
+						y="9"
+						width="33"
+						height="13"
+						key="staticText-16"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[Date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="36"
+						y="9"
+						width="154"
+						height="13"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{REPORT_GEN_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="31"
+						width="250"
+						height="13"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_HOLDER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="44"
+						width="250"
+						height="13"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="83"
+						width="250"
+						height="13"
+						key="textField-5"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MEMBER_STATE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="96"
+						width="250"
+						height="13"
+						key="textField-6"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MEMBER_PIN_CODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="57"
+						width="250"
+						height="13"
+						key="textField-7"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="38"
+						y="70"
+						width="250"
+						height="13"
+						key="textField-8"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS_3}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="16"
+						y="314"
+						width="205"
+						height="14"
+						key="staticText-17"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[What are the claim registration details?]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="110"
+						y="336"
+						width="398"
+						height="13"
+						key="textField-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="110"
+						y="350"
+						width="398"
+						height="13"
+						key="textField-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PATIENT_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="110"
+						y="365"
+						width="398"
+						height="13"
+						key="textField-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_NAME}.trim()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="110"
+						y="379"
+						width="400"
+						height="13"
+						key="textField-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="7"
+						y="31"
+						width="33"
+						height="13"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[Mr/Ms]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17"
+						y="336"
+						width="93"
+						height="13"
+						key="staticText-19"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[1.	Claim Number: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17"
+						y="350"
+						width="93"
+						height="13"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[2.	Patient Name: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17"
+						y="365"
+						width="93"
+						height="13"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[3.	Hospital Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17"
+						y="379"
+						width="93"
+						height="13"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[4.	Hospital Address:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8"
+						y="210"
+						width="62"
+						height="13"
+						key="staticText-23"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[Dear Mr/Ms]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="65"
+						y="210"
+						width="233"
+						height="13"
+						key="textField-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADVISOR_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="83"
+						y="116"
+						width="398"
+						height="85"
+						backcolor="#CCCCFF"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" pdfFontName="Helvetica-BoldOblique" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Additional documents required:
+                                                                           
+                                                                            ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="272"
+						y="132"
+						width="192"
+						height="12"
+						key="textField-14"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="272"
+						y="156"
+						width="192"
+						height="12"
+						key="textField-15"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLAN_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="272"
+						y="168"
+						width="192"
+						height="13"
+						key="textField-16"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="157"
+						y="132"
+						width="115"
+						height="13"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Number:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="144"
+						width="115"
+						height="13"
+						key="staticText-26"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Holder Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="156"
+						width="115"
+						height="13"
+						key="staticText-27"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Plan Name:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="168"
+						width="115"
+						height="13"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Number:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="272"
+						y="144"
+						width="192"
+						height="12"
+						key="textField-17"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_HOLDER_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="16"
+						y="228"
+						width="503"
+						height="14"
+						key="staticText-29"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[Thank you for your association with CignaTTK Health Insurance.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16"
+						y="244"
+						width="503"
+						height="35"
+						key="textField-18"
+						isRemoveLineWhenBlank="true"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Additional documents of Mr/Ms " + $F{POLICY_HOLDER_NAME} + " have still not been received for processing the reimbursement claim. We have sent a reminder to him/her on " + $F{CLM_REG_DATE} + "."]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="16"
+						y="279"
+						width="503"
+						height="25"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" size="10"/>
+					</textElement>
+				<text><![CDATA[We would appreciate your help in expediting the submission of the same]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16"
+						y="674"
+						width="370"
+						height="14"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CignaTTK Health Insurance Company Limited]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="181"
+						width="115"
+						height="13"
+						key="staticText-32"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!$F{clm_int_num}.equals("NIL"))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Intimation Number: ]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="272"
+						y="181"
+						width="192"
+						height="13"
+						key="textField-19"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{clm_int_num}]]></textFieldExpression>
+				</textField>
+				<image  scaleImage="FillFrame" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="2"
+						y="619"
+						width="128"
+						height="39"
+						key="image-3"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/Jyoti_Punja.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="15"
+						y="660"
+						width="148"
+						height="13"
+						key="staticText-33"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Jyoti Punja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17"
+						y="603"
+						width="140"
+						height="13"
+						key="staticText-34"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Arial" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Best Regards,]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="61"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5"
+						y="6"
+						width="530"
+						height="50"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/footer.jpg"]]></imageExpression>
+				</image>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

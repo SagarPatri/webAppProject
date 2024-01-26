@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Domiciliary hospitalisation" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Domiciliary hospitalisation coverage" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10"	mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Domiciliary hospitalisation charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Spondylitis exclusion: Neck &amp; back related problems" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=M46.9:M54.2">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spondylitistotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M46.9:M54.2','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('M46.9:M54.2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Spondylitis charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spondylitismemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M46.9:M54.2')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('M46.9:M54.2')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Spondylitis charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.spondylitisfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M46.9:M54.2','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('M46.9:M54.2')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Spondylitis charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Asthma exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=J45.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.asthmatotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J45.9','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J45.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Asthma charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.asthmamemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J45.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J45.9')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Asthma charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.asthmafamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J45.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J45.9')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Asthma charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Bronchitis exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=J40">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.bronchitistotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J40','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J40')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Bronchitis charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.bronchitismemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J40')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J40')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Bronchitis charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.bronchitisfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J40','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J40')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Bronchitis charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Diarrhoea, Dysentry, Gastroenteritis exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=A09">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diarrhoeatotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','A09','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('A09')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diarrhoea charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diarrhoeamemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','A09')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('A09')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diarrhoea charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diarrhoeafamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','A09','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('A09')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diarrhoea charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Diabetes Mellitus, Diabetes Isipidus exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=E14.9:E23.2">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diabetestotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','E14.9:E23.2','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('E14.9:E23.2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diabetes charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diabetesmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','E14.9:E23.2')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('E14.9:E23.2')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diabetes charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.diabetesfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','E14.9:E23.2','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('E14.9:E23.2')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Diabetes charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Epilepsy exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=G40.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.epilepsytotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','G40.9','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('G40.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Epilepsy charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.epilepsymemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','G40.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('G40.9')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Epilepsy charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.epilepsyfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','G40.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('G40.9')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Epilepsy charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hypertension exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=I10">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hypertensiontotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','I10','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('I10')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hypertension charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hypertensionmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','I10')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('I10')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hypertension charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hypertensionfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','I10','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('I10')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hypertension charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Influenza, Cough And Cold exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=J11.1:R05:J00">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.influenzatotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J11.1:R05:J00','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J11.1:R05:J00')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Influenza charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.influenzamemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J11.1:R05:J00')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J11.1:R05:J00')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Influenza charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.influenzafamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J11.1:R05:J00','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J11.1:R05:J00')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Influenza charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="All Psychiatric and Psychosomatic Disorders exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=100.1.22">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.psychiatrictotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.22','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('100.1.22')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Psychiatric charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.psychiatricmemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.22')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('100.1.22')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Psychiatric charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.psychiatricfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','100.1.22','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('100.1.22')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Psychiatric charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Pyrexia Of Unknown Origin For Less Than 10 Days exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=R50.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.pyrexiatotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','R50.9','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('R50.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Pyrexia charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.pyrexiamemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','R50.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('R50.9')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Pyrexia charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.pyrexiafamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','R50.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('R50.9')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Pyrexia charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Tonsiliitis And Upper Repiratory Tract Infection Including Lyryngitis And Pharingitis exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=J03.9:J06.9:J04.0:J02.9">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.tonsiliitistotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J03.9:J06.9:J04.0:J02.9','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('J03.9:J06.9:J04.0:J02.9')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Tonsiliitis charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.tonsiliitismemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J03.9:J06.9:J04.0:J02.9')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J03.9:J06.9:J04.0:J02.9')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Tonsiliitis charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.tonsiliitisfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','J03.9:J06.9:J04.0:J02.9','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('J03.9:J06.9:J04.0:J02.9')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Tonsiliitis charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Arthritis, Gout, Rheumatism exclusion" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="ICD=M13.9:M10.9:M79.0">
+        <condition id="" field="member.waitingperiod" op="GT" value="~" clfactor="10" mandatory="YES" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Exclusion period from the Cover Start Date" operator="numeric" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.arthritistotalamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M13.9:M10.9:M79.0','TOT')" clfactor="10"	mandatory="YES" method="get_request_ailment_amount('M13.9:M10.9:M79.0')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Arthritis charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.arthritismemberamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M13.9:M10.9:M79.0')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('M13.9:M10.9:M79.0')" source="PACKAGE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Arthritis charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.arthritisfamilyamount" op="LE" value="" dynValue="get_ailment_limit(~,~,'~','~','M13.9:M10.9:M79.0','FLY')" clfactor="10" mandatory="YES" method="get_request_ailment_amount('M13.9:M10.9:M79.0')" source="PACKAGE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Arthritis charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

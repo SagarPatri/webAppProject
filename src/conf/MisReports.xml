@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reports>
+	<reportsvalidation>
+		
+			<report type="PAPRI" maxValue="5000"/>
+			<report type="CSD" maxValue="5000"/>
+			<report type="BSR" maxValue="5000"/>
+			<report type="HMRCI" maxValue="5000"/>
+			<report type="HMRPRI" maxValue="5000"/>
+			<report type="CMREI" maxValue="5000"/>
+			<report type="CMRCI" maxValue="5000"/>
+			<report type="CMRPRI" maxValue="5000"/>
+			<report type="CMRPOI" maxValue="5000"/>
+			<report type="EMPR" maxValue="5000"/>
+			<report type="EMMR" maxValue="5000"/>
+			<report type="IMCIR" maxValue="5000"/>
+			<report type="IMPAIR" maxValue="5000"/>
+			<report type="FGPR" maxValue="5000"/>
+			<report type="PAR" maxValue="5000"/>
+	</reportsvalidation>
+		
+</reports>

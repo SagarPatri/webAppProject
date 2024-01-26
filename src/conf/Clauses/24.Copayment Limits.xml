@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Co-payment limits as applicable to maternity limits" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Any co-payment coverages" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <text>
+          This rule is being analyzed. Manual discretion is required to evaluate this rule. Please check if the co-payment is applicable for the specific Product-Hospital combination.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>      
+    </clause>

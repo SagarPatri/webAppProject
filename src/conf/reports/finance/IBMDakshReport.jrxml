@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/tipsint/dtds/jasperreport.dtd">
+<jasperReport
+		 name="AMHI DN Report"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="11112"
+		 pageHeight="842"
+		 columnWidth="11112"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	
+	
+	<parameter name="DEBIT_SEQ_ID" isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="DEBIT_SEQ_ID" postlabel="" control="input" type="text" source="" method="" value="" class="textBox textBoxMedium" mandatory="YES" jscall=""/>]]></parameterDescription>
+	</parameter>
+	<parameter name="FLOAT_SEQ_ID" isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="FLOAT_SEQ_ID" postlabel="" control="date" type="" source="" method="" value="" mandatory="YES"  jscall=""/>]]></parameterDescription>
+	</parameter>
+	
+	<field name="TPA_Code" class="java.lang.String"/>
+	<field name="DEBIT_NOTE_NO" class="java.lang.String"/>
+	<field name="DEBIT_NOTE_DATE" class="java.lang.String"/>
+	<field name="AMHI_PROVIDER_ID" class="java.lang.String"/>
+	<field name="Policy_start_date" class="java.lang.String"/>
+	<field name="POLICY_NUMBER" class="java.lang.String"/>
+	<field name="GroupName_ProposerName" class="java.lang.String"/>
+	<field name="Date_of_file_received" class="java.lang.String"/>
+	<field name="CLAIM_COMPLETION_DATE" class="java.lang.String"/>
+	<field name="Beneficiary_Name" class="java.lang.String"/>
+	<field name="TPA_UHID" class="java.lang.String"/>
+	<field name="INVOICE_DATE" class="java.lang.String"/>
+	<field name="Sum_Insured" class="java.math.BigDecimal"/>
+	<field name="Bal_sum_ins" class="java.math.BigDecimal"/>
+	<field name="CLAIM_SETTLEMENT_NO" class="java.lang.String"/>
+	<field name="CLAIM_EXT_NO" class="java.lang.String"/>
+	<field name="CLAIM_TYPE" class="java.lang.String"/>	
+	<field name="Diagnosis" class="java.lang.String"/>
+	<field name="Dt_of_admission" class="java.lang.String"/>
+	<field name="Dt_of_discharge" class="java.lang.String"/>
+	<field name="Provider_Name" class="java.lang.String"/>
+	<field name="PROVIDER_ID" class="java.lang.String"/>
+	<field name="NAME_AS_ON_PAN" class="java.lang.String"/>
+	<field name="Hospital_Bill_number" class="java.lang.String"/>
+	<field name="SERV_TAX_REGN_NUMBER" class="java.lang.String"/>
+	<field name="CLAIMED_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="SERICE_TAX_CLAIMED_BY_TPA" class="java.math.BigDecimal"/>
+	<field name="SERVICE_TAX_CLAIMED" class="java.math.BigDecimal"/>
+	<field name="DISALLOWED_AMT" class="java.math.BigDecimal"/>
+	<field name="NETWORK_DISCOUNT" class="java.math.BigDecimal"/>
+	<field name="Assessed_Claim_Amt" class="java.math.BigDecimal"/>
+	<field name="SERVICE_TAX_PAYABLE" class="java.math.BigDecimal"/>
+	<field name="TDS_EXEMPT_STATUS" class="java.lang.String"/>
+	<field name="PAYEMENT_STATUS" class="java.lang.String"/>
+	<field name="STATUS" class="java.lang.String"/>
+	<field name="PAN_NUMBER" class="java.lang.String"/>
+	<field name="Payee" class="java.lang.String"/>
+	<field name="Provider_Address" class="java.lang.String"/>
+	<field name="Provider_City" class="java.lang.String"/>
+	<field name="Provider_State" class="java.lang.String"/>
+	<field name="TDS_AMT" class="java.math.BigDecimal"/>
+	<field name="TDS_CAL_DT" class="java.lang.String"/>
+	<field name="TDS_PAY_ID" class="java.lang.String"/>
+	<field name="CREATED_BY" class="java.lang.String"/>
+	<field name="CREATED_DATE" class="java.lang.String"/>
+	<field name="UPDATED_BY" class="java.lang.String"/>
+	<field name="UPDATED_DATE" class="java.lang.String"/>
+	<field name="BANK_ACCOUNT_NUMBER" class="java.lang.String"/>
+	<field name="BANK_BRANCH_CODE" class="java.lang.String"/>
+	<field name="BANK_NAME" class="java.lang.String"/>
+	<field name="BRANCH_NAME" class="java.lang.String"/>
+	<field name="HOSP_EMAIL_ID" class="java.lang.String"/>
+	<field name="PRINT_LOCATION" class="java.lang.String"/>
+	<field name="Type_of_Claim_IPD_OPD" class="java.lang.String"/>
+	<field name="EMPLOYEE_NAME" class="java.lang.String"/>
+	<field name="EMPLOYEE_NUM" class="java.lang.String"/>
+	
+	
+		<background>
+			<band height="0"  isSplitAllowed="true">
+			</band>
+		</background>
+			<title>
+			<band height="75" isSplitAllowed="true">
+			<staticText>
+				<reportElement key="staticText-1" mode="Opaque" x="0" y="0" width="87" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TPA_CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" mode="Opaque" x="87" y="0" width="166" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAYMENT_REQUEST_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" mode="Opaque" x="253" y="0" width="186" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAYEMENT_REQUEST_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-4" mode="Opaque" x="439" y="0" width="237" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[AMHI_PROVIDER_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-5" mode="Opaque" x="676" y="0" width="315" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TPA_PROVIDED_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-6" mode="Opaque" x="991" y="0" width="115" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[POL_START_DT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-7" mode="Opaque" x="1106" y="0" width="269" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[POLICY_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-8" mode="Opaque" x="1375" y="0" width="378" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[GROUP_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-9" mode="Opaque" x="1753" y="0" width="161" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIM_RECEIVED_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-10" mode="Opaque" x="1914" y="0" width="139" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIM_SETTLE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-11" mode="Opaque" x="2053" y="0" width="300" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PATIENT_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-12" mode="Opaque" x="2353" y="0" width="263" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[MEMBER_PATIENT_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-13" mode="Opaque" x="2616" y="0" width="117" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SUM_INSURED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-14" mode="Opaque" x="2733" y="0" width="122" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[BAL_SUM_INS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-15" mode="Opaque" x="2855" y="0" width="219" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIM_NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-16" mode="Opaque" x="3074" y="0" width="148" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIM_EXT_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-17" mode="Opaque" x="3222" y="0" width="99" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIM_TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-18" mode="Opaque" x="3321" y="0" width="420" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-19" mode="Opaque" x="3741" y="0" width="116" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[ADMIT_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-20" mode="Opaque" x="3857" y="0" width="125" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DISCHARGE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-21" mode="Opaque" x="3982" y="0" width="335" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PROVIDER_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-22" mode="Opaque" x="4317" y="0" width="155" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[INVOICE_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-24" mode="Opaque" x="4472" y="0" width="119" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[INVOICE_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-24" mode="Opaque" x="4591" y="0" width="173" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SERVICE_TAX_REGN_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-25" mode="Opaque" x="4764" y="0" width="118" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CLAIMED_AMT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-26" mode="Opaque" x="4882" y="0" width="236" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SERICE_TAX_CLAIMED_BY_TPA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-27" mode="Opaque" x="5118" y="0" width="151" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SERICE_TAX_CLAIMED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-28" mode="Opaque" x="5269" y="0" width="128" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[DISALLOWED_AMT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-29" mode="Opaque" x="5397" y="0" width="159" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[NETWORK_DISCOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-30" mode="Opaque" x="5556" y="0" width="170" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SETTELED_AMT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-31" mode="Opaque" x="5726" y="0" width="173" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[SERVICE_TAX_PAYABLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-32" mode="Opaque" x="5899" y="0" width="143" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TDS_EXEMPT_STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-33" mode="Opaque" x="6042" y="0" width="140" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAYEMENT_STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-34" mode="Opaque" x="6182" y="0" width="100" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-36" mode="Opaque" x="6282" y="0" width="154" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAN_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-37" mode="Opaque" x="6436" y="0" width="431" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[NAME_AS_ON_PAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-38" mode="Opaque" x="6867" y="0" width="442" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAYEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-39" mode="Opaque" x="7309" y="0" width="422" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-40" mode="Opaque" x="7731" y="0" width="264" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PROVIDER_LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-41" mode="Opaque" x="7995" y="0" width="263" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PROVIDER _STATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-41" mode="Opaque" x="8258" y="0" width="122" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TDS_AMT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-42" mode="Opaque" x="8380" y="0" width="138" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TDS_CAL_DT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-43" mode="Opaque" x="8518" y="0" width="141" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[TDS_PAY_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-44" mode="Opaque" x="8659" y="0" width="137" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CREATED_BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-45" mode="Opaque" x="8796" y="0" width="142" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[CREATED_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-46" mode="Opaque" x="8938" y="0" width="128" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[UPDATED_BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-47" mode="Opaque" x="9066" y="0" width="155" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[UPDATED_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-48" mode="Opaque" x="9221" y="0" width="255" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[BENEFICIARY_ACCOUNT_NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-49" mode="Opaque" x="9476" y="0" width="182" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[IFSC_CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" mode="Opaque" x="9658" y="0" width="319" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[BENE_BANK_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" mode="Opaque" x="9977" y="0" width="310" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[BENE_BANK_BRANCH_NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-50" mode="Opaque" x="10287" y="0" width="248" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[BENEFICIARY_EMAIL_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-51" mode="Opaque" x="10535" y="0" width="122" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PRINT_LOCATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-51" mode="Opaque" x="10657" y="0" width="186" height="25" forecolor="#333333" backcolor="#CCCCCC"/>
+				<textElement>
+					<font fontName="Verdana" size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[PAYMENT_MODE]]></text>
+			</staticText>
+		<staticText>
+					<reportElement
+						mode="Opaque"
+						x="11029"
+						y="0"
+						width="186"
+						height="25"
+						forecolor="#333333"
+						backcolor="#CCCCCC"
+						key="staticText-52"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				
+				<text><![CDATA[EMPLOYEE_NAME]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="10843"
+						y="0"
+						width="186"
+						height="25"
+						forecolor="#333333"
+						backcolor="#CCCCCC"
+						key="staticText-53"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[EMPLOYEE_NO]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="55"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="87"
+						height="25"
+						key="textField"
+						stretchType="RelativeToBandHeight"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+					
+					
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TPA_Code}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="87" y="0" width="166" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DEBIT_NOTE_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="253" y="0" width="186" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DEBIT_NOTE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="439" y="0" width="237" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{AMHI_PROVIDER_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="676" y="0" width="315" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PROVIDER_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="991" y="0" width="115" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Policy_start_date}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="1106" y="0" width="269" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{POLICY_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="1375" y="0" width="378" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{GroupName_ProposerName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="1753" y="0" width="161" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Date_of_file_received}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="1914" y="0" width="139" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CLAIM_COMPLETION_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="2053" y="0" width="300" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Beneficiary_Name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="2353" y="0" width="263" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TPA_UHID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="2616" y="0" width="117" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Sum_Insured}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="2733" y="0" width="122" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Bal_sum_ins}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="2855" y="0" width="219" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CLAIM_SETTLEMENT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3074" y="0" width="148" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CLAIM_EXT_NO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3222" y="0" width="99" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CLAIM_TYPE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3321" y="0" width="420" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Diagnosis}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3741" y="0" width="116" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Dt_of_admission}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3857" y="0" width="125" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Dt_of_discharge}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="3982" y="0" width="335" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Provider_Name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="4317" y="0" width="155" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Hospital_Bill_number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="4472" y="0" width="119" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{INVOICE_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="4591" y="0" width="173" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SERV_TAX_REGN_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="4764" y="0" width="118" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CLAIMED_AMOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="4882" y="0" width="236" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SERICE_TAX_CLAIMED_BY_TPA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5118" y="0" width="151" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SERVICE_TAX_CLAIMED}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5269" y="0" width="128" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{DISALLOWED_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5397" y="0" width="159" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{NETWORK_DISCOUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5556" y="0" width="170" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Assessed_Claim_Amt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5726" y="0" width="173" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{SERVICE_TAX_PAYABLE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="5899" y="0" width="143" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{TDS_EXEMPT_STATUS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="6042" y="0" width="140" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{PAYEMENT_STATUS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="6182" y="0" width="100" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="6282" y="0" width="154" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{PAN_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="6436" y="0" width="431" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{NAME_AS_ON_PAN}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="6867" y="0" width="442" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{Payee}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="7309" y="0" width="422" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{Provider_Address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="7731" y="0" width="264" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{Provider_City}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="7995" y="0" width="263" height="25"/>
+				<textElement/>
+				<textFieldExpression  class="java.lang.String"><![CDATA[$F{Provider_State}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8258" y="0" width="122" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{TDS_AMT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8518" y="0" width="141" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TDS_PAY_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8659" y="0" width="137" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CREATED_BY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8796" y="0" width="142" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CREATED_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8938" y="0" width="128" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{UPDATED_BY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="9221" y="0" width="255" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BANK_ACCOUNT_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="9476" y="0" width="182" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BANK_BRANCH_CODE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="9658" y="0" width="319" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BANK_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="9977" y="0" width="310" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BRANCH_NAME}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="10287" y="0" width="248" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{HOSP_EMAIL_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="9066" y="0" width="155" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{UPDATED_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="8380" y="0" width="138" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TDS_CAL_DT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="10535" y="0" width="122" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PRINT_LOCATION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" stretchType="RelativeToBandHeight" x="10657" y="0" width="186" height="25"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Type_of_Claim_IPD_OPD}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+				<reportElement
+					x="11029"
+					y="0"
+					width="186"
+					height="25"
+					key="textField-1"
+					stretchType="RelativeToBandHeight"/>
+				<box></box>
+				<textElement>
+					<font/>
+				</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMPLOYEE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+				<reportElement
+					x="10843"
+					y="0"
+					width="186"
+					height="25"
+					key="textField-2"
+					stretchType="RelativeToBandHeight"/>
+				<box></box>
+				<textElement>
+					<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMPLOYEE_NUM}]]></textFieldExpression>
+				</textField>	
+		</band>
+		</detail>	
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>
+

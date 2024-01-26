@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Policy Validations" allowed="NO" type="validation" execution="POL">
+      <coverage id="" name="Policy entry" allowed="NO" module="P" clpercentage="" selected="">
+        <!-- Field calc: fieldData={current date - Cover Start Date}  -->
+        <condition id="" field="policy.elapsedperiod" op="LE" value="~" clfactor="10" mandatory="YES" method="get_policy_elapsed_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. elapsed period since start date" operator="numeric" control="input" type="text" default="" postlabel="for which entry is allowed" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Policy entry violated:" />
+      </coverage>
+      <coverage id="" name="Policy tenure" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="policy.tenure" op="EQ" value="~" clfactor="10" mandatory="YES" method="get_policy_tenure('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. tenure" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="UpdatePolicyTenure" Message="" />
+      </coverage>
+      <coverage id="" name="Endorsement entry" allowed="NO" module="P" clpercentage="" selected="">
+        <!-- Field calc: fieldData={current date - policy end date}  -->
+        <condition id="" field="policy.expiredperiod" op="LE" value="~" clfactor="10" mandatory="YES" method="get_policy_expired_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. elapsed period since expiry" operator="numeric" control="input" type="text" default="" postlabel="for which entry is allowed" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Endorsement entry violated:" />
+      </coverage>
+    </clause>

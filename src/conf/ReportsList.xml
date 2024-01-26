@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reports>
+	<module name="Enrollment">
+		<reporttype name="Daily Reports">
+			<report id="EnrDaiImg" name="Image Not Uploaded" xml="reports/enrollment/ImgNotUploaded.jrxml" ACL=""/>
+			<report id="EnrDaiPolAwtWork" name="Schemes awaiting Workflow" xml="reports/enrollment/PoliciesAwaitingWorkflow.jrxml" ACL=""/>
+			<report id="EnrDaiCardPrint" name="Cards Printed" xml="reports/enrollment/CardsPrinted.jrxml" ACL=""/>
+			<report id="EnrDaiCardsNotDelr" name="Cards Not Delivered" xml="reports/enrollment/CardsNotDelivered.jrxml" ACL=""/>
+			<report id="EnrDaiGrpRen" name="Groups Renewal" xml="reports/enrollment/GroupsDueForRenewal.jrxml" ACL=""/>
+			<report id="EnrDaiTimeTakToRecvPol" name="Time Taken To Receive Scheme" xml="reports/enrollment/TimeTakenToReceivePolicy.jrxml" ACL=""/>
+			<report id="EnrDaiDispRpt" name="Dispatch Report List" xml="reports/enrollment/DispatchReportList.jrxml" ACL=""/>
+			<report id="EnrDaiEndors" name="Endorsements" xml="reports/enrollment/Endorsements.jrxml" ACL=""/>
+			<report id="EnrDaiPolProcTime" name="Scheme Processing Time" xml="reports/enrollment/PolicyProcessingTime.jrxml" ACL=""/>
+			<report id="EnrDaiBOI" name="BOI Report" xml="reports/enrollment/BOIReport.jrxml" ACL=""/>
+			<report id="EndrImpactReport" name="Endorsement Impact Report" xml="reports/enrollment/ImpactReport.jrxml" ACL=""/>
+			<report id="PremChangeRpt" name="Premium Change Report" xml="reports/enrollment/PremiumChange.jrxml" ACL=""/>
+			<report id="IOBBatRpt" name="IOB Report" xml="reports/enrollment/BOIReport.jrxml" ACL=""/>
+			<report id="AccentureRpt" name="Accenture Report" xml="reports/enrollment/AccentureReport.jrxml" ACL=""/>
+		</reporttype>
+		<reporttype name="SoftCopy Upload Reports">
+			<report id="SoftCopyUpload" name="Soft Copy Upload Report" xml="reports/enrollment/SoftCopyUploadError.jrxml" ACL=""/>
+			<report id="SoftCopyUploadError" name="Soft Copy Upload Report for Corporate" xml="reports/enrollment/SoftCopyUploadErrorLog.jrxml" ACL="" />
+		</reporttype>
+	</module>
+	<module name="Empanelment">
+		<reporttype name="Daily Reports">
+		</reporttype>
+	</module>
+	<!-- added for ibm reports -->
+	<module name="Corporate">
+		<reporttype name="IBM Reports">
+		<report id="IBMDeletion" name="IBM Deletion" xml="reports/ibm/IBMDeletionCutoff.jrxml" ACL=""/>
+		<report id="IBMAdditionMaxRec" name="IBM Addition cut-off" xml="reports/ibm/IBMAdditionCutOff.jrxml" ACL=""/>
+		<report id="IBMGrpPreAuthRpt" name="Claim Report"  xml="reports/ibm/HRPreAuthReport.jrxml"  ACL=""/>
+		<report id="DailyReport" name="IBM Daily Report" xml="reports/ibm/IBMAdditionCutOff.jrxml" ACL=""/>
+		<report id="Reoptin" name="IBM Reoptingin_Report" xml="reports/ibm/IBMAdditionCutOff.jrxml" ACL=""/>
+		<!--<report id="MontlyRecon" name="IBM Montly Recon Report" xml="reports/ibm/IBMAdditionCutOff.jrxml" ACL=""/>-->
+		<report id="ChildBorn" name="IBM Login Child Born to Female Employees" xml="reports/ibm/IBMAdditionCutOff.jrxml" ACL=""/>
+		<report id="NewIBMDeletion" name="New IBM Deletion" xml="reports/ibm/IBMDeletionCutoff.jrxml" ACL=""/>
+		</reporttype>
+	</module>	
+	<module name="Cashless">
+		<reporttype name="Cashless Reports">
+			<report id="PreAuthRpt" name="Cashless Report" xml="reports/preauth/PreauthReport.jrxml" ACL=""/>
+			<report id="PreAuthManul" name="Manual Cashless List" xml="reports/preauth/ManualPreauth.jrxml" ACL=""/>
+			<report id="PreAuthClmDetail" name="Cashless/Claim Detail Report" xml="reports/preauth/PreauthClmReport.jrxml" ACL="" />
+		</reporttype>
+	</module>
+	<module name="Claims">
+		<reporttype name="Claims Reports">
+			<report id="ClaimsManul" name="Manual Claims List" xml="reports/claims/ManualClaims.jrxml" ACL=""/>
+			<report id="ProcessTimeAnalysis" name="Process Time Analysis" xml="reports/claims/ProcessTimeAnalysis.jrxml" ACL=""/>
+			<!-- KOC 1339 for mail -->
+			<report id="ClaimsIntimation" name="Claims Intimation List" xml="reports/claims/ClaimIntimation.jrxml" ACL=""/>
+			<!-- KOC 1339 for mail -->
+			<!--<report id="ClaimsOutstandingLiability" name="Outstanding Liability for Claims" xml="reports/claims/ClaimsLiability.jrxml" ACL=""/>-->
+		</reporttype>
+	</module>
+	<module name="Finance">
+		<reporttype name="Finance Reports">
+			<report id="FinDaiBat" name="Finance Batch Report" xml="reports/finance/FinanceBatchReport.jrxml" ACL=""/>
+			<report id="FinBanRec" name="Bank Reconciliation" xml="reports/finance/BankReconciliation.jrxml" ACL=""/>
+			<report id="FinDetRpt" name="Claims Detail Report" xml="reports/finance/ClaimsDetail.jrxml" ACL=""/>
+			<report id="FinPenRpt" name="Claims Pending Report" xml="reports/finance/ClaimsPending.jrxml" ACL=""/>
+			<report id="FinTPAComm" name="TPA Commission Report" xml="reports/finance/TPACommission.jrxml" ACL=""/>
+			<report id="76ColPend" name="76 Column Pending Report" xml="reports/finance/DebitPending.jrxml" ACL=""/>
+			<report id="CitiFinDetRpt" name="Citibank Claims Detail Report" xml="reports/finance/CitibankClaimsDetail.jrxml" ACL=""/>
+			<report id="FurGenRpt" name="Future Generali Report" xml="reports/finance/FutureGeneraliReport.jrxml" ACL=""/>
+		</reporttype>
+	</module>
+	<module name="Coding">
+	    <reporttype name="Coding Reports">
+	    	<report id="PenCaseRpt" name="Coding Status Report" xml="reports/coding/CodingStatusReport.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	<module name="Code CleanUp">
+	    <reporttype name="Code CleanUp Reports">
+	    		<report id="CCSRpt" name="Code CleanUp Status Report" xml="reports/codecleanup/CCSReport.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	<module name="Common">
+	    <reporttype name="Common Reports">
+	    		<report id="FaxStsRpt" name="Fax Status Report" xml="reports/common/FaxStatusReport.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	<module name="Citibank">
+	    <reporttype name="Citibank Reports">
+	    		<report id="CitiSoftCpyUpl" name="Citibank SoftCopy Upload Report" xml="reports/citibank/CitibankSCUploadReport.jrxml" ACL=""/>
+	    		<report id="CitiSoftCpyCncl" name="Citibank SoftCopy Cancellation Report" xml="reports/citibank/CitibankSCCancellationReport.jrxml" ACL=""/>
+	    		<report id="CitiSoftCpyNtCncl" name="Citibank Not Cancelled Report" xml="reports/citibank/CitibankNotCancelledReport.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	<module name="TDS">
+	    <reporttype name="TDS">
+	    		<report id="TDSRemittanceRpt" name="TDS Remittance Report" xml="reports/finance/RemittanceDetailRpt.jrxml" ACL=""/>
+	    		<report id="DailyTansferRpt" name="Daily Transfer Report" xml="reports/tds/DailyTansferRpt.jrxml" ACL=""/>
+	    		<report id="MonthlyRemitRpt" name="Monthly Remittance Report" xml="reports/tds/MonthlyRemitRpt.jrxml" ACL=""/>
+	    		<report id="Annexure126qRpt" name="Annexure I26Q Report" xml="reports/tds/Annexure126Q.jrxml" ACL=""/>
+	    		<report id="ChallanDetailsRpt" name="Challan Details Report" xml="reports/tds/ChallanDetailsRpt.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	<module name="Comprehensive">
+	    <reporttype name="Comprehensive">
+	    		<report id="UniSampoPenRpt" name="Universal Sompo Pending Report" xml="reports/finance/UniversalSampoPending.jrxml" ACL=""/>
+	    </reporttype>
+	</module>
+	
+	<module name="DashBoard">
+	    <reporttype name="Insurance Login Reports">
+	    		<report id="ClaimUtilizationRep" name="Claim Utilization Report" xml="reports/insLogin/ClaimUtilizationRep.jrxml" ACL=""/>
+	    		<report id="AuthUtilizationRep" name="Auth Utilization Report" xml="reports/insLogin/AuthUtilizationRep.jrxml" ACL=""/>
+	    		<report id="TATForClaims" name="TAT For Claims" xml="reports/insLogin/TATForClaims.jrxml" ACL=""/>
+	    		<report id="TATForPreAuth" name="TAT For Pre-Auth" xml="reports/insLogin/TATForPreAuth.jrxml" ACL=""/>
+	    		<report id="TechnicalResultReport" name="Technical Result Report" xml="reports/insLogin/TechnicalResultReport.jrxml" ACL=""/>
+     			<!-- <report id="TATFSCORPOARTE" name="TAT Enrollment Corporate" xml="reports/insLogin/TATForEnrolment.jrxml" ACL=""/>
+     			<report id="TATFSINDIVIDUAL" name="TAT Enrollment Individual" xml="reports/insLogin/TATForIndividual.jrxml" ACL=""/> -->
+     			<report id="TATForCards" name="TAT Enrollment Cards" xml="reports/insLogin/TATForCards.jrxml" ACL=""/>
+				<!-- <report id="HIPA" name="HIPA" xml="reports/insLogin/HIPA.jrxml" ACL=""/> -->
+	    </reporttype>
+	    
+	</module>
+	
+</reports>

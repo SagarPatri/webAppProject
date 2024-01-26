@@ -1,0 +1,3003 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/tipsint/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ClaimsApprovalForm"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="680"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="MediClaimSubReport1" isForPrompting="true" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="MyDataSource1" isForPrompting="true" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="MediClaimSubReport2" isForPrompting="true" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="MyDataSource2" isForPrompting="true" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="MediClaimSubReport3" isForPrompting="true" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="MyDataSource3" isForPrompting="true" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<queryString><![CDATA[SELECT * FROM "APP"."CLM_GENERAL_DETAILS" CLM_GENERAL_DETAILS]]></queryString>
+
+	<field name="claim_seq_id" class="java.math.BigDecimal"/>
+	<field name="claim_no" class="java.lang.String"/>
+	<field name="proposer_name" class="java.lang.String"/>
+	<field name="patient_name" class="java.lang.String"/>
+	<field name="employee_customer_id" class="java.lang.String"/>
+	<field name="tpa_id" class="java.lang.String"/>
+	<field name="patient_age" class="java.math.BigDecimal"/>
+	<field name="relation" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="policy_no" class="java.lang.String"/>
+	<field name="policy_form" class="java.lang.String"/>
+	<field name="policy_upto" class="java.lang.String"/>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="sum_insured" class="java.math.BigDecimal"/>
+	<field name="bonus" class="java.math.BigDecimal"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="intimation_date" class="java.util.Date"/>
+	<field name="date_of_doc_rec" class="java.lang.String"/>
+	<field name="loss_date" class="java.util.Date"/>
+	<field name="hospital_name" class="java.lang.String"/>
+	<field name="hospital_city" class="java.lang.String"/>
+	<field name="hospital_state" class="java.lang.String"/>
+	<field name="hospital_pincode" class="java.lang.String"/>
+	<field name="diagnosis" class="java.lang.String"/>
+	<field name="diagnosis_code_level_1" class="java.lang.String"/>
+	<field name="diagnosis_code_level_2" class="java.lang.String"/>
+	<field name="diagnosis_description_level_1" class="java.lang.String"/>
+	<field name="diagnosis_description_level_2" class="java.lang.String"/>
+	<field name="procedure_codes_level_1" class="java.lang.String"/>
+	<field name="procedure_codes_level_2" class="java.lang.String"/>
+	<field name="procedure_description_level_1" class="java.lang.String"/>
+	<field name="procedure_description_level_2" class="java.lang.String"/>
+	<field name="doa" class="java.lang.String"/>
+	<field name="dod" class="java.lang.String"/>
+	<field name="claim_type" class="java.lang.String"/>
+	<field name="claim_category" class="java.lang.String"/>
+	<field name="policy_type" class="java.lang.String"/>
+	<field name="estimate_amt" class="java.math.BigDecimal"/>
+	<field name="claim_amount" class="java.math.BigDecimal"/>
+	<field name="recommend_amount" class="java.math.BigDecimal"/>
+	<field name="co_pay_amount" class="java.math.BigDecimal"/>
+	<field name="approved_amount" class="java.math.BigDecimal"/>
+	<field name="deducted_amount" class="java.lang.String"/>
+	<field name="deduction_reason" class="java.lang.String"/>
+	<field name="compulsary_deduction" class="java.lang.String"/>
+	<field name="service_tax_amount" class="java.math.BigDecimal"/>
+	<field name="service_tax_no" class="java.lang.String"/>
+	<field name="payble_amount" class="java.math.BigDecimal"/>
+	<field name="tds_amount" class="java.math.BigDecimal"/>
+	<field name="net_payble_amt" class="java.math.BigDecimal"/>
+	<field name="recommend_on" class="java.lang.String"/>
+	<field name="approved_on" class="java.lang.String"/>
+	<field name="pay_to_insured" class="java.lang.String"/>
+	<field name="pay_to_hospital" class="java.lang.String"/>
+	<field name="Buff_App_Amt" class="java.math.BigDecimal"/>
+	<field name="Utilised_Amount" class="java.math.BigDecimal"/>
+	<field name="Med_Buff_App_Amt" class="java.math.BigDecimal"/>
+	<field name="Utilised_Med_Amount" class="java.math.BigDecimal"/>
+	<field name="Crit_Buff_App_Amt" class="java.math.BigDecimal"/>
+	<field name="Utilised_Crit_Amount" class="java.math.BigDecimal"/>
+	<field name="Crit_Med_Buff_App_Amt" class="java.math.BigDecimal"/>
+	<field name="Utilised_Crit_Med_Amount" class="java.math.BigDecimal"/>
+	<field name="Crit_Corp_Buff_App_Amt" class="java.math.BigDecimal"/>
+	<field name="Utilised_Crit_Corp_Amount" class="java.math.BigDecimal"/>
+	<field name="cheque_no" class="java.lang.String"/>
+	<field name="cheque_date" class="java.util.Date"/>
+	<field name="clm_pay_to_beneficiary_name" class="java.lang.String"/>
+	<field name="disc_datails" class="java.lang.String"/>
+	<field name="insured_disc_date" class="java.lang.String"/>
+	<field name="insured_reminder_date" class="java.lang.String"/>
+	<field name="insured_final_reminder_date" class="java.lang.String"/>
+	<field name="insured_reply_recieved_date" class="java.lang.String"/>
+	<field name="hospital_disc_date" class="java.lang.String"/>
+	<field name="hospital_reminder_date" class="java.lang.String"/>
+	<field name="hospital_final_reminder_date" class="java.lang.String"/>
+	<field name="hospital_reply_recieved_date" class="java.lang.String"/>
+	<field name="insurer_disc_date" class="java.lang.String"/>
+	<field name="insurer_reminder_date" class="java.lang.String"/>
+	<field name="insurer_final_reminder_date" class="java.lang.String"/>
+	<field name="insurer_reply_recieved_date" class="java.lang.String"/>
+	<field name="pre_auth_received_on" class="java.lang.String"/>
+	<field name="pre_auth_letter_no" class="java.lang.String"/>
+	<field name="pre_auth_status" class="java.lang.String"/>
+	<field name="pre_auth_amount" class="java.math.BigDecimal"/>
+	<field name="pre_auth_approved_on" class="java.lang.String"/>
+	<field name="float_date" class="java.util.Date"/>
+	<field name="payment_date" class="java.util.Date"/>
+	<field name="agent_code" class="java.lang.String"/>
+	<field name="development_code" class="java.lang.String"/>
+	<field name="operating_office" class="java.lang.String"/>
+	<field name="operating_code" class="java.lang.String"/>
+	<field name="ins_city" class="java.lang.String"/>
+	<field name="ins_state" class="java.lang.String"/>
+	<field name="ins_pincode" class="java.math.BigDecimal"/>
+	<field name="controlling_office" class="java.lang.String"/>
+	<field name="insurance_company" class="java.lang.String"/>
+	<field name="settelement_type" class="java.lang.String"/>
+	<field name="settelement_date" class="java.util.Date"/>
+	<field name="repudiation_rejection_reason" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="benefit_type" class="java.lang.String"/>
+	<field name="bill_entered_by" class="java.lang.String"/>
+	<field name="bill_entry_location" class="java.lang.String"/>
+	<field name="hospital_code" class="java.lang.String"/>
+	<field name="member_seq_id" class="java.math.BigDecimal"/>
+	<field name="enr_num" class="java.lang.String"/>
+	<field name="premium_zone" class="java.lang.String"/>
+	<field name="claims_remarks" class="java.lang.String"/>
+
+
+		<group  name="insuranceDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="127"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="49"
+						width="142"
+						height="14"
+						key="staticText-1"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurance Company :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="74"
+						width="142"
+						height="14"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Controlling office :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="49"
+						width="140"
+						height="14"
+						key="staticText-3"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[City/Town/Village :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="74"
+						width="140"
+						height="14"
+						key="staticText-4"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[State :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="49"
+						width="163"
+						height="14"
+						key="textField-3"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{ins_city}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ins_city}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="49"
+						width="160"
+						height="14"
+						key="textField-40"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insurance_company}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insurance_company}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="74"
+						width="160"
+						height="14"
+						key="textField-42"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{controlling_office}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{controlling_office}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="74"
+						width="163"
+						height="14"
+						key="textField-45"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{ins_state}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ins_state}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="99"
+						width="142"
+						height="14"
+						key="staticText-88"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Pin Code :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="99"
+						width="160"
+						height="14"
+						key="textField-46"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{ins_pincode}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ins_pincode}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="21"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="InsuranceCompanyHeading"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurance Company Details ]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="PolicyDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="354"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="25"
+						width="142"
+						height="14"
+						key="staticText-17"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Name :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="75"
+						width="140"
+						height="14"
+						key="staticText-19"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme To :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="100"
+						width="142"
+						height="14"
+						key="staticText-20"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Product name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="75"
+						width="142"
+						height="14"
+						key="staticText-22"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme From]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="150"
+						width="140"
+						height="14"
+						key="staticText-23"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Agent Code :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="50"
+						width="142"
+						height="14"
+						key="staticText-24"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Number :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="50"
+						width="140"
+						height="14"
+						key="staticText-25"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Type :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="25"
+						width="140"
+						height="14"
+						key="staticText-26"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Customer ID :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="125"
+						width="142"
+						height="14"
+						key="staticText-27"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Operating Office Code :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="150"
+						width="142"
+						height="14"
+						key="staticText-28"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Development Officer Code :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="175"
+						width="140"
+						height="14"
+						key="staticText-30"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Cumulative Bonus/Buffer(Rs.) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="175"
+						width="140"
+						height="14"
+						key="staticText-31"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Sum Insured(Rs.) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="334"
+						width="142"
+						height="14"
+						key="staticText-33"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payable From :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="243"
+						width="140"
+						height="14"
+						key="staticText-35"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Illness Buffer. Utilised Amount (Rs.) :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="243"
+						width="140"
+						height="14"
+						key="staticText-36"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Illness Buffer. Approved Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="25"
+						width="160"
+						height="14"
+						key="textField-43"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{patient_name}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{patient_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="50"
+						width="163"
+						height="14"
+						key="textField-44"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{policy_type}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{policy_type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="25"
+						width="163"
+						height="14"
+						key="textField-47"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{employee_customer_id}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{employee_customer_id}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="50"
+						width="160"
+						height="14"
+						key="textField-48"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{policy_no}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{policy_no}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="75"
+						width="163"
+						height="14"
+						key="textField-49"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{policy_upto}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{policy_upto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="75"
+						width="160"
+						height="14"
+						key="textField-50"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{policy_form}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{policy_form}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="100"
+						width="160"
+						height="14"
+						key="textField-51"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{product_name}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{product_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="100"
+						width="163"
+						height="14"
+						key="textField-52"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{operating_office}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{operating_office}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="150"
+						width="163"
+						height="14"
+						key="textField-53"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{agent_code}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{agent_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="125"
+						width="463"
+						height="14"
+						key="textField-54"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{operating_code}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{operating_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="150"
+						width="160"
+						height="14"
+						key="textField-55"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{development_code}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{development_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="175"
+						width="163"
+						height="14"
+						key="textField-56"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{bonus}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{bonus}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="243"
+						width="162"
+						height="14"
+						key="textField-57"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Crit_Buff_App_Amt}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Crit_Buff_App_Amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="141"
+						y="175"
+						width="161"
+						height="14"
+						key="textField-58"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{sum_insured}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{sum_insured}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="334"
+						width="463"
+						height="18"
+						key="textField-59"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{clm_pay_to_beneficiary_name}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{clm_pay_to_beneficiary_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="243"
+						width="163"
+						height="14"
+						key="textField-60"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{premium_zone}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Utilised_Crit_Amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="2"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[ Scheme Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="100"
+						width="140"
+						height="14"
+						key="staticText-92"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Operating Office :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="197"
+						width="140"
+						height="14"
+						key="staticText-93"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Normal Corpus Approved Amount (Rs.):]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="197"
+						width="162"
+						height="14"
+						key="textField-108"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Buff_App_Amt}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Buff_App_Amt}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="301"
+						y="197"
+						width="151"
+						height="14"
+						key="staticText-94"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Normal Corpus Utilised Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="441"
+						y="197"
+						width="164"
+						height="14"
+						key="textField-109"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Utilised_Amount}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Utilised_Amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="220"
+						width="151"
+						height="14"
+						key="staticText-95"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Normal Medical Approved Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="220"
+						width="172"
+						height="14"
+						key="textField-110"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Med_Buff_App_Amt}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Med_Buff_App_Amt}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="301"
+						y="220"
+						width="151"
+						height="14"
+						key="staticText-96"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Normal Medical Utilised Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="441"
+						y="220"
+						width="174"
+						height="14"
+						key="textField-111"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Utilised_Med_Amount}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Utilised_Med_Amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="264"
+						width="140"
+						height="14"
+						key="staticText-97"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Medical Approved Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="264"
+						width="162"
+						height="14"
+						key="textField-112"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Crit_Med_Buff_App_Amt}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Crit_Med_Buff_App_Amt}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="302"
+						y="264"
+						width="140"
+						height="14"
+						key="staticText-98"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Medical Utilised Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="264"
+						width="163"
+						height="14"
+						key="textField-113"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{premium_zone}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Utilised_Crit_Med_Amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="287"
+						width="140"
+						height="14"
+						key="staticText-99"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Corpus Approved Amount (Rs.) :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="287"
+						width="155"
+						height="14"
+						key="textField-114"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean((!$F{Crit_Corp_Buff_App_Amt}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Crit_Corp_Buff_App_Amt}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="302"
+						y="287"
+						width="140"
+						height="14"
+						key="staticText-100"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Corpus Utilised Amount (Rs.)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="287"
+						width="163"
+						height="14"
+						key="textField-115"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{premium_zone}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Utilised_Crit_Corp_Amount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="310"
+						width="140"
+						height="14"
+						key="staticText-101"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Premium Zone :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="140"
+						y="310"
+						width="163"
+						height="14"
+						key="textField-116"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{premium_zone}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{premium_zone}]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="Scheme history" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="65"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="27"
+						width="600"
+						height="20"
+						key="subreport-1"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{MyDataSource1}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{MediClaimSubReport1}]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="5"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-37"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[ Scheme History]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="ClaimantDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="103"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="25"
+						width="142"
+						height="14"
+						key="staticText-39"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Patient Name :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="75"
+						width="142"
+						height="14"
+						key="staticText-40"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Address :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="25"
+						width="67"
+						height="14"
+						key="staticText-41"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Age:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="50"
+						width="142"
+						height="14"
+						key="staticText-42"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Relation:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="442"
+						y="25"
+						width="42"
+						height="14"
+						key="staticText-43"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Sex:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="369"
+						y="25"
+						width="73"
+						height="14"
+						key="textField-6"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{patient_age}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="484"
+						y="25"
+						width="122"
+						height="14"
+						key="textField-7"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{gender}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{gender}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="50"
+						width="160"
+						height="14"
+						key="textField-8"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{relation}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="75"
+						width="462"
+						height="19"
+						key="textField-9"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{address}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{address}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="25"
+						width="160"
+						height="14"
+						key="textField-10"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{patient_name}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{patient_name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="5"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-38"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[ Claimant Details]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="ClaimHistoryBand" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="87"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="30"
+						width="600"
+						height="50"
+						key="subreport-2"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{MyDataSource2}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{MediClaimSubReport2}]]></subreportExpression>
+				</subreport>
+				<break>
+					<reportElement
+						x="0"
+						y="86"
+						width="620"
+						height="0"
+						key="element-1"/>
+				</break>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="4"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-64"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[ Claim History ]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="HospitalizationDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="327"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="30"
+						width="142"
+						height="14"
+						key="staticText-5"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Intimation Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="103"
+						width="140"
+						height="14"
+						key="staticText-7"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ State :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="55"
+						width="140"
+						height="14"
+						key="staticText-9"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Discharge :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="103"
+						width="142"
+						height="14"
+						key="staticText-10"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[City/Town/Village :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="55"
+						width="142"
+						height="14"
+						key="staticText-12"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Admission :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="30"
+						width="140"
+						height="14"
+						key="staticText-14"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date Of Diagnosis :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="153"
+						width="142"
+						height="14"
+						key="staticText-15"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis Code Level 1 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="153"
+						width="140"
+						height="14"
+						key="staticText-16"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis Code Level 2 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="178"
+						width="140"
+						height="14"
+						key="staticText-46"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Code Level 2 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="178"
+						width="142"
+						height="14"
+						key="staticText-47"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Code Level 1 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="234"
+						width="142"
+						height="14"
+						key="staticText-48"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DiagnosisDescriptionLevel2 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="266"
+						width="142"
+						height="14"
+						key="staticText-49"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ProcedureDescriptionLevel1 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="203"
+						width="142"
+						height="14"
+						key="staticText-86"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DiagnosisDescriptionLevel1 :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="297"
+						width="142"
+						height="14"
+						key="staticText-87"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ProcedureDescriptionLevel2 :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="30"
+						width="160"
+						height="14"
+						key="textField-61"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{intimation_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{intimation_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="30"
+						width="165"
+						height="14"
+						key="textField-62"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{date_of_doc_rec}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{date_of_doc_rec}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="55"
+						width="160"
+						height="14"
+						key="textField-64"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{doa}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{doa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="103"
+						width="160"
+						height="14"
+						key="textField-65"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_city}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="153"
+						width="160"
+						height="14"
+						key="textField-66"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{diagnosis_code_level_1}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{diagnosis_code_level_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="178"
+						width="160"
+						height="14"
+						key="textField-67"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{procedure_codes_level_1}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{procedure_codes_level_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="203"
+						width="465"
+						height="18"
+						key="textField-68"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{diagnosis_description_level_1}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{diagnosis_description_level_1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="234"
+						width="465"
+						height="18"
+						key="textField-69"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{diagnosis_description_level_2}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{diagnosis_description_level_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="55"
+						width="165"
+						height="14"
+						key="textField-70"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{dod}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{dod}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="103"
+						width="165"
+						height="14"
+						key="textField-71"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_state}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_state}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="153"
+						width="165"
+						height="14"
+						key="textField-72"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{diagnosis_code_level_2}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{diagnosis_code_level_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="178"
+						width="165"
+						height="14"
+						key="textField-75"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{procedure_codes_level_2}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{procedure_codes_level_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="297"
+						width="465"
+						height="18"
+						key="textField-78"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{procedure_description_level_2}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{procedure_description_level_2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="266"
+						width="465"
+						height="18"
+						key="textField-79"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{procedure_description_level_1}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{procedure_description_level_1}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="10"
+						width="140"
+						height="16"
+						backcolor="#666666"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[ Hospitalization Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="78"
+						width="140"
+						height="14"
+						key="staticText-90"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Code :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="78"
+						width="142"
+						height="14"
+						key="staticText-91"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Name :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="78"
+						width="160"
+						height="14"
+						key="textField-105"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_name}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="78"
+						width="165"
+						height="14"
+						key="textField-106"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_code}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_code}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="141"
+						y="128"
+						width="463"
+						height="14"
+						key="textField-107"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{diagnosis}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{diagnosis}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="128"
+						width="142"
+						height="14"
+						key="staticText-13"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis :]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="ClaimDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="213"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="31"
+						width="142"
+						height="14"
+						key="staticText-51"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Type :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="31"
+						width="138"
+						height="14"
+						key="staticText-52"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Category :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="81"
+						width="138"
+						height="14"
+						key="staticText-53"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Recommended Amount :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="81"
+						width="142"
+						height="14"
+						key="staticText-54"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Requested/Claimed :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="56"
+						width="142"
+						height="14"
+						key="staticText-55"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Recieved on :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="56"
+						width="138"
+						height="14"
+						key="staticText-56"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Recommended On :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="131"
+						width="142"
+						height="14"
+						key="staticText-57"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Voluntary Copay/High Deductable :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="106"
+						width="142"
+						height="14"
+						key="staticText-58"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Non Admissable :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="106"
+						width="138"
+						height="14"
+						key="staticText-59"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Copay :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="131"
+						width="138"
+						height="14"
+						key="staticText-60"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payable :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="156"
+						width="142"
+						height="14"
+						key="staticText-61"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TDS :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="304"
+						y="156"
+						width="138"
+						height="14"
+						key="staticText-62"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Net Payable :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="180"
+						width="142"
+						height="14"
+						key="staticText-63"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Deductable Reason :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="31"
+						width="162"
+						height="14"
+						key="textField-80"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{claim_type}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{claim_type}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="31"
+						width="165"
+						height="14"
+						key="textField-81"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{claim_category}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{claim_category}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="56"
+						width="162"
+						height="14"
+						key="textField-82"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{pre_auth_received_on}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{pre_auth_received_on}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="56"
+						width="165"
+						height="14"
+						key="textField-83"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{recommend_on}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{recommend_on}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="81"
+						width="162"
+						height="14"
+						key="textField-84"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{claim_amount}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{claim_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="81"
+						width="165"
+						height="14"
+						key="textField-85"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{recommend_amount}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{recommend_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="131"
+						width="165"
+						height="14"
+						key="textField-86"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{payble_amount}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{payble_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="106"
+						width="165"
+						height="14"
+						key="textField-87"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{co_pay_amount}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{co_pay_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="131"
+						width="162"
+						height="14"
+						key="textField-88"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{deducted_amount}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{deducted_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="181"
+						width="465"
+						height="22"
+						key="textField-89"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{deduction_reason}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{deduction_reason}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="156"
+						width="162"
+						height="14"
+						key="textField-90"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{tds_amount}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{tds_amount}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="156"
+						width="165"
+						height="14"
+						key="textField-91"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean($F{net_payble_amt}.intValue()!=0)]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{net_payble_amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="106"
+						width="162"
+						height="14"
+						key="textField-92"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{compulsary_deduction}.equals("")))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{compulsary_deduction}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="2"
+						y="10"
+						width="124"
+						height="16"
+						backcolor="#666666"
+						key="staticText-50"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ Claim Details]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="BillDetails" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="52"  isSplitAllowed="true" >
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="10"
+						y="30"
+						width="590"
+						height="20"
+						key="subreport-3"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$P{MyDataSource3}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{MediClaimSubReport3}]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="5"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-89"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ Bill Details]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="125"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="54"
+						width="600"
+						height="18"
+						key="claimapprrovalformstatictext1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[Claim Report]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="2"
+						y="46"
+						width="608"
+						height="2"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="0"
+						y="100"
+						width="142"
+						height="14"
+						key="ClaimNumber"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Number :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="302"
+						y="100"
+						width="140"
+						height="14"
+						key="TTK ID"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Vidal Health\TTK ID :]]></text>
+				</staticText>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="45"
+						y="8"
+						width="216"
+						height="30"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/TTLLogo.gif"]]></imageExpression>
+				</image>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="440"
+						y="8"
+						width="130"
+						height="30"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/FormerlyTTKlogo.gif"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="false" pattern="#,##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="100"
+						width="160"
+						height="14"
+						key="textField-37">
+							<printWhenExpression><![CDATA[new Boolean(!($F{claim_no}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{claim_no}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="100"
+						width="170"
+						height="14"
+						key="textField-39">
+							<printWhenExpression><![CDATA[new Boolean(!($F{tpa_id}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{tpa_id}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="80"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="ClaimdetailsHeading"/>
+					<box>					<pen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<topPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<leftPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<bottomPen lineWidth="0.0" lineColor="#CCCCCC"/>
+					<rightPen lineWidth="0.0" lineColor="#CCCCCC"/>
+</box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[General Details]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="296"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="30"
+						width="142"
+						height="14"
+						key="staticText-65"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Shortfall Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="30"
+						width="140"
+						height="14"
+						key="staticText-66"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="80"
+						width="140"
+						height="14"
+						key="staticText-67"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="80"
+						width="142"
+						height="14"
+						key="staticText-68"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Shortfall Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="55"
+						width="142"
+						height="14"
+						key="staticText-69"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Final Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="55"
+						width="140"
+						height="14"
+						key="staticText-70"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Reply Received Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="130"
+						width="142"
+						height="14"
+						key="staticText-71"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurer Shortfall Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="105"
+						width="142"
+						height="14"
+						key="staticText-72"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Final Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="105"
+						width="140"
+						height="14"
+						key="staticText-73"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Reply Received Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="130"
+						width="140"
+						height="14"
+						key="staticText-74"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurer Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="0"
+						y="155"
+						width="142"
+						height="14"
+						key="staticText-75"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurer Final Reminder Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="302"
+						y="155"
+						width="140"
+						height="14"
+						key="staticText-76"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Insurer Reply Received Date :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="200"
+						width="142"
+						height="14"
+						key="staticText-78"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigator Name :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="225"
+						width="142"
+						height="14"
+						key="staticText-80"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Vidal Healthcare Recommendation :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="250"
+						width="142"
+						height="14"
+						key="staticText-82"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Healthcare Remarks :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="201"
+						width="465"
+						height="14"
+						key="textField-30"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true">
+							<printWhenExpression><![CDATA[new Boolean(!($F{proposer_name}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{proposer_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="225"
+						width="465"
+						height="14"
+						key="textField-31"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true">
+							<printWhenExpression><![CDATA[new Boolean(!($F{status}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{status}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="142"
+						y="250"
+						width="465"
+						height="33"
+						key="textField-35"
+						positionType="Float"
+						isPrintWhenDetailOverflows="true">
+							<printWhenExpression><![CDATA[new Boolean(!($F{claims_remarks}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{claims_remarks}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="80"
+						width="165"
+						height="14"
+						key="textField-93"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_reminder_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="30"
+						width="165"
+						height="14"
+						key="textField-94"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insured_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insured_reminder_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="55"
+						width="160"
+						height="14"
+						key="textField-95"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insured_final_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insured_final_reminder_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="55"
+						width="165"
+						height="14"
+						key="textField-96"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insured_reply_recieved_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insured_reply_recieved_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="80"
+						width="160"
+						height="14"
+						key="textField-97"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_disc_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_disc_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="30"
+						width="160"
+						height="14"
+						key="textField-98"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insured_disc_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insured_disc_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="155"
+						width="165"
+						height="14"
+						key="textField-99"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insurer_reply_recieved_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insurer_reply_recieved_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="105"
+						width="165"
+						height="14"
+						key="textField-100"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_reply_recieved_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_reply_recieved_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="130"
+						width="160"
+						height="14"
+						key="textField-101"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insurer_disc_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insurer_disc_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="442"
+						y="130"
+						width="165"
+						height="14"
+						key="textField-102"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insurer_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insurer_reminder_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="155"
+						width="160"
+						height="14"
+						key="textField-103"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{insurer_final_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{insurer_final_reminder_date}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="142"
+						y="105"
+						width="160"
+						height="14"
+						key="textField-104"
+						positionType="Float">
+							<printWhenExpression><![CDATA[new Boolean(!($F{hospital_final_reminder_date}.equals( "" )))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{hospital_final_reminder_date}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="10"
+						width="126"
+						height="16"
+						backcolor="#666666"
+						key="staticText-77"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ ShortFall Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="175"
+						width="120"
+						height="16"
+						backcolor="#666666"
+						key="staticText-79"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isPdfEmbedded ="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Details]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Additional benefits" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Double Benefit" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="">
+        <condition id="" field="request.doublebenefittotalamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Overall Double Benefit amount (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.doublebenefitmemberamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="" source="XML" module="M" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Double Benefit amount per member (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.doublebenefitfamilyamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="YES" method="" source="XML" module="E" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Double Benefit amount per family (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="family.size" op="LE" value="~" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of members allowed per family" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.stay" op="GE" value="~" clfactor="10" mandatory="YES" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of days allowed per admission (Days)" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Covalalescence Benefit" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="">
+        <condition id="" field="request.covbenefittotalamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Overall Covalalescence Benefit amount (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.covbenefitmemberamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="" source="XML" module="M" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Covalalescence Benefit amount per member (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.covbenefitfamilyamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="YES" method="" source="XML" module="E" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		  <display id="" target="fieldData,1" prelabel="Covalalescence Benefit amount per family (Rs)" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="family.size" op="LE" value="~" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of members allowed per family" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.stay" op="GE" value="~" clfactor="10" mandatory="YES" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of days allowed per admission (Days)" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hospitalisation expenses allowed per admission" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="">
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hospitalisationamount" op="GE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Minimum charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="M" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Minimum charges per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Maximum charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="E" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Minimum charges per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="family.size" op="LE" value="~" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of members allowed per family" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.stay" op="GE" value="~" clfactor="10" mandatory="YES" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of days allowed per admission (Days)" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.admissions" op="GE" value="~" clfactor="10" mandatory="YES" method="get_admission_count('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="No. of admissions allowed per member" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Hospitalisation expenses for chidren" allowed="NO" module="PEM" clpercentage="" selected="" autoselect="">
+        <condition id="" field="request.hospitalisationamount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.HOSPITALISATION_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Hospitalisation expenses (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Reimbursed for children with age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

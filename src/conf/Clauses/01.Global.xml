@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <clause id="" name="Global" type="rule" allowed="YES" execution="PRE,CLA">
+      <coverage id="" name="Any coverage" allowed="YES" module="P" clpercentage="" selected="YES">
+        <condition id="" field="member.inceptiondate" op="LE" value="" module="P" dynValue="get_hospitalization_start_date()" clfactor="10" mandatory="YES" method="MEMBER.INCEPTION_DATE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Member inception date" operator="date" control="" type="" default="" postlabel="admission date" jscall="" />
+        </condition>
+        <condition id="" field="policy.enddate" op="GE" value="" module="P" dynValue="get_hospitalization_start_date()" clfactor="10" mandatory="YES" method="MEMBER.EFFECTIVE_TO_DATE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Policy end date" operator="date" control="" type="" default="" postlabel="admission date" jscall="" />
+        </condition>
+        <condition id="" field="member.status" op="EQ" value="POA" module="P" clfactor="10" mandatory="YES" method="MEMBER.MEM_STATUS"	source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Member status" operator="text" control="" type="" default="" postlabel="active" jscall="" />
+        </condition>
+        <condition id="" field="request.amount" op="LE" value="" module="P" dynValue="get_available_sumassured()" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Requested amount" operator="numeric" control="" type="" default="" postlabel="available sum assured" jscall="" />
+        </condition>
+        <condition id="" field="request.amount" op="GE" value="" module="P" dynValue="get_approved_amount()" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Requested amount" operator="numeric" control="" type="" default="" postlabel="approved amount" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>     
+    </clause>

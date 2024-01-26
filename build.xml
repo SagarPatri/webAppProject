@@ -1,0 +1,252 @@
+<project name="TTK Healthcare Services" default="all" basedir=".">
+	<property name="src.dir" value="${basedir}/src/java"/>
+	<property name="conf.dir" value="${basedir}/src/conf"/>
+	<property name="build.dir" value="${basedir}/build"/>
+	<property name="web.dir" value="${basedir}/web"/>
+	<!-- TLS -->
+	<property name="lib.dir" value="${basedir}/lib"/>
+	<!-- TLS -->	
+	<!-- The build classpath -->
+	<path id="build.classpath">
+		<fileset dir="${basedir}/lib/">
+			<include name="*.jar"/>
+			
+		</fileset>
+	</path>
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.dir}/classes"/>
+		<mkdir dir="${build.dir}/jar"/>
+		<mkdir dir="${build.dir}/jar/lib"/>
+	</target>
+	<!-- MUST use JDK 1.5 compiler -->
+	<target name="compile" depends="prepare">
+		<javac destdir="${build.dir}/classes" classpathref="build.classpath" debug="on">
+			<src path="${src.dir}"/>
+		</javac>
+		<copy todir="${build.dir}/classes">
+			<fileset dir="${conf.dir}">
+				<include name="*.properties"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Package all the EJB and other classes -->
+	<target name="package-ejb" depends="compile">
+		<jar jarfile="${build.dir}/jar/business.ejb3">
+			<fileset dir="${build.dir}/classes">
+				<include name="com/**"/>
+				<include name="ApplicationResources.properties"/>
+				<exclude name="com/ttk/common/tags/**"/>
+				<exclude name="com/ttk/common/webservices/**"/>
+			</fileset>
+		</jar>
+	</target>
+		<!-- TLS -->
+	<target name="package-lib" depends="compile">
+
+		<copy todir="${build.dir}/jar/lib">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar" />
+				<exclude name="classes12.jar"/>
+				<exclude name="javax.servlet.jar"/>
+				<exclude name="javax.servlet.jsp.jar"/>
+				<exclude name="jaxen.jar"/>
+				<exclude name="jboss-common-client.jar"/>
+				<exclude name="jboss-common-jdbc-wrapper.jar"/>
+				<exclude name="jboss-common.jar"/>
+				<exclude name="jboss-ejb3x.jar"/>
+				<exclude name="jboss-j2ee.jar"/>
+				<exclude name="jboss-jaxrpc.jar"/>
+				<exclude name="jboss-jmx.jar"/>
+				<exclude name="jboss-system.jar"/>
+				<exclude name="log4j-boot.jar"/>
+				<exclude name="log4j.jar"/>
+				<exclude name="mail.jar"/>
+				<exclude name="namespace.jar"/>
+				<exclude name="ojdbc14.jar"/>
+				<exclude name="xdb.jar"/>
+				<exclude name="xmlparserv2.jar"/>
+				<exclude name="ojdbc6.jar"/>
+				<exclude name="ironjacamar-jdbc-1.0.9.Final.jar"/>
+				<exclude name="jboss-ejb-api_3.1_spec-1.0.2.Final.jar"/>
+			</fileset>
+		</copy>
+		     
+	</target>
+		<!-- TLS -->
+	<!-- Package the web module -->
+	<target name="package-web" depends="compile">
+		<copy todir="${web.dir}/WEB-INF/classes">
+			<fileset dir="${build.dir}/classes">
+				<include name="com/ttk/common/tags/**"/>
+				<include name="com/ttk/common/webservices/**"/>
+			</fileset>
+		</copy>
+		<!-- TLS  -->
+		<copy todir="${web.dir}/WEB-INF/classes">
+			<fileset dir="${web.dir}">
+				<include name="ttk/images/**"/>
+			</fileset>
+		</copy>
+		<!-- TLS  -->
+		<war warfile="${build.dir}/jar/web.war" webxml="${web.dir}/WEB-INF/web.xml">
+			<fileset dir="web">
+				<include name="**/*"/>
+			</fileset>
+			<webinf dir="${web.dir}/WEB-INF">
+				<include name="*.*"/>
+				<exclude name="web.xml"/>
+				<exclude name="jboss-web.xml"/>
+			</webinf>
+			<!-- TLS -->
+<manifest>
+<attribute name="Dependencies" value="org.jboss.ironjacamar.jdbcadapters, com.oracle.oracle11g"/>
+</manifest>
+			<!-- TLS -->
+		</war>
+	</target>
+	<!-- Creates an ear file containing all the modules as well as application.xml. -->
+	<target name="assemble-app">
+		<jar jarfile="${build.dir}/jar/TTKServices.ear">
+			<metainf dir="${conf.dir}">
+				<include name="application.xml"/>
+			</metainf>
+			<manifest>
+			<attribute name="Dependencies" value="org.jboss.ironjacamar.jdbcadapters, com.oracle.oracle11g"/>
+			</manifest>
+
+			<!-- TLS -->
+		<fileset dir="${build.dir}/jar" includes="*.ejb3,*.jar,*.war,lib/*"/> 
+			<!-- TLS -->
+		</jar>
+		<delete file="${build.dir}/jar/web.war"/>
+		<delete file="${build.dir}/jar/business.ejb3"/>
+		<delete dir="${build.dir}/classes"/>
+		<delete dir="${build.dir}/jar/lib"/>
+	</target>
+	<!--Remove the contents from build folder -->
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+	<!--Deploy the ear file on JBOSS server -->
+	<target name="deploy" >
+		<property name="deploy.dir" value="C:/home/tipsint/jboss-as-7.1.1.Final/standalone/deployments"/>
+		<property name="deploy.dir1" value="C:/home/tipsint/jboss-as-7.1.1.Final/standalone/deployments"/>
+		<property name="bin.dir" value="C:/home/tipsint/jboss-as-7.1.1.Final/bin"/>
+		<property name="jboss.dir" value="C:/home/tipsint/jboss-as-7.1.1.Final"/>
+		<delete dir="${deploy.dir1}/tmp"/>
+		<delete dir="${deploy.dir1}/work"/>
+	<delete file="${deploy.dir}/TTKServices.ear"/>
+	<copy todir="${deploy.dir}" file="${build.dir}/jar/TTKServices.ear"/>
+		<delete>
+		  			<fileset dir="${bin.dir}" includes="*.properties"/>
+		  			<fileset dir="${bin.dir}" includes="*.xml"/>
+		  			<fileset dir="${bin.dir}" includes="*.jrxml"/>
+		  		</delete>
+				<delete dir="${bin.dir}/reports"/>
+				<delete dir="${bin.dir}/generalreports"/>
+				<delete dir="${bin.dir}/onlinereports"/>
+                                <delete dir="${bin.dir}/providerLogin"/>
+				<delete dir="${bin.dir}/ecardjrxml"/>
+		<copy todir="${bin.dir}">
+					<fileset dir="${conf.dir}">
+						<include name="*.properties" />
+						<include name="*.xml"/>
+						<include name="*.jrxml"/>
+						<include name="reports/**"/>
+						<include name="generalreports/**"/>
+						<include name="onlinereports/**"/>
+                                                <include name="providerLogin/**"/>
+						<include name="ecardjrxml/*.jrxml"/>
+						<exclude name="ApplicationResources.properties"/>
+					</fileset>
+				</copy>
+	</target>
+	<!--<target name="deploy" if="is.windows" depends="deploy-unix">
+		<echo message=" This is windows operating system"/>
+		<property name="deploy.dir" value="D:/home/jboss-4.0.2/server/all/deploy"/>
+	        <property name="bin.dir" value="D:/jboss-4.0.2/bin"/>
+		<delete file="${deploy.dir}/TTKServices.ear"/>
+		<delete>
+  			<fileset dir="${bin.dir}" includes="*.properties"/>
+  			<fileset dir="${bin.dir}" includes="*.xml"/>
+  			<fileset dir="${bin.dir}" includes="*.jrxml"/>
+  		</delete>
+		<delete dir="${bin.dir}/reports"/>
+		<delete dir="${bin.dir}/generalreports"/>
+		<delete dir="${bin.dir}/onlinereports"/>
+		<delete dir="${bin.dir}/ecardjrxml"/>
+		<copy todir="${deploy.dir}" file="${build.dir}/jar/TTKServices.ear"/>
+		<copy todir="${bin.dir}">
+			<fileset dir="${conf.dir}">
+				<include name="*.properties" />
+				<include name="*.xml"/>
+				<include name="*.jrxml"/>
+				<include name="reports/**"/>
+				<include name="generalreports/**"/>
+				<include name="onlinereports/**"/>
+				<include name="ecardjrxml/*.jrxml"/>
+				<exclude name="application.xml"/>
+				<exclude name="ApplicationResources.properties"/>
+				<exclude name="ttkconnectionpool-ds.xml"/>
+				<exclude name="ttkreportconnectionpool-ds.xml"/>
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="deploy-unix" if="is.unix">
+		<echo message=" This is NOT windows operating system. Can be Unix flavours..."/>
+		<property name="deploy.dir" value="/home/jboss/jboss-4.0.2/server/all/deploy"/>
+		<property name="bin.dir" value="/home/jboss/jboss-4.0.2/bin"/>
+		<delete file="${deploy.dir}/TTKServices.ear"/>
+		<delete>
+	  		<fileset dir="${bin.dir}" includes="*.properties"/>
+	  		<fileset dir="${bin.dir}" includes="*.xml"/>
+	  		<fileset dir="${bin.dir}" includes="*.jrxml"/>
+	  	</delete>
+		<delete dir="${bin.dir}/reports"/>
+		<delete dir="${bin.dir}/generalreports"/>
+		<delete dir="${bin.dir}/onlinereports"/>
+		<delete dir="${bin.dir}/ecardjrxml"/>
+		<copy todir="${deploy.dir}" file="${build.dir}/jar/TTKServices.ear"/>
+		<copy todir="${bin.dir}">
+			<fileset dir="${conf.dir}">
+				<include name="*.properties" />
+				<include name="*.xml"/>
+				<include name="*.jrxml"/>
+				<include name="reports/**"/>
+				<include name="generalreports/**"/>
+				<include name="onlinereports/**"/>
+				<include name="ecardjrxml/*.jrxml"/>
+				<exclude name="application.xml"/>
+				<exclude name="ApplicationResources.properties"/>
+				<exclude name="ttkconnectionpool-ds.xml"/>
+				<exclude name="ttkreportconnectionpool-ds.xml"/>
+			</fileset>
+		</copy>
+    </target> -->
+
+	<target name="all">
+		<condition property="is.windows">
+			<os family="windows"/>
+		</condition>
+
+		<condition property="is.unix">
+			<os family="unix"/>
+		</condition>
+
+		<echo message="Build Started"/>
+		
+		<antcall target="clean"/>
+		<antcall target="package-ejb"/>
+		<antcall target="package-web"/>
+			<!-- TLS -->
+		<antcall target="package-lib"/>
+			<!-- TLS -->
+		<antcall target="assemble-app"/>
+		<antcall target="deploy"/> 
+		
+		<echo message="Build Completed"/>
+	</target>
+</project>

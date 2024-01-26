@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ClaimRejectionEmailAdvisor"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="10"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="MyDataSource" isForPrompting="true" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="ClaimRejectionEmailPOSub" isForPrompting="true" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="Batch Number" isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="Batch Number" postlabel="" control="input" type="text" source="" method="" value="" class="textBox textBoxMedium" mandatory="" jscall=""/>]]></parameterDescription>
+	</parameter>
+
+	<field name="CLAIM_NUMBER" class="java.lang.String"/>
+	<field name="PATIENT_NAME" class="java.lang.String"/>
+	<field name="CM_NAME" class="java.lang.String"/>
+	<field name="HOSPITAL_ADDRESS" class="java.lang.String"/>
+	<field name="CLAIM_REGISTRATION_DATE" class="java.lang.String"/>
+	<field name="HOSPITAL_NAME" class="java.lang.String"/>
+	<field name="REPORT_GEN_DATE" class="java.lang.String"/>
+	<field name="AILMENT_FOR_WHICH_ADMITTED" class="java.lang.String"/>
+	<field name="FIRST_NAME" class="java.lang.String"/>
+	<field name="POLICY_NO" class="java.lang.String"/>
+	<field name="ADDRESS_1" class="java.lang.String"/>
+	<field name="ADDRESS_2" class="java.lang.String"/>
+	<field name="ADDRESS_3" class="java.lang.String"/>
+	<field name="MEMBER_STATE_NAME" class="java.lang.String"/>
+	<field name="MEMBER_CITY_NAME" class="java.lang.String"/>
+	<field name="REGARDS_NAME" class="java.lang.String"/>
+	<field name="PLAN_NAME" class="java.lang.String"/>
+	<field name="ADVISOR_NAME" class="java.lang.String"/>
+	<field name="REJECTED_REASON" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="68"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="0"
+						width="535"
+						height="50"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/header.jpg"]]></imageExpression>
+				</image>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="481"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="399"
+						y="85"
+						width="0"
+						height="0"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Static Text]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="372"
+						width="580"
+						height="43"
+						key="staticText-17"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Best regards 
+				Cigna TTK Health Insurance Company Limited
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="142"
+						width="205"
+						height="14"
+						key="staticText-24"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[What are the claim registration details?]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="223"
+						width="299"
+						height="11"
+						key="staticText-26"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Why is the claim rejected?]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="307"
+						width="270"
+						height="12"
+						key="staticText-30"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[We are here to help:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="326"
+						width="525"
+						height="21"
+						key="staticText-31"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+				<text><![CDATA[You can reach us on our Healthline: 1-800-10-24462, write to us on customercare@cignattk.in or visit our nearest Cigna TTK Health Insurance Branch and you will be assisted for any information you may require.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="51"
+						y="8"
+						width="450"
+						height="52"
+						key="staticText-33"/>
+					<box>					<pen lineWidth="0.25" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[Non-approval of reimbursement claim: Scheme Holder Name:
+                                                                   Scheme Number:
+                                                                   Plan Name:
+                                                                  Claim Number:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="74"
+						width="25"
+						height="10"
+						key="staticText-34"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+				<text><![CDATA[Date: ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="353"
+						width="509"
+						height="15"
+						key="staticText-35"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+				<text><![CDATA[We appreciate your understanding and always look forward to your continuous support.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="161"
+						width="492"
+						height="56"
+						key="staticText-36"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+				<text><![CDATA[1.	Claim Number: 
+2.	Patient Name: 
+3.	Hospital Name: 
+4.	Hospital Address: 
+5.	Ailment for which admitted: 
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="162"
+						width="200"
+						height="8"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica" size="8" isBold="false" isItalic="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="84"
+						y="171"
+						width="200"
+						height="8"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PATIENT_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="181"
+						width="200"
+						height="8"
+						key="textField-3"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="96"
+						y="191"
+						width="300"
+						height="8"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="130"
+						y="201"
+						width="200"
+						height="8"
+						key="textField-5"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AILMENT_FOR_WHICH_ADMITTED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="334"
+						y="46"
+						width="130"
+						height="10"
+						key="textField-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="334"
+						y="22"
+						width="120"
+						height="10"
+						key="textField-7"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="47"
+						y="74"
+						width="142"
+						height="10"
+						key="textField-8"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{REPORT_GEN_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="337"
+						y="9"
+						width="125"
+						height="10"
+						key="textField-11"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CM_NAME}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="8"
+						y="275"
+						width="500"
+						height="25"
+						key="subreport-1"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintInFirstWholeBand="true"/>
+					<dataSourceExpression><![CDATA[$P{MyDataSource}]]></dataSourceExpression>
+					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{ClaimRejectionEmailPOSub}]]></subreportExpression>
+				</subreport>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="334"
+						y="34"
+						width="120"
+						height="10"
+						key="textField-13"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-BoldOblique" isBold="true" isItalic="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PLAN_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7"
+						y="89"
+						width="400"
+						height="10"
+						key="textField-14"
+						isRemoveLineWhenBlank="true"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Dear Mr  "+$F{ADVISOR_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="16"
+						y="-272"
+						width="520"
+						height="22"
+						forecolor="#000000"
+						key="textField-15"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Thank you for your association with Cigna TTK Health Insurance./nIt is with extreme regret that we inform you that the claim of Mr/Ms "+$F{FIRST_NAME}+" made on "+$F{CLAIM_REGISTRATION_DATE}+" has not been approved."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="6"
+						y="107"
+						width="520"
+						height="22"
+						forecolor="#000000"
+						key="textField-16"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Thank you for your association with Cigna TTK Health Insurance./nIt is with extreme regret that we inform you that the claim of Mr/Ms "+$F{FIRST_NAME}+" made on "+$F{CLAIM_REGISTRATION_DATE}+" has not been approved."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="16"
+						y="-272"
+						width="520"
+						height="25"
+						forecolor="#000000"
+						key="textField-17"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["On scrutiny of the documents it has been observed that "+ $F{REJECTED_REASON}+"\n\nWith regards to the same, it is necessary to read the scheme document and refer to the clause mentioned below:"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="20"
+						y="236"
+						width="523"
+						height="40"
+						forecolor="#000000"
+						key="textField-18"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["On scrutiny of the documents it has been observed that "+ $F{REJECTED_REASON}+"\n\nWith regards to the same, it is necessary to read the scheme document and refer to the clause mentioned below:"]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="60"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="0"
+						y="3"
+						width="535"
+						height="56"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/footer.jpg"]]></imageExpression>
+				</image>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

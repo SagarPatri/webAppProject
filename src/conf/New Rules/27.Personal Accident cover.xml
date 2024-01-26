@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Personal Accident cover" allowed="NO" type="rule" execution="CLA">
+      <coverage id="" name="Temporary Disability" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Accident_Benefits('TDC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.temporarydisability" op="EQ" opType="text" value="~" clfactor="10" mandatory="NO" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Type of temporary disability" control="select" type="single" default="" optText="Total Disability,Partial Disability,Both" altText="Total Disability,Partial Disability,Both" optVal="TT,TP,TT|TP" postlabel="" jscall="" />
+          <display id="" target="fieldData,1" prelabel="Type of temporary disability"  control="select" type="single" default="" optText="Total Disability,Partial Disability" altText="Total Disability,Partial Disability" optVal="TT,TP" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.tempdisamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','TDC')" clfactor="10" mandatory="NO" method="get_account_amount('TDC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Temporary Disability charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Permanent Disability" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Accident_Benefits('PDC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.permanentdisability" op="EQ" opType="text" value="~" clfactor="10" mandatory="NO" method="" source="XML" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Type of permanent disability" control="select" type="single" default="" optText="Total Disability,Partial Disability,Both" altText="Total Disability,Partial Disability,Both" optVal="PT,PP,PT|PP" postlabel="" jscall="" />
+          <display id="" target="fieldData,1" prelabel="Type of permanent disability"  control="select" type="single" default="" optText="Total Disability,Partial Disability" altText="Total Disability,Partial Disability" optVal="PT,PP" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.permanentdisamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PDC')" clfactor="10" mandatory="NO" method="get_account_amount('PDC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Permanent Disability charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Compensations" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Accident_Benefits('WCC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.weeklycompensationamount" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_account_amount('WCC')" source="PACKAGE" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Weekly Compensation charges (Rs)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+		<action id="" name="ruleengineaction" />
+      </coverage>
+	  <coverage id="" name="Death Cover" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Accident_Benefits('DEC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+	  	<condition id="" field="member.dischargecondition" op="EQ" opType="text" value="DCD" clfactor="10" mandatory="YES" method="REQUEST.DISCHARGE_CONDITION" source="TABLE" module="P" fieldData="" result="" configure="NO">
+            <display id="" target="" prelabel="Member's discharge condition" control="select" type="single" optText="Dead" altText="Dead" optVal="DCD" default="DCD" postlabel="" jscall="" lookup="dischargeCondition"/>
+        </condition>
+        <condition id="" field="request.deathcoveramount" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_account_amount('DEC')" source="PACKAGE" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Death Cover amount (Rs)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

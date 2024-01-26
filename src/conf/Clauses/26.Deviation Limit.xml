@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Deviation Limit" allowed="NO" type="rule" execution="PA">
+      <coverage id="" name="Deviation Limit" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.deviationamount" op="LE" value="" dynValue="get_minimum(~,~,'~')" clfactor="10" mandatory="YES" method="get_deviation_limit()" source="PACKAGE" module="P" fieldData="~" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Excess on approved amount (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+        </condition>
+		<text>
+			Please check if copayment overrides the deviation limit.
+		</text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

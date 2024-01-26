@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Day care procedures" allowed="NO" type="rule" execution="PRE,CLA">
+     
+ <coverage id="" name="Option 1" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_DayCare('~')">
+	<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.amount" op="LE" opType="numeric" value="" dynValue="get_daycare_limit(~,~,'~','~','~')" clfactor="10" mandatory="YES" method="get_daycare_amount('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Day care procedures limit (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+	      <display id="" target="autoselect,1;dynValue,5;method,1;node,ID,dynValue,1" prelabel="&lt;br&gt;Day care procedures belonging to this option"  control="input" type="text" default="GR1" postlabel="" jscall="" disabled="true" />
+          <display id="" target="" prelabel="" control="image" type="image" imagepath="EditIcon.gif" alt="Select day care group" default="" postlabel=" | " jscall="onclick=openRadioList('ID','DAYCARE_GROUP')"/>
+          <display id="" target="" prelabel="" control="image" type="image" imagepath="HistoryIcon.gif" alt="View procedures" default="" postlabel="" jscall="onclick=showList('ID','DAYCARE_PROCEDURE')"/>
+        </condition>
+        <text id="" mandatory="YES" value="" dynValue="get_daycare_procedures('~')"/>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+     </clause>
+	 
+	 <clause id="cls.9" name="Day care procedures" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="cvg.9.1" name="Option 1" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_DayCare(&apos;~&apos;)">
+	<display id="dsp.9.1.1" target="allowed,1" prelabel="" control="radiogroup" type="single" default="1" optText="Pay,Don&apos;t Pay,Pay Conditionally" altText="Pay,Don&apos;t Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)"/>
+        <condition id="cnd.9.1.1" field="request.amount" op="LE" opType="numeric" value="" dynValue="get_daycare_limit(~,~,&apos;~&apos;,&apos;~&apos;,&apos;~&apos;)" clfactor="10" mandatory="YES" method="get_daycare_amount(&apos;~&apos;)" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="dsp.9.1.1.1" target="dynValue,1" prelabel="Day care procedures limit (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)"/>
+          <display id="dsp.9.1.1.2" target="dynValue,2" prelabel="OR" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)"/>
+          <display id="dsp.9.1.1.3" target="dynValue,3" prelabel="% of" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall=""/>
+          <display id="dsp.9.1.1.4" target="dynValue,4;unit,1" prelabel="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall=""/>
+		  <display id="dsp.9.1.1.5" target="autoselect,1;dynValue,5;method,1;node,txt.9.1.2,dynValue,1" prelabel="&lt;br&gt;Day care procedures belonging to this option" control="input" type="text" default="" postlabel="" jscall="" disabled="true"/> 
+	      <display id="dsp.9.1.1.6" target="" prelabel="" control="image" type="image" imagepath="EditIcon.gif" alt="Select day care group" default="" postlabel=" | " jscall="onclick=openRadioList(&apos;dsp.9.1.1.5&apos;,&apos;DAYCARE_GROUP&apos;,&apos;option&apos;)"/>
+          <display id="dsp.9.1.1.7" target="" prelabel="" control="image" type="image" imagepath="HistoryIcon.gif" alt="View procedures" default="" postlabel="" jscall="onclick=showList(&apos;dsp.9.1.1.5&apos;,&apos;DAYCARE_PROCEDURE&apos;)"/>
+        </condition>
+        <text id="txt.9.1.2" mandatory="YES" value="" dynValue="get_daycare_procedures(&apos;~&apos;)"/>
+        <action id="act.9.1.1" name="ruleengineaction"/>
+      </coverage>
+     </clause>

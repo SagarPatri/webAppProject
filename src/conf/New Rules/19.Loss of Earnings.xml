@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Loss of Earnings" allowed="NO" type="rule" execution="CLA">
+      <coverage id="" name="Coverage for disability" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('DIS')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.relationship" op="EQ" opType="text" value="NSF" clfactor="10" mandatory="YES" method="MEMBER.RELATIONSHIP" source="TABLE" module="P" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Member" control="select" type="single" default="NSF" optText="Self" altText="Self" optVal="NSF" postlabel="" jscall="" lookup="relationshipCode"/>
+        </condition>
+        <condition id="" field="request.stay" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. hospitalisation period (Days)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.stay" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. hospitalisation period (Days)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.stay" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="REQUEST.STAY" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting Period from the date of Hospitalisation" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="request.compensationamount" op="LE" opType="numeric" value="" dynValue="get_compensation_limit(~,'~','DIS')" clfactor="10" mandatory="NO" method="get_account_amount('DIS')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Compensation (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.dailyallowance" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_account_amount('DAW')" source="PACKAGE" module="P" fieldData="~" unit="" result="">
+          <display id="" target="value,1" prelabel="Daily allowance (Rs)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

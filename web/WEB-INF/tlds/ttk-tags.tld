@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!-- a tag library descriptor -->
+<taglib>
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>TTK</shortname>
+  <uri/>
+  <info>Tag Libraries used for TTK HealthCare Services web application</info>
+  <tag>
+    <name>HtmlGrid</name>
+    <tagclass>com.ttk.common.tags.HtmlGrid</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the HTML Grid content by using the session data available from TableData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>RowCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>PageLinkCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>className</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>PageLinks</name>
+    <tagclass>com.ttk.common.tags.PageLinks</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the page links by using the session data available from TableData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>PageLinksNew</name>
+    <tagclass>com.ttk.common.tags.PageLinksNew</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the page links by using the session data available from TableData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>SelectBox</name>
+    <tagclass>com.ttk.common.tags.SelectBox</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the drop-down select box</info>
+    <attribute>
+      <name>cacheObject</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>className</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>MOU</name>
+    <tagclass>com.ttk.common.tags.HospitalMOUDocument</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the MOU details</info>
+    <attribute>
+      <name>name</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>Caption</name>
+    <tagclass>com.ttk.common.tags.Caption</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the dynamic label</info>
+  </tag>
+  <tag>
+    <name>RoleTree</name>
+    <tagclass>com.ttk.common.tags.RoleTree</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Role Permissions</info>
+  </tag>
+  <tag>
+    <name>PersonalInformation</name>
+    <tagclass>com.ttk.common.tags.PersonalInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Personal Information </info>
+  </tag>
+  <tag>
+    <name>ProfessionalDetail</name>
+    <tagclass>com.ttk.common.tags.ProfessionalDetail</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Professional's Personal Information </info>
+  </tag>
+  
+  <tag>
+    <name>UserAccess</name>
+    <tagclass>com.ttk.common.tags.UserAccess</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the User Access Information </info>
+  </tag>
+  <tag>
+    <name>AdditionalInformation</name>
+    <tagclass>com.ttk.common.tags.AdditionalInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Additional Information </info>
+  </tag>
+  <tag>
+    <name>TreeComponent</name>
+    <tagclass>com.ttk.common.tags.TreeComponent</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the HTML Grid content by using the session data available from TreeData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>RowCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>PageLinkCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>OnlineTreeComponent</name>
+    <tagclass>com.ttk.common.tags.OnlineTreeComponent</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the HTML Grid content by using the session data available from TreeData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>RowCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>PageLinkCount</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>TreePageLinks</name>
+    <tagclass>com.ttk.common.tags.TreePageLinks</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the page links by using the session data available from TreeData object</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>PolicyAdditionalInformaion</name>
+    <tagclass>com.ttk.common.tags.PolicyAdditionalInformaion</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Policy Additional Information </info>
+  </tag>
+  <tag>
+    <name>PolicySearchBox</name>
+    <tagclass>com.ttk.common.tags.enrollment.PolicySearchBox</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Search Box of PolicyList screen of enrollment module</info>
+  </tag>
+  <!-- Enrollment Policy Details screen -->
+  <tag>
+    <name>PolicyInfo</name>
+    <tagclass>com.ttk.common.tags.enrollment.PolicyInfo</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Corporate Information, Group Information</info>
+  </tag>
+  <tag>
+    <name>MemberPolicyInfo</name>
+    <tagclass>com.ttk.common.tags.enrollment.MemberPolicyInfo</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Poicy information in the Add Member Screen</info>
+  </tag>
+  <tag>
+    <name>InsuranceRelatedInformation</name>
+    <tagclass>com.ttk.common.tags.enrollment.InsuranceRelatedInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Insurance Related Information </info>
+  </tag>
+  <tag>
+    <name>BeneficiaryInformation</name>
+    <tagclass>com.ttk.common.tags.enrollment.BeneficiaryInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Beneficiary Information </info>
+  </tag>
+  <tag>
+    <name>InsuredAddressInformation</name>
+    <tagclass>com.ttk.common.tags.enrollment.InsuredAddressInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Insured Address Information</info>
+  </tag>
+  <tag>
+    <name>DomiciliaryTreatment</name>
+    <tagclass>com.ttk.common.tags.enrollment.DomiciliaryTreatment</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Domiciliary Treatment Information </info>
+  </tag>
+  <tag>
+    <name>BankAccountInformation</name>
+    <tagclass>com.ttk.common.tags.enrollment.BankAccountInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Bank Account Information</info>
+  </tag>
+  <tag>
+    <name>ReviewInformation</name>
+    <tagclass>com.ttk.common.tags.enrollment.ReviewInformation</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Review Information </info>
+  </tag>
+  <tag>
+    <name>BatchDetails</name>
+    <tagclass>com.ttk.common.tags.enrollment.BatchDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Required buttons </info>
+  </tag>
+  <tag>
+    <name>ComparePolicy</name>
+    <tagclass>com.ttk.common.tags.enrollment.ComparePolicy</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected records to be compared </info>
+  </tag>
+  <!-- Pre-Authorization -->
+  <tag>
+    <name>CitibankEnrolHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.CitibankEnrolHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Citibank Enroll Details information</info>
+  </tag>
+  <tag>
+    <name>Shortfalls</name>
+    <tagclass>com.ttk.common.tags.preauth.Shortfalls</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Raised Preauth short falls</info>
+     <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>DiagnosisDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.DiagnosisDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Diagnosis Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>ActivityDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.ActivityDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Activity Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    <tag>
+    <name>PremiumConfigurationDetails</name>
+    <tagclass>com.ttk.common.tags.administration.PremiumConfigurationDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added ASO and AS Plus Policy</info>
+    <!-- <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute> -->
+  </tag>
+    <tag>
+    <name>MemberEligibilityAuditLogs</name>
+    <tagclass>com.ttk.common.tags.administration.MemberEligibiltyRulesAuditDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added ASO and AS Plus Rules Audit Logs</info>
+    <!-- <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute> -->
+  </tag>
+  
+   <tag>
+    <name>PolicyDocsUploadLogs</name>
+    <tagclass>com.ttk.common.tags.enrollment.PolicyDocsUploadLogs</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Policy Upload Data</info>
+    <!-- <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute> -->
+  </tag>
+  <tag>
+    <name>OnlineActivityDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.OnlineActivityDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Activity Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+       <attribute>
+      <name>flag</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>preAuthNoYN</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>OnlineDrugDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.OnlineDrugDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Drug Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+       <attribute>
+      <name>flag</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>preAuthNoYN</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>OnlineDiagnosisDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.OnlineDiagnosisDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Diagnosis Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+        <attribute>
+      <name>flag</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>preAuthNoYN</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>PreAuthHistoryDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.PreAuthHistoryDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the PreAuth History Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+    <name>ClaimHistoryDetails</name>
+    <tagclass>com.ttk.common.tags.claims.ClaimHistoryDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Claim History Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>CitibankClaimHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.CitibankClaimHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Citibank Claim Details information</info>
+  </tag>
+  <tag>
+    <name>ClaimantDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.ClaimantDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Claimant Details information</info>
+  </tag>
+
+  <tag>
+    <name>PolicyDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.PolicyDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Policy Details information</info>
+  </tag>
+  <tag>
+    <name>InsuranceCompany</name>
+    <tagclass>com.ttk.common.tags.preauth.InsuranceCompany</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Insurance information</info>
+  </tag>
+  <tag>
+    <name>CorporateDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.CorporateDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Corporate Details</info>
+  </tag>
+  <tag>
+    <name>HospitalizationDetails</name>
+    <tagclass>com.ttk.common.tags.preauth.HospitalizationDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Hospitalization Details</info>
+  </tag>
+  <tag>
+        <name>HospitalDetails</name>
+        <tagclass>com.ttk.common.tags.preauth.HospitalDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the selected Hospital Details </info>
+  </tag>
+  <tag>
+    <name>PolicyDetailHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.PolicyDetailHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Policy History information</info>
+  </tag>
+  <tag>
+    <name>PreAuthHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.PreAuthHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Pre-Authorization Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>ClaimantHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.ClaimantHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Claimant Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>PolicyHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.PolicyHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Policy Details in Pre-Auth History</info>
+  </tag>
+
+  <tag>
+    <name>IcsPcsHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.IcsPcsHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display ICD  PCS Coding Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>HospitalHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.HospitalHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Hospital Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>AuthorizationHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.AuthorizationHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Authorization Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>NarrationHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.NarrationHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Narration Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>ClaimantDetailHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.ClaimantDetailHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Claims Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>SettlementHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.SettlementHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Claims Details in Pre-Auth History</info>
+  </tag>
+  <tag>
+    <name>ChequeInfoHistory</name>
+    <tagclass>com.ttk.common.tags.preauth.ChequeInfoHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Claims Details in Pre-Auth/Claims History</info>
+  </tag>
+  <tag>
+    <name>InsuranceApprovePage</name>
+    <tagclass>com.ttk.common.tags.preauth.InsuranceApprovePage</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Claims Details in Approval Awaited from Insurers </info>
+  </tag>
+  <tag>
+    <name>ReportsList</name>
+    <tagclass>com.ttk.common.tags.reports.ReportsLink</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Reports List as links</info>
+  </tag>
+  <tag>
+    <name>WebLoginReportsLink</name>
+    <tagclass>com.ttk.common.tags.reports.WebLoginReportsLink</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display WebLogin Reports List as links</info>
+  </tag>
+  <tag>
+    <name>ReportParameter</name>
+    <tagclass>com.ttk.common.tags.reports.ReportParameter</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Reports Parameters</info>
+  </tag>
+  <tag>
+    <name>OnlineReportParameter</name>
+    <tagclass>com.ttk.common.tags.onlinereports.OnlineReportParameter</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display Online Reports Parameters</info>
+  </tag>
+  <tag>
+    <name>ClauseDetails</name>
+    <tagclass>com.ttk.common.tags.ClauseDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display selected clauses</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+      <name>ClauseList</name>
+      <tagclass>com.ttk.common.tags.preauth.ClauseListTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display the selected clauses in Pre-Auth RuleData</info>
+  </tag>
+  <tag>
+      <name>RuleData</name>
+      <tagclass>com.ttk.common.tags.preauth.RuleDataTag</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display field elements to collect the information about the member in Pre-Auth RuleData</info>
+  </tag>
+   <tag>
+			<name>RuleResult</name>
+			<tagclass>com.ttk.common.tags.preauth.RuleDataResultTag</tagclass>
+			<bodycontent>empty</bodycontent>
+			<info>To display the selected clauses in Pre-Auth RuleData</info>
+	</tag>
+	<tag>
+			<name>CoverageList</name>
+			<tagclass>com.ttk.common.tags.preauth.CoverageList</tagclass>
+			<bodycontent>empty</bodycontent>
+			<info>To display coverage list</info>
+	</tag>
+   <tag>
+        <name>ShortFallQueries</name>
+        <tagclass>com.ttk.common.tags.preauth.ShortFallQueries</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Shortfall queries</info>
+        <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <!-- Shortfall CR KOC1179 -->
+   <tag>
+        <name>ShortFallQueriesClaims</name>
+        <tagclass>com.ttk.common.tags.preauth.ShortFallQueriesClaims</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Shortfall queries for Claims</info>
+  </tag>
+  <!-- End Shortfall CR KOC1179 -->
+  <tag>
+        <name>EnrollmentRule</name>
+        <tagclass>com.ttk.common.tags.enrollment.EnrollmentDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Enrollment rules</info>
+  </tag>
+  <tag>
+        <name>DocumentChkList</name>
+        <tagclass>com.ttk.common.tags.claims.DocumentChkList</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Document Check List</info>
+  </tag>
+  <tag>
+        <name>ClaimBatchDeatils</name>
+        <tagclass>com.ttk.common.tags.claims.ClaimBatchDeatils</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Claim Batch Amount List</info>
+        <attribute>
+      <name>submissionType</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  <tag>
+          <name>MemberRule</name>
+          <tagclass>com.ttk.common.tags.enrollment.MemberRuleData</tagclass>
+          <bodycontent>empty</bodycontent>
+          <info>To display the Enrollment rules</info>
+  </tag>
+  <tag>
+      <name>RuleVerification</name>
+      <tagclass>com.ttk.common.tags.administration.RuleVerification</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display the Defined Rules for the user verification</info>
+  </tag>
+  <!-- End Pre-Authorization -->
+  <!-- Online forms -->
+  <tag>
+      <name>OnlinePolicyHistory</name>
+      <tagclass>com.ttk.common.tags.onlineforms.OnlinePolicyHistory</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Policy Details in Online Enrollment</info>
+  </tag>
+  <tag>
+      <name>OnlinePreAuthHistory</name>
+      <tagclass>com.ttk.common.tags.onlineforms.OnlinePreAuthHistory</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Preauth Details in Online Enrollment</info>
+  </tag>
+  <tag>
+      <name>OnlineClaimHistory</name>
+      <tagclass>com.ttk.common.tags.onlineforms.OnlineClaimHistory</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Claim Details in Online Enrollment</info>
+  </tag>
+  <tag>
+      <name>OnlineHomeDetails</name>
+      <tagclass>com.ttk.common.tags.onlineforms.OnlineHomeDetails</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online Home Details in Web Login</info>
+  </tag>
+  <!-- Added as per Hospital Login -->
+  <tag>
+      <name>OnlineHospHomeDetails</name>
+      <tagclass>com.ttk.common.tags.hospital.OnlineHospHomeDetails</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Hospital Home Details in Web Login</info>
+  </tag>
+  
+   <tag>
+      <name>OnlineHospPreauthDashBoard</name>
+      <tagclass>com.ttk.common.tags.hospital.OnlineHospPreauthDashBoard</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Hospital Home Details in Web Login</info>
+  </tag>
+   <tag>
+      <name>OnlineHospClaimDashBoard</name>
+      <tagclass>com.ttk.common.tags.hospital.OnlineHospClaimDashBoard</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Hospital Home Details in Web Login</info>
+  </tag>
+  
+  <!-- Added For the Partner Login -->
+   <tag>
+      <name>OnlinePtnrPreauthDashBoard</name>
+      <tagclass>com.ttk.common.tags.partner.OnlinePtnrPreauthDashBoard</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Partner Home Details in Web Login</info>
+  </tag>
+   <tag>
+      <name>OnlineHospClaimDashBoard</name>
+      <tagclass>com.ttk.common.tags.hospital.OnlineHospClaimDashBoard</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Hospital Home Details in Web Login</info>
+  </tag>
+  <!-- Added for the Partner -->
+  <tag>
+      <name>OnlinePtnrClaimDashBoard</name>
+      <tagclass>com.ttk.common.tags.partner.OnlinePtnrClaimDashBoard</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online  Partner Home Details in Web Login</info>
+  </tag>
+  
+  <tag>
+    <name>OnlineHospitalHistory</name> 
+    <tagclass>com.ttk.common.tags.hospital.OnlineHospitalHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To Display Pre-Auth or Claim History Details </info>
+  </tag>
+  
+  
+    <tag>
+    <name>HospitalClaimantDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.preauth.ClaimantDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Claimant Details information</info>
+  </tag>
+  <!-- intX -->
+  <!-- Added as per Partner Login -->
+  <tag>
+      <name>OnlinePartnerHomeDetails</name>
+      <tagclass>com.ttk.common.tags.partner.OnlinePartnerHomeDetails</tagclass>
+      <bodycontent>empty</bodycontent>
+      <info>To display Online Partner Home Details in Web Login</info>
+  </tag> 
+  
+  
+  <tag>
+    <name>BankRenewHistory</name>
+    <tagclass>com.ttk.common.tags.finance.BankRenewHistory</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the History of Bank Guarantee</info>
+  </tag><tag>
+    <name>EmpanelmentFinanceDocs</name>
+    <tagclass>com.ttk.common.tags.finance.EmpanelmentFinanceDocs</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the FIles Uploaded at Empanelment</info>
+  </tag>
+  <!--INTX ENDS -->
+   <tag>
+    <name>HospitalLoginPolicyDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.preauth.PolicyDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Policy Details information</info>
+  </tag>
+  
+   <tag>
+    <name>HospitalLoginInsuranceCompany</name>
+    <tagclass>com.ttk.common.tags.hospital.preauth.InsuranceCompany</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Insurance information</info>
+  </tag>
+  
+  <tag>
+    <name>HospitalLoginCorporateDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.preauth.CorporateDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the selected Corporate Details</info>
+  </tag>
+  
+   <tag>
+        <name>HospitalLoginHospitalDetails</name>
+        <tagclass>com.ttk.common.tags.hospital.preauth.HospitalDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the selected Hospital Details </info>
+  </tag>
+  <!-- Added as per Hospital Login -->
+  
+  
+  <!-- Added as per Insurance Login -->
+  <tag>
+        <name>IsuranceLoginEnrollmentDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.InsGoblalEnrollmentDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Enrollment Details </info>
+  </tag>
+  <tag>
+        <name>IsuranceLoginClaimDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.InsGoblalClaimDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Claim Details </info>
+  </tag>
+  <tag>
+        <name>IsuranceLoginCallCenterDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.InsGoblalCallCenteretails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Call CenterDetails </info>
+  </tag>
+  <tag>
+        <name>IsuranceLoginNetworkDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.InsGoblalNetworkDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Call CenterDetails </info>
+  </tag>
+  <tag>
+        <name>DependentDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.DependentDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Dependent Details </info>
+  </tag>
+  <tag>
+        <name>RetailDependentDetails</name>
+        <tagclass>com.ttk.common.tags.onlineforms.insuranceLogin.RetailDependentDetails</tagclass>
+        <bodycontent>empty</bodycontent>
+        <info>To display the Retail Dependent Details </info>
+  </tag>
+  
+  
+  <!-- End as per Insurance Login -->
+  <tag>
+    <name>AccountHeadInfo</name>
+    <tagclass>com.ttk.common.tags.preauth.AccountHeadInfo</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display selected clauses</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <!--  Rules Engine Enhancement related tags : Added on 26/02/2008 -->
+  <tag>
+    <name>BusinessErrors</name>
+    <tagclass>com.ttk.common.tags.BusinessErrors</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Business Errors</info>
+    <attribute>
+      <name>name</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>scope</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+   <tag>
+    <name>AccessMenues</name>
+    <tagclass>com.ttk.common.tags.broker.AccessMenues</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Access Menues In Broker login</info>
+  </tag>
+  <tag>
+    <name>BrokerSummaryViews</name>
+    <tagclass>com.ttk.common.tags.broker.BrokerSummaryViews</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Broker Summary Views In Broker login</info>
+  </tag>
+  <tag>
+    <name>BrokerDetailedViews</name>
+    <tagclass>com.ttk.common.tags.broker.BrokerDetailedViews</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Broker Detailed Views In Broker login</info>
+  </tag>
+  <tag>
+    <name>HistoryOfTariffUpdates</name>
+    <tagclass>com.ttk.common.tags.hospital.HistoryOfTariffUpdates</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the History Of Tariff Updates for HAAD Providers</info>
+  </tag>
+  
+   <tag>
+    <name>ProviderLocationCopayDetails</name>
+    <tagclass>com.ttk.common.tags.administration.ProviderLocationCopayDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the  provider Copay Details</info>
+  </tag>
+  <tag>
+    <name>ProviderCopayCondionDetails</name>
+    <tagclass>com.ttk.common.tags.administration.ProviderCopayCondionDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the  provider Copay Details Display</info>
+  </tag>
+  <tag>
+    <name>ProviderConfDetailsView</name>
+    <tagclass>com.ttk.common.tags.administration.ProviderConfDetailsView</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the  provider Configuration Details</info>
+  </tag>
+  <tag>
+    <name>RuleBenefitsDisplay</name>
+    <tagclass>com.ttk.common.tags.administration.RuleBenefitsDisplay</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the  Rule Benefits Details</info>
+  </tag>
+  <tag>
+    <name>RuleBenefitsConf</name>
+    <tagclass>com.ttk.common.tags.administration.RuleBenefitsConfiguration</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the  Rule Benefits Details Configuration</info>
+  </tag>
+   <tag>
+    <name>ConfigWindowDetails</name>
+    <tagclass>com.ttk.common.tags.administration.ConfigWindowDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To ConfigWindowDetails</info>
+  </tag>
+  <tag>
+    <name>DynConsultRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynConsultRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynConsultRuleConfDetails</info>
+  </tag>
+  <tag>
+    <name>DynInvestRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynInvestRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynInvestRuleConfDetails</info>
+  </tag>
+  <tag>
+    <name>DynPhysioRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynPhysioRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynPhysioRuleConfDetails</info>
+  </tag>
+  <tag>
+    <name>DynPharmaRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynPharmaRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynPharmaRuleConfDetails</info>
+  </tag>
+  
+  <!-- DynVaccinRuleConfDetails added by govind -->
+    <tag>
+    <name>DynVaccinRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynVaccinRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynVaccinRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynAltTmtRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynAltTmtRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynAltTmtRuleConfDetails</info>
+  </tag>
+  
+  <!-- new -->
+  
+     <tag>
+    <name>DynDEOTRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynDEOTRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynDEOTRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynEyeCareRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynEyeCareRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynEyeCareRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynGyncolgyRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynGyncolgyRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynGyncolgyRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynMinrSrgryRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynMinrSrgryRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynMinrSrgryRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynNaslCrctionRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynNaslCrctionRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynNaslCrctionRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynOnclgyRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynOnclgyRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynOnclgyRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynOgnTrnspltRcptRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynOgnTrnspltRcptRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynOgnTrnspltRcptRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynPsychiatricRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynPsychiatricRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynPsychiatricRuleConfDetails</info>
+  </tag>
+  
+     <tag>
+    <name>DynRnlDlsRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynRnlDlsRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynRnlDlsRuleConfDetails</info>
+  </tag>
+  
+  
+  <!-- govind -->
+  <tag>
+  
+    <name>MOHProviderLocationCopayDetails</name>
+    <tagclass>com.ttk.common.tags.administration.MOHProviderLocationCopayDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To MOHProviderLocationCopayDetails</info>
+  </tag>
+    <tag>
+    <name>MOHProviderConfDetailsView</name>
+    <tagclass>com.ttk.common.tags.administration.MOHProviderConfDetailsView</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To MOHProviderConfDetailsView</info>
+  </tag>
+   <tag>
+    <name>MOHProviderCopayCondionDetails</name>
+    <tagclass>com.ttk.common.tags.administration.MOHProviderCopayCondionDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To MOHProviderCopayCondionDetails</info>
+  </tag>
+  <tag>
+    <name>DynCompanRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynCompanRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynCompanRuleConfDetails</info>
+  </tag>
+  <tag>
+    <name>DynAmbulanceRuleConfDetails</name>
+    <tagclass>com.ttk.common.tags.administration.DynAmbulanceRuleConfDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To DynAmbulanceRuleConfDetails</info>
+  </tag>
+   <tag>
+    <name>MOHBenefitsWebBoards</name>
+    <tagclass>com.ttk.common.tags.administration.MOHBenefitsWebBoards</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To MOHBenefitsWebBoards</info>
+  </tag>
+  
+    <tag>
+    <name>ConfigWindowDetails</name>
+    <tagclass>com.ttk.common.tags.administration.ConfigWindowDetails</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To ConfigWindowDetails</info>
+  </tag>
+   
+  <tag>
+    <name>EditIrdrgParameters</name>
+    <tagclass>com.ttk.common.tags.hospital.IrdrgParameters</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the History Of Edited Irdrg Parameters</info>
+  </tag>
+ 
+  <tag>
+    <name>IrdrgAuditLog</name>
+    <tagclass>com.ttk.common.tags.hospital.IrdrgAuditLog</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Irdrg AuditLog</info>
+  </tag>
+  
+   <tag>
+    <name>PreauthDocsUpload</name>
+    <tagclass>com.ttk.common.tags.preauth.PreauthDocsUpload</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the Preauth Upload Data</info>
+   </tag>
+   
+	 <tag>
+    <name>ProviderDiagnosisDetails</name>
+    <tagclass>com.ttk.common.tags.hospital.ProviderDiagnosisDetails</tagclass> 
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Diagnosis Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+   <tag>
+    <name>Activity</name>
+    <tagclass>com.ttk.common.tags.hospital.ActivityDetails</tagclass> 
+    <bodycontent>empty</bodycontent>
+    <info>To display the Added Diagnosis Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>PreAuthHistoryDetails2</name>
+    <tagclass>com.ttk.common.tags.preauth.PreAuthHistoryDetails2</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info>To display the PreAuth History Details</info>
+    <attribute>
+      <name>flow</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+<!--  End of Adding  -->
+
+</taglib>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortfall>
+  <section name="Medical">     
+<subsection name="MedicalQueries">
+<query id="MedicalQuery.1" postlabel="Clarification from the Insured for Delay in Submission of Claims"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.2" postlabel="Claim Form duly completed and signed by the insured on the prescribed format original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.3" postlabel="Medical Certificate Form (Prescribed one) completed and signed by the hospital authorities authenticated with Rubber  Stamp"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.4" postlabel="Detailed Discharge Summary from the Hospital on the Hospital Letter-head - Original authenticated with Rubber Stamp"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.5" postlabel="Date-wise Treatment Summary for Dialysis (in the place of Discharge Summary)"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.6" postlabel="Date-wise Treatment Summary for Chemotherapy/ Radiotherapy (in the place of Discharge Summary)"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.7" postlabel="Death Summary (instead of Discharge Summary) in case the patient has passed away during hospitalisation - original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.8" postlabel="First Consultation Papers - Original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.9" postlabel="OPD Consultation Papers prior to Hospitalisation - Original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.10" postlabel="Admission Notes from the Hospital - certified copy"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.11" postlabel="Treatment Chart from the Hospital - certified copy"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.12" postlabel="Indoor Case Papers from the Hospital - certified copy"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.13" postlabel="Hospital Main Inpatient Bill - original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.14" postlabel="Printed/ Serially Numbered Receipt for the amount paid against the Hospital Main Inpatient Bill - Original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.15" postlabel="Advance Receipt, paid if any - Original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.16" postlabel="Break-up bill for the Hospital Main Inpatient Bill - Original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.17" postlabel="Break up Bill for the Pharmacy/ Consumables / OT Materials"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.18" postlabel="Detailed bill for the non-admissible amounts collected from the patient"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.19" postlabel="Receipt for the amount collected from the patient"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.20" postlabel="Pharmacy Bills in original for medicines purchased during hospitalisation"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.21" postlabel="Prescriptions with Duration and Dosage for medicines purchased during hospitalisation"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.22" postlabel="Investigation reports - in original for investigations done during hospitalisation"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.23" postlabel="Histopathology report, if any, in original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.24" postlabel="Echo report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.25" postlabel="Angiogram (CAG) Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.26" postlabel="USG report - pre operative"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.27" postlabel="USG report - post operative"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.28" postlabel="MRI Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.29" postlabel="CT Scan Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.30" postlabel="ECG Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.31" postlabel="X-ray Plates/ Films"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.32" postlabel="X-ray Reports"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.33" postlabel="All Laboratory/ Investigation Reports"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.34" postlabel="Report confirming Diagnosis"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.35" postlabel="Blood Alcohol Report at the time of accident/ admission"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.36" postlabel="Bill and Receipt for the Investigations conducted during hospitalisation"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.37" postlabel="Certificate from treating Doctor on Any risk factors contributing to present ailment"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.38" postlabel="Details of previous treatment taken"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.39" postlabel="Certificate from treating Doctor on Relevance of past history to present problem in his/her expert opinion"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.40" postlabel="Obstetric history / Gravida Status from the Hospital"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.41" postlabel="Copy of Registration Certificate of Hospital Nursing Home issued by City Municipality/ Corporation"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.42" postlabel="MLC report/ FIR for accident cases - certified copy"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.43" postlabel="Detailed Clarification on the circumstances of the accident and the Injury/ First Aid obtained etc in case no Police"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.44" postlabel="Certifiate from the hospital confirming Date and Time of Admission and Date and Time of Discharge"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.45" postlabel="Certificate from the Treating Doctor on the Etiology/ Cause"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.46" postlabel="Certificate from treating Doctor on Duration of the ailments"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.47" postlabel="Certificate from treating Doctor on Duration/ History of Diabetes"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.48" postlabel="Certificate from treating Doctor on Duration/ History of Hypertension"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.49" postlabel="Certificate from treating Doctor on Duration/ History of Heart Disease"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.50" postlabel="Certificate from treating Doctor on Duration/ History of Bronchial Asthma"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.51" postlabel="Certificate from treating Doctor on Duration/ History of COPD"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.52" postlabel="Certificate from treating Doctor on Duration/ History of Osteoarthritis"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.53" postlabel="Certificate from treating Doctor on Duration/ History of Any other ailment/s"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.54" postlabel="Certificate from treating Doctor on Any other significant past history given by patient"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.55" postlabel="Certificate from the treating Doctor on the degree of refractive Error supported by the Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.56" postlabel="Sticker for the implants used - original"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.57" postlabel="Invoice for the implants used - Copy"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.58" postlabel="PTCA Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.59" postlabel="CABG Report"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.60" postlabel="Confirmation from the hospital for non-utilisation of the cashless facility, if any sanctioned"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.61" postlabel="Investigation reports - in original - for investigations done prior to admission"   control="input" type="checkbox"  value="YES" received="NO"/>
+<query id="MedicalQuery.62" postlabel="OPD Consultation Paper with details of presenting complaints/ Diagnosis"   control="input" type="checkbox"  value="YES" received="NO"/>
+   </subsection>      
+  </section>  
+  <section name="Others">
+    <subsection name="OtherQueries">
+	 <query id="OtherQuery.1" postlabel=""  control="textArea" type="text"  value="" received="NO" />
+   </subsection>
+  </section>
+</shortfall>

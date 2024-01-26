@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	  <configuration>
+        <operator type="numeric">
+          <display control="select" type="single" default="" optText="&lt;&gt;,=,&lt;,&lt;=,&gt;,&gt;="
+				altText="should be not equal to,should be equal to,should be less than,should be less than or equal to,should be greater than,should be greater than or equal to" optVal="NE,EQ,LT,LE,GT,GE" />
+        </operator>
+        <operator type="text">
+          <display control="select" type="single" default="" optText="&lt;&gt;,=,contains,does not contain"
+				altText="should be not equal to,should be equal to,should be present in ,should not be present in" optVal="NE,EQ,IN,NOTIN" />
+        </operator>
+        <operator type="date">
+          <display control="select" type="single" default="" optText="&lt;&gt;,=,&lt;,&lt;=,&gt;,&gt;=,contains,does not contain"
+	  				altText="should be not equal to,should be equal to,should be less than,should be less than or equal to,should be greater than,should be greater than or equal to,should be present in ,should not be present in" optVal="NE,EQ,LT,LE,GT,GE,IN,NOTIN" />
+        </operator>
+        <operator type="notText">
+          <display control="select" type="single" default="" optText="contains"
+				altText=" and cities selected for this region are " optVal="IN" />
+        </operator>
+
+		<lookup name="unit">
+          <display control="select" type="single" default="" optText="days,months,years,per Claim,per Total Policy Period,per Day,per Month,per Year" altText="days,months,years,per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="DD,MM,YY,PC,PP,PD,PM,PY" />
+        </lookup>
+		<lookup name="Relationships">
+          <display control="select" type="single" default="" optText="Father,Mother,Wife,Son,Daughter"
+	  				altText="Father,Mother,Wife,Son,Daughter" optVal="F001,M001,W001,S001,D001" />
+        </lookup>
+		<lookup name="Account Heads">
+          <display control="select" type="single" default="" optText="Room&amp;Boarding expenses,ICU charges,Anaesthesist charges,Specialist charges,Surgeon charges"
+	  				altText="Room&amp;Boarding expenses,ICU charges,Anaesthesist charges,Specialist charges,Surgeon charges" optVal="ROO,ICU,ANC,SPE,SUF" />
+        </lookup>
+      </configuration>

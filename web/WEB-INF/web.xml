@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+			id="WebApp_ID" version="3.0">
+	<!-- for generating pdf/excel -->
+	<servlet>
+		<servlet-name>binaryFileServlet</servlet-name>
+        <servlet-class>com.ttk.common.tags.BinaryStreamServlet</servlet-class>
+    </servlet>
+    <servlet>
+		<servlet-name>binaryFileServlet1</servlet-name>
+        <servlet-class>com.ttk.common.tags.BinaryStreamReportServlet</servlet-class>
+    </servlet>
+    
+      <servlet>
+	  <servlet-name>schedularServlet</servlet-name>
+        <servlet-class>com.ttk.common.tags.SchedularServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+     </servlet>   
+
+	
+	
+   <servlet>
+    		<servlet-name>imageFileServlet</servlet-name>
+            <servlet-class>com.ttk.common.tags.misreports.ImageServlet</servlet-class>
+   </servlet>
+
+ <servlet>
+	  <servlet-name>RuleEngineServlet</servlet-name>
+        <servlet-class>com.ttk.common.RuleEngineServlet</servlet-class>
+        <load-on-startup>4</load-on-startup>
+</servlet>
+
+ <servlet>
+		<servlet-name>MasterBaseRuleServlet</servlet-name>
+        <servlet-class>com.ttk.common.tags.MasterBaseRuleServlet</servlet-class>
+        <load-on-startup>200</load-on-startup>
+    </servlet>
+ 
+        <servlet-mapping>
+        		<servlet-name>imageFileServlet</servlet-name>
+        	    <url-pattern>/ImageServlet</url-pattern>
+    	</servlet-mapping>
+
+    	<servlet-mapping>
+        		<servlet-name>RuleEngineServlet</servlet-name>
+        	    <url-pattern>/RuleEngineServlet</url-pattern>
+    	</servlet-mapping>
+
+		<servlet-mapping>
+      <servlet-name>MasterBaseRuleServlet</servlet-name>
+      <url-pattern>/BaseRuleServlet</url-pattern>
+    </servlet-mapping>
+	<!-- END : ImageServlet -->
+
+  <listener>
+        <listener-class>org.apache.axis.transport.http.AxisHTTPSessionListener</listener-class>
+    </listener>
+
+    <!-- START : Added for webservice -->
+   <servlet>
+    <display-name>Apache-Axis Servlet</display-name>
+      <servlet-name>AxisServlet</servlet-name>
+      <servlet-class>
+          org.apache.axis.transport.http.AxisServlet
+      </servlet-class>
+    </servlet>
+
+    <servlet>
+     <display-name>Axis Admin Servlet</display-name>
+      <servlet-name>AdminServlet</servlet-name>     
+      <servlet-class>
+          org.apache.axis.transport.http.AdminServlet
+      </servlet-class>
+      <load-on-startup>100</load-on-startup>
+    </servlet>
+	<servlet-mapping>
+    		<servlet-name>binaryFileServlet</servlet-name>
+    	    <url-pattern>/binaryFile</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+    		<servlet-name>binaryFileServlet1</servlet-name>
+    	    <url-pattern>/binaryFileReport</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+      <servlet-name>AxisServlet</servlet-name>
+      <url-pattern>/servlet/AxisServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>AxisServlet</servlet-name>
+      <url-pattern>*.jws</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+      <servlet-name>AxisServlet</servlet-name>
+      <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+
+   <!-- uncomment this if you want the admin servlet -->
+  	  <servlet-mapping>
+      <servlet-name>AdminServlet</servlet-name>
+      <url-pattern>/servlet/AdminServlet</url-pattern>
+    </servlet-mapping>
+ 
+     <mime-mapping>
+      <extension>wsdl</extension>
+       <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+
+    <mime-mapping>
+      <extension>xsd</extension>
+      <mime-type>text/xml</mime-type>
+    </mime-mapping>
+
+  <!-- END: for webservice -->
+
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>application</param-name>
+      <param-value>ApplicationResources</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>2</param-value>
+    </init-param>
+    <init-param>
+      <param-name>validate</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+   <!--<security-constraint>
+  	<web-resource-collection>
+    	<web-resource-name>TTKServices</web-resource-name>
+    	<url-pattern>/binaryFile</url-pattern>
+    	<url-pattern>/servlet/AxisServlet</url-pattern>
+    </web-resource-collection>
+  	<auth-constraint>
+        <role-name>JBossAdmin</role-name>
+    </auth-constraint>
+  </security-constraint>-->
+
+  <login-config>
+    <auth-method>DIGEST</auth-method>
+    <realm-name>digest</realm-name>
+  </login-config>
+
+  <!-- Security roles referenced by this web application -->
+   <!--<security-role>
+  	<description>
+    	The role that is required to log in to the JBossAdmin Application
+  	</description>
+  	<role-name>JBossAdmin</role-name>
+  </security-role>-->
+
+
+  <!-- The Usual Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>/ttk/index.jsp</welcome-file>
+    <welcome-file>/ttk/onlineaccess.jsp</welcome-file>
+  </welcome-file-list>
+	<!-- <error-page>
+    <error-code>500</error-code>
+    <location>http://10.1.0.200/ttk/index.jsp</location>
+  </error-page>-->
+  <!-- Struts Tag Library Descriptors -->
+  <jsp-config>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-bean.tld</taglib-uri>
+    <taglib-location>/WEB-INF/tlds/struts-bean.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-html.tld</taglib-uri>
+    <taglib-location>/WEB-INF/tlds/struts-html.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-logic.tld</taglib-uri>
+    <taglib-location>/WEB-INF/tlds/struts-logic.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>/WEB-INF/struts-tiles.tld</taglib-uri>
+    <taglib-location>/WEB-INF/tlds/struts-tiles.tld</taglib-location>
+  </taglib>
+</jsp-config>
+</web-app>

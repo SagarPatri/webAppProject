@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="General Limitations" allowed="NO" type="rule" execution="PRE">
+      <coverage id="" name="Per Family" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per member (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per family (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Self" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','NSF')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit to self (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Spouse" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','YSP')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit to spouse (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Son" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','NS1')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per son (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofsons" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('NS1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of sons" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Daughter" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','ND1')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per daughter (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofdaughters" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('ND1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of daughters" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Brother" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','NB1')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per brother (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofbrothers" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('NB1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of brothers" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Sister" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','NL1')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per sister (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofsisters" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('NL1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of sisters" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Parents" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','NFR,YMO')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per parent (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofparents" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('NFR,YMO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of parents" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="member.elapsedperiod" op="LE" value="~" clfactor="10" mandatory="YES" method="get_member_elapsed_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Date of first member inception" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <text>
+          Please check parents belong to unmarried employee (Applicable to coporate/group policy only).
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Parents-in-laws" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. Age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <!-- TO CHANGE: Proper relationship code -->
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_relationship_limit(~,~,'~','~','YFL,YML')" clfactor="10" mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Limit per parent-in-law (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.numberofparentinlaws" op="LE" value="~" clfactor="10" mandatory="YES" method="get_dependent_count('YFL,YML')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. number of parents-in-laws" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <condition id="" field="member.elapsedperiod" op="LE" value="~" clfactor="10" mandatory="YES" method="get_member_elapsed_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Date of first member inception" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <text>
+          Dependent/Non-Dependent status to be verified.
+        </text>
+        <text>
+          Please check parents belong to unmarried employee (Applicable to coporate/group policy only).
+        </text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

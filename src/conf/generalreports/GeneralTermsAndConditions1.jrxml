@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/jboss/dtds/jasperreport.dtd">
+<jasperReport
+		 name="GeneralTermsAndConditions1"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="40"  isSplitAllowed="true" >
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="399"
+						y="3"
+						width="134"
+						height="35"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/vidal_AE_Logo.PNG"]]></imageExpression>
+				</image>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="680"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="8"
+						y="5"
+						width="523"
+						height="23"
+						forecolor="#000000"
+						key="staticText-2"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[ Exclusions & Conditions]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8"
+						y="28"
+						width="109"
+						height="574"
+						forecolor="#000000"
+						key="staticText-3"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="117"
+						y="28"
+						width="414"
+						height="574"
+						forecolor="#000000"
+						key="staticText-4"/>
+					<box>					<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font fontName="Calibri" pdfFontName="Helvetica" size="12" isBold="false" isItalic="false" isUnderline="false"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11"
+						y="32"
+						width="100"
+						height="563"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Excluded (non-basic) healthcare services.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="121"
+						y="33"
+						width="405"
+						height="562"
+						key="textField-1"/>
+					<box></box>
+					<textElement>
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[" 20.Costs associated with hearing tests, vision corrections,prosthetic\n      devices or hearing and vision aids.\n 21.Mental Health diseases, both out-patient and in-patient treatments,\n      unless it is an emergency condition.\n 22.Patient treatment supplies (including for example: elastic stockings,\n      ace bandages, gauze, syringes, diabetic test strips, and like \n      products; non-prescription drugs and treatments,) excluding supplies\n      required as a result of Healthcare Services rendered during a \n      Medical Emergency.\n 23.Allergy testing and desensitization (except testing for allergy\n      towards medications and supplies used in treatment); any\n      physical,psychiatric or psychological examinations or investigations\n      during these examinations.\n 24.Services rendered by any medical provider who is a relative of the\n      patient for example the Insured person himself or first degree relatives.\n 25.Enteral feedings (via a tube) and other nutritional and electrolyte \n      supplements,unless medically necessary during treatment.\n 26.Healthcare services for adjustment of spinal subluxation,\n     diagnosis and treatment by manipulation of the skeletal structure, by \n      any means, except treatment of bone fractures and joint dislocations.\n 27.Healthcare services and treatments by acupuncture; acupressure,\n      hypnotism massage therapy, aromatherapy, ozone therapy,\n      homeopathic treatments, and all forms of treatment by alternative\n      medicine.\n 28.All healthcare services & treatments for in-vitro\n      fertilization (IVF), embryo transfer; ovum and sperms transfer.\n 29.Elective diagnostic services and medical treatment for correction of\n     vision.\n 30.Nasal septum deviation and nasal concha resection. \n 31.All chronic conditions requiring hemodialysis or peritoneal dialysis,\n      and related investigations, treatments or procedures. \n 32.Healthcare services, investigations and treatments related to viral\n      hepatitis and associated complications, except for the treatment and\n      services related to Hepatitis A.\n 33.Birth defects, congenital diseases for newborn and deformities \n      unless life threatening.\n 34.Healthcare services for senile dementia and Alzheimer’s disease. \n 35.Air or terrestrial medical evacuation and unauthorized\n      transportation services.\n 36.Inpatient treatment received without prior approval from the insurance \n      company including cases of medical emergency which were not notified \n      within 24 hours from the date of admission."]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="34"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="8"
+						y="3"
+						width="179"
+						height="27"
+						forecolor="#666666"
+						key="staticText-5"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement>
+						<font fontName="Calibri" pdfFontName="Helvetica-BoldOblique" size="9" isBold="true" isItalic="true"/>
+					</textElement>
+				<text><![CDATA[© Vidal Health.  All rights reserved.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="482"
+						y="3"
+						width="51"
+						height="27"
+						forecolor="#999999"
+						key="staticText-6"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center">
+						<font fontName="Calibri" pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[19]]></text>
+				</staticText>
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

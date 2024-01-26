@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Usage Restrictions" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Cashless in preferred hospitals" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.claimtype" op="EQ" value="CNH" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_TYPE" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Request type" operator="text" control="" type="" default="" postlabel="cashless" jscall=""/>
+        </condition>
+        <condition id="" field="request.providerstatus" op="EQ" value="PRF" clfactor="10" mandatory="YES" method="REQUEST.PROVIDER_STATUS" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Hospital" operator="text" control="" type="" default="" postlabel="preferred" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Cashless in restricted hospitals" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.claimtype" op="EQ" value="CNH" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_TYPE" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Request type" operator="numeric" control="" type="" default="" postlabel="cashless" jscall=""/>
+        </condition>
+        <condition id="" field="request.providerstatus" op="EQ" value="NPR" clfactor="10" mandatory="YES" method="REQUEST.PROVIDER_STATUS" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Hospital" operator="text" control="" type="" default="" postlabel="restricted" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="MR in restricted hospitals" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.claimtype" op="EQ" value="CTM" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_TYPE" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Request type" operator="text" control="" type="" default="" postlabel="member reimbursement" jscall=""/>
+        </condition>
+        <condition id="" field="request.providerstatus" op="EQ" value="NPR" clfactor="10" mandatory="YES" method="REQUEST.PROVIDER_STATUS" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Hospital" operator="text" control="" type="" default="" postlabel="restricted" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <!-- NEW: need to provide proper codes for the drop down -->
+      <coverage id="" name="Covered hospitals" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.hospitaltype" op="EQ" value="~" clfactor="10" mandatory="YES" method="get_hospital_type()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Type of hospitals covered" operator="text" control="select" type="single" default="" optText="Network Hospitals,Non-Network Hospitals,Both" altText="Network Hospitals,Non-Network Hospitals,Both" optVal="NW,NN,NW:NN" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <!-- NEW: need to provide proper text -->
+      <coverage id="" name="Copayment to hospital" allowed="NO" module="P" clpercentage="" selected="">
+        <text>
+          Please check if copayment is required for the hospital.
+        </text>
+      </coverage>
+    </clause>

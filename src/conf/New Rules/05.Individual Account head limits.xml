@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Individual Account head limits" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Room,Boarding expenses" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ROO')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Room,Boarding expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 1" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 1 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 2" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 2 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 3" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 3 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 4" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 4 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 5" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 5 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 6" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 6 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 7" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 7 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 8" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 8 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 9" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 9 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Room,Boarding expenses for Employee Level 10" allowed="~" module="P" clpercentage="" selected="" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.roomboardamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ROO')" clfactor="10"	mandatory="NO" method="get_account_amount('ROO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Level 10 expenses (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Nursing/Attendant charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('NUC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date " control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.nursingamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','NUC')" clfactor="10"	mandatory="NO" method="get_account_amount('NUC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Nursing/Attendant charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="ICU charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ICU')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.icuamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ICU')" clfactor="10" mandatory="NO" method="get_account_amount('ICU')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="ICU charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Anaesthesist charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ANC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.anaesthesistamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ANC')" clfactor="10" mandatory="NO" method="get_account_amount('ANC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Anaesthesist charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Specialist charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('SPE')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.specialistamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','SPE')" clfactor="10" mandatory="NO" method="get_account_amount('SPE')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Specialist charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Surgeon charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('SUF')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.surgeonamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','SUF')" clfactor="10" mandatory="NO" method="get_account_amount('SUF')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Surgeon charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Medical practitioner fee" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('PRO')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.practitioneramount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PRO')" clfactor="10" mandatory="NO" method="get_account_amount('PRO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Medical practitioner fee (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Blood charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('BFR')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.bloodamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','BFR')" clfactor="10" mandatory="NO" method="get_account_amount('BFR')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Blood charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Blood and fluid replacement" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('BFR')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+          <display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.bframount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','BFR')" clfactor="10" mandatory="NO" method="get_account_amount('BFR')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Blood and fluid replacement charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Laboratory Investigations" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('LAI')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.laboratoryamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','LAI')" clfactor="10" mandatory="NO" method="get_account_amount('LAI')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Laboratory charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Radiology Investigations" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('RAI')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.radiologyamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','RAI')" clfactor="10" mandatory="NO" method="get_account_amount('RAI')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Radiology charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Overall Investigation charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('LAI')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.totalinvestigationamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','LAI')" clfactor="10" mandatory="NO" method="get_account_amount('LAI')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Total charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Medicine charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('MED')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.medicineamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','MED')" clfactor="10" mandatory="NO" method="get_account_amount('MED')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Medicine charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="OT charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('OTC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.otamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','OTC')" clfactor="10" mandatory="NO" method="get_account_amount('OTC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="OT charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Oxygen charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('OXC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.oxygenamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','OXC')" clfactor="10" mandatory="NO" method="get_account_amount('OXC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Oxygen charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Anaesthesia charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ANE')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.anaethesiaamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ANE')" clfactor="10" mandatory="NO" method="get_account_amount('ANE')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Anaesthesia charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Surgical appliances" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('SGA')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.surgicalappliancesamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','SGA')" clfactor="10" mandatory="NO" method="get_account_amount('SGA')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Surgical appliances (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Pace maker" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('COP')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.pacemakeramount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','COP')" clfactor="10"	mandatory="NO" method="get_account_amount('COP')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of pace maker (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Life supporting devices" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('VEC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.lifesupportamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','VEC')" clfactor="10"	mandatory="NO" method="get_account_amount('VEC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Life supporting devices (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Ambulance charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('AMF')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.ambulanceamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','AMF')" clfactor="10"	mandatory="NO" method="get_account_amount('AMF')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Ambulance charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Artificial limbs" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ART')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.artificiallimbsamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ART')" clfactor="10"	mandatory="NO" method="get_account_amount('ART')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Cost of artificial limbs (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Miscellaneous charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('MIS')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.miscellaneousamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','MIS')" clfactor="10" mandatory="NO" method="get_account_amount('MIS')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Miscellaneous charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Organ transplant charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('ORT')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.organtransplantamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','ORT')" clfactor="10" mandatory="NO" method="get_account_amount('ORT')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Organ transplant charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text id="" mandatory="YES" value="Please verify the policy status and the coverage for donor expenses." />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Primary care services" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('PCS')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.primarycareamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PCS')" clfactor="10" mandatory="NO" method="get_account_amount('PCS')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Primary care charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Secondary care services" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('SCS')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.secondarycareamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','SCS')" clfactor="10" mandatory="NO" method="get_account_amount('SCS')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Secondary care charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+	 <coverage id="" name="Disposable Surgical Consumables" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('COD')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+		</condition>
+		<condition id="" field="request.disposablesurgicalconsumables" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','COD')" clfactor="10" mandatory="NO" method="get_account_amount('COD')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="dynValue,1" prelabel="Disposable Surgical Consumables charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+		  <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		</condition>
+		<action id="" name="ruleengineaction" />
+	  </coverage>
+	 <coverage id="" name="RMO charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('RMO')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+		</condition>
+		<condition id="" field="request.rmocharges" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','RMO')" clfactor="10" mandatory="NO" method="get_account_amount('RMO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="dynValue,1" prelabel="RMO charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+		  <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		</condition>
+		<action id="" name="ruleengineaction" />
+	  </coverage>
+	 <coverage id="" name="DMO charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('DMO')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+		</condition>
+		<condition id="" field="request.dmocharges" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','DMO')" clfactor="10" mandatory="NO" method="get_account_amount('DMO')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="dynValue,1" prelabel="DMO charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+		  <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		</condition>
+		<action id="" name="ruleengineaction" />
+	  </coverage>
+	 <coverage id="" name="Pre-operative consultation fee" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('POC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+		</condition>
+		<condition id="" field="request.preoperativefee" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','POC')" clfactor="10" mandatory="NO" method="get_account_amount('POC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="dynValue,1" prelabel="Pre-operative consultation fee  (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+		  <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		</condition>
+		<action id="" name="ruleengineaction" />
+	  </coverage>
+	 <coverage id="" name="Physiotherapist" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('PYC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="1" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+		<condition id="" field="request.claimsubtype" op="EQ" opType="text" value="OPD" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="OPD" optText="OPD" altText="OPD" optVal="OPD" postlabel="" jscall="" lookup="claimSubType"/>
+		</condition>
+		<condition id="" field="request.physiotherapistfee" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','PYC')" clfactor="10" mandatory="NO" method="get_account_amount('PYC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="dynValue,1" prelabel="Physiotherapist fee  (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		  <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+		  <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+		</condition>
+		<action id="" name="ruleengineaction" />
+	  </coverage>
+      <coverage id="" name="Non Vidal Health TPA agreed package charges" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('TPK')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="request.nonttkpackageamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','TPK')" clfactor="10" mandatory="NO" method="get_account_amount('TPK')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Non Vidal Health TPA agreed package charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt,Pkgd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt,Pkgd Amt" optVal="SA,CB,SB,RA,PA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="House visits" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ACH('HVC')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.claimsubtype" op="EQ" opType="text" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="" configure="NO">
+			<display id="" target="" prelabel="Claim type" control="select" type="" default="CSH" optText="Hospitalization" altText="Hospitalization" optVal="CSH" postlabel="" jscall="" lookup="claimSubType"/>
+        </condition>
+        <condition id="" field="member.waitingperiod" op="GT" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_waitingperiod('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Waiting period from the Cover Start Date" control="input" type="text" default="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.homevisitamount" op="LE" opType="numeric" value="" dynValue="get_account_limit(~,~,'~','~','HVC')" clfactor="10"	mandatory="NO" method="get_account_amount('HVC')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="House visits charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="100" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="SA" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="PC" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+
+    </clause>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Alternative Medicines" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Homeopathy" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10"	mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Homeopathy charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text>Please verify that the treatment is taken in Government Hospital/Medical College Hospital</text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Naturopathy" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10"	mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Naturopathy charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text>Please verify that the treatment is taken in Government Hospital/Medical College Hospital</text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Ayurvedic" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="request.amount" op="LE" value="" dynValue="get_request_limit(~,~,'~','~')" clfactor="10"	mandatory="YES" method="REQUEST.REQUESTED_AMOUNT" source="TABLE"  module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Ayurvedic charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text>Please verify that the treatment is taken in Government Hospital/Medical College Hospital</text>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

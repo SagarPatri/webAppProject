@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Pre-Auth group account head limits" allowed="NO" type="rule" execution="PRE">
+      <coverage id="" name="Room/ICU rent" allowed="NO" module="P" clpercentage="" selected="" autoselect="GACH=1">
+        <condition id="" field="request.claimsubtype" op="EQ" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Claim Type" operator="text" control="" type="" default="" postlabel="hospital to claim against this account head." jscall="" />
+        </condition>
+        <condition id="" field="request.roomicuamount" op="LE" value="" dynValue="get_account_limit(~,~,'~','~','1')" clfactor="10"	mandatory="YES" method="get_group_amount('1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Room/ICU rent (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Nursing and Patient diet expenses" allowed="NO" module="P" clpercentage="" selected="" autoselect="GACH=2">
+        <condition id="" field="request.claimsubtype" op="EQ" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Claim Type" operator="text" control="" type="" default="" postlabel="hospital to claim against this account head." jscall="" />
+        </condition>
+        <condition id="" field="request.nursingpatientdietamount" op="LE" value="" dynValue="get_account_limit(~,~,'~','~','2')" clfactor="10"	mandatory="YES" method="get_group_amount('2')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Nursing and Patient diet expenses (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Investigation expenses" allowed="NO" module="P" clpercentage="" selected="" autoselect="GACH=3">
+        <condition id="" field="request.claimsubtype" op="EQ" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Claim Type" operator="text" control="" type="" default="" postlabel="hospital to claim against this account head." jscall="" />
+        </condition>
+        <condition id="" field="request.investigationamount" op="LE" value="" dynValue="get_account_limit(~,~,'~','~','3')" clfactor="10"	mandatory="YES" method="get_group_amount('3')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Investigation expenses (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Surgeon,Assistant Surgeon,Anesthetist expenses" allowed="NO" module="P" clpercentage="" selected="" autoselect="GACH=4">
+        <condition id="" field="request.claimsubtype" op="EQ" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Claim Type" operator="text" control="" type="" default="" postlabel="hospital to claim against this account head." jscall="" />
+        </condition>
+        <condition id="" field="request.surgeonanesthetistamount" op="LE" value="" dynValue="get_account_limit(~,~,'~','~','4')" clfactor="10"	mandatory="YES" method="get_group_amount('4')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Investigation expenses (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Visiting charges" allowed="NO" module="P" clpercentage="" selected="" autoselect="GACH=5">
+        <condition id="" field="request.claimsubtype" op="EQ" value="CSH" module="P" clfactor="10" mandatory="YES" method="REQUEST.CLAIM_SUBTYPE" source="TABLE" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Claim Type" operator="text" control="" type="" default="" postlabel="hospital to claim against this account head." jscall="" />
+        </condition>
+        <condition id="" field="request.visitingamount" op="LE" value="" dynValue="get_account_limit(~,~,'~','~','5')" clfactor="10"	mandatory="YES" method="get_group_amount('5')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Visiting charges (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Policy Validations" allowed="NO" type="validation" execution="POL">
+      <coverage id="" name="Policy entry" allowed="~" module="P" clpercentage="" selected="" autoselect="check_Entry('ENR')">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="policy.elapsedperiod" op="LE" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_policy_elapsed_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. elapsed period since start date" control="input" type="text" default="" postlabel="for which entry is allowed" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Policy entry violated:" />
+      </coverage>
+      <coverage id="" name="Policy tenure" allowed="~" module="P" clpercentage="" selected="YES" autoselect="">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="policy.tenure" op="EQ" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_policy_tenure('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. tenure" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Policy tenure violated:" />
+      </coverage>
+      <coverage id="" name="Endorsement entry" allowed="~" module="P" clpercentage="" selected="" autoselect="check_Entry('END')">
+        <display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="policy.expiredperiod" op="LE" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_policy_expired_period('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. elapsed period since expiry" control="input" type="text" default="" postlabel="for which entry is allowed" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Endorsement entry violated:" />
+      </coverage>
+    </clause>

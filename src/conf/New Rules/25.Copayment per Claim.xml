@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Copayment per Claim" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Copayment charges" allowed="~" module="P" clpercentage="" selected="YES" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Don't Pay,Pay Conditionally" altText="Don't Pay,Pay Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.copaymentamount" op="EQ" opType="numeric" value="" dynValue="get_copayment_limit(~,~,'~')" clfactor="10" mandatory="NO" method="REQUEST.CO_PAYMENT_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Copayment per Claim charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="Apprd Amt" altText="Apprd Amt" optVal="AA" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

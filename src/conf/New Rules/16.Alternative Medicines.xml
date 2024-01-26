@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Alternative Medicines" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Homeopathy" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ICD('ST0.HAY')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.amount" op="LE" opType="numeric" value="" dynValue="get_ailment_limit(~,~,'~','~','ST0.HAY')" clfactor="10"	mandatory="NO" method="get_request_ailment_amount('ST0.HAY')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Homeopathy charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text id="" mandatory="YES" value="Please verify that the treatment is taken in Government Hospital/Medical College Hospital" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Naturopathy" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ICD('ST0.NAT')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.amount" op="LE" opType="numeric" value="" dynValue="get_ailment_limit(~,~,'~','~','ST0.NAT')" clfactor="10"	mandatory="NO" method="get_request_ailment_amount('ST0.NAT')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Naturopathy charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text id="" mandatory="YES" value="Please verify that the treatment is taken in Government Hospital/Medical College Hospital" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Ayurvedic" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_ICD('ST0.AYU')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="2" optText="Pay,Don't Pay,Pay Conditionally" altText="Pay,Don't Pay,Pay Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="request.amount" op="LE" opType="numeric" value="" dynValue="get_ailment_limit(~,~,'~','~','ST0.AYU')" clfactor="10"	mandatory="NO" method="get_request_ailment_amount('ST0.AYU')" source="PACKAGE"  module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Ayurvedic charges (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel=""  control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <text id="" mandatory="YES" value="Please verify that the treatment is taken in Government Hospital/Medical College Hospital" />
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

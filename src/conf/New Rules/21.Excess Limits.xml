@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Excess Limits" allowed="NO" type="rule" execution="PRE,CLA">
+      <coverage id="" name="Per Member" allowed="~" module="P" clpercentage="" selected="YES" autoselect="Check_Excesslimit(~,~,'~','~')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Per Family" allowed="~" module="P" clpercentage="" selected="YES" autoselect="Check_Excesslimit(~,~,'~','~')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessfamilyamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','FLY')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Self" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','NSF')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessselfamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','NSF')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Spouse" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','SPO')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessspouseamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','SPO')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Parents" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','PAR')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessparentsamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','PAR')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Parent-in-laws" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','PIL')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessinlawsamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','PIL')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Brother" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','NB1')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessbrotheramount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','NB1')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Sister" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','NL1')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excesssisteramount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','NL1')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Son" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','NS1')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excesssonamount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','NS1')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+      <coverage id="" name="Daughter" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_Excesslimit_Relationship(~,~,'~','~','ND1')">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Apply,Don't Apply,Apply Conditionally" altText="Apply,Don't Apply,Apply Conditionally" optVal="1,2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="request.excessdaughteramount" op="EQ" opType="numeric" value="" dynValue="get_excess_limit(~,~,'~','~','ND1')" clfactor="10" mandatory="NO" method="REQUEST.EXCESS_AMOUNT" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1;autoselect,1" prelabel="Total deductible amount (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2;autoselect,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3;autoselect,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,Reqd Amt" altText="SI,Bonus,SI+Bonus,Reqd Amt" optVal="SA,CB,SB,RA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1;autoselect,4" prelabel=""  control="select" type="single" default="" optText="per Total Policy Period" altText="per Total Policy Period" optVal="PP" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="ruleengineaction" />
+      </coverage>
+    </clause>

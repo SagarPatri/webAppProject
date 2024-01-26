@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Family Level Limitations" allowed="NO" type="validation" execution="ENR">
+      <coverage id="" name="Size Limitations" allowed="~" module="P" clpercentage="" selected="YES" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="family.size" op="LE" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. family size" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+		<condition id="" field="member.numberofsons" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('NS1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of sons" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+		<condition id="" field="member.numberofdaughters" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('ND1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of daughters" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+		<condition id="" field="member.numberofbrothers" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('NB1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of brothers" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+		<condition id="" field="member.numberofsisters" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('NL1')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of sisters" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+		<condition id="" field="member.numberofparents" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('PAR')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of parents" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+		<condition id="" field="member.numberofparentinlaws" op="LE" opType="numeric" value="~" clfactor="10" mandatory="NO" method="get_dependent_count('PIL')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+		  <display id="" target="value,1" prelabel="Max. number of parent-in-laws" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+		</condition>
+        <action id="" name="validationaction" Message="Size Limitations violated:" />
+      </coverage>
+	  <coverage id="" name="Premium limits for a family upto 5" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_FamilySize(5)">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="family.size" op="GE" opType="numeric" value="1" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Min. number of members" control="" type="" default="" postlabel="1" jscall="" />
+        </condition>
+        <condition id="" field="family.size" op="LE" opType="numeric" value="5" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Max. number of members" control="" type="" default="" postlabel="5" jscall="" />
+        </condition>
+        <condition id="" field="policy.familypremium" op="LE" opType="numeric" value="" dynValue="get_minimum(~,~,'~')" clfactor="10" mandatory="YES" method="get_family_premium()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. premium per annum (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus" altText="SI,Bonus,SI+Bonus" optVal="SA,CB,SB" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Family premium limits violated:" />
+      </coverage>
+      <coverage id="" name="Premium limits for a family upto 7" allowed="~" module="P" clpercentage="" selected="" autoselect="Check_FamilySize(7)">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="family.size" op="GT" opType="numeric" value="5" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Min. number of members" control="" type="" default="" postlabel="5" jscall="" />
+        </condition>
+        <condition id="" field="family.size" op="LE" opType="numeric" value="7" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Max. number of members" control="" type="" default="" postlabel="7" jscall="" />
+        </condition>
+        <condition id="" field="policy.familypremium" op="LE" opType="numeric" value="" dynValue="get_minimum(~,~,'~')" clfactor="10" mandatory="YES" method="get_family_premium()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. premium per annum (Rs)" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR"  control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of"  control="select" type="single" default="" optText="SI,Bonus,SI+Bonus" altText="SI,Bonus,SI+Bonus" optVal="SA,CB,SB" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Family premium limits violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured limits per family" allowed="~" module="P" clpercentage="" selected="YES" autoselect="">
+		<display id="" target="allowed,1" prelabel=""  control="radiogroup" type="single" default="3" optText="Don't Apply,Apply Conditionally" altText="Don't Apply,Apply Conditionally" optVal="2,3" postlabel="" jscall="onclick=showHideCondition(this)" />
+        <condition id="" field="member.age" op="GE" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_family_min_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" opType="numeric" value="~" clfactor="10" mandatory="YES" method="get_family_max_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel=""  control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="family.suminsured" op="LE" opType="numeric" value="~" dynValue="" clfactor="10" mandatory="YES" method="FAMILY.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. Sum insured limit (Rs)" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="validationaction" Message="Family Sum Insured limits violated:" />
+      </coverage>
+    </clause>

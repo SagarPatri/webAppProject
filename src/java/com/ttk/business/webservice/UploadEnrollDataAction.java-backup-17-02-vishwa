@@ -1,0 +1,116 @@
+package com.ttk.business.webservice;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import javax.naming.InitialContext;
+import javax.xml.bind.DatatypeConverter;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import com.ttk.business.maintenance.MaintenanceManager;
+import com.ttk.common.TTKCommon;
+import com.ttk.common.TTKPropertiesReader;
+import com.ttk.common.exception.TTKException;
+import com.ttk.dto.administration.ProcedureDetailVO;
+
+public class UploadEnrollDataAction implements Job{
+
+	@Override
+	public void execute(JobExecutionContext arg0)  
+	{
+		 MaintenanceManager maintenanceManager = null;
+		 try {
+			if(new Boolean(TTKPropertiesReader.getPropertyValue("OMAN.WS.MU.RUN.MODE"))){ 
+			 System.out.println("********* Oman member upload schedular started (vings)***********");
+			
+			 maintenanceManager = this.getMaintenanceManagerObject();
+			 ProcedureDetailVO memberDataVO=maintenanceManager.getOMANMemberUploadData();
+		        try {
+		        	SimpleDateFormat sdate=new SimpleDateFormat("ddMMyy");
+			        final Calendar cal = Calendar.getInstance();
+			        cal.add(Calendar.DATE, -1);
+			        String result ="";
+			        String jsonInput="";
+		        	
+		            jsonInput=memberDataVO.getOmaJsonInput();
+		        	HttpClient httpClient = HttpClientBuilder.create().build();
+					HttpPost httpPost = new HttpPost(TTKPropertiesReader.getPropertyValue("omanMemberUploadSchedular"));
+					httpPost.setHeader("Content-type", "application/json");
+					StringEntity stringEntity = new StringEntity(jsonInput);
+					httpPost.getRequestLine();
+					httpPost.setEntity(stringEntity);
+					System.out.println("before calling ........... spring boot");		
+					HttpResponse response1 = httpClient.execute(httpPost);
+					System.out.println("after calling ........... spring boot");
+					HttpEntity entity = response1.getEntity();
+					result = EntityUtils.toString(entity);
+		        	
+		        	System.out.println("Member(s) uploaded result -> "+result);
+		        
+		        } catch ( Exception e) {
+					e.printStackTrace();
+				}
+			 System.out.println("********* Oman member upload schedular ended (vings) ***********");
+		}//if(new Boolean(TTKPropertiesReader.getPropertyValue("DHPO.WS.MU.RUN.MODE"))){ 
+		}
+		catch (TTKException e) 
+		   {
+			TTKCommon.logStackTrace(e);
+		   }
+
+	}
+	
+ private String  omanMemberRestService(ProcedureDetailVO memVO) throws Exception {
+		
+	 String result = "";
+	 String strSuccessMsg="";
+	 MaintenanceManager maintenanceManager = null;
+
+	 String authHeader = "Basic "+DatatypeConverter.printBase64Binary("vidal_health:$r@MSJ7us=".getBytes("UTF-8"));
+     HttpPost post = new HttpPost("http://91.132.64.27:8333/updateDhamaniRegistry/");
+     post.addHeader("Authorization",authHeader);
+     post.setEntity(new StringEntity(memVO.getOmaJsonInput()));
+     try (CloseableHttpClient httpClient = HttpClients.createDefault();
+          CloseableHttpResponse response = httpClient.execute(post)) {
+        
+            int status=0;
+			result = EntityUtils.toString(response.getEntity());
+		    System.out.println("result=====>"+result);
+		   maintenanceManager = this.getMaintenanceManagerObject();
+	       status = maintenanceManager.saveOmanMemberUploadLogFile(result);
+	         if(status>0){
+	        	 System.out.println("Response saved successfully");
+	        	 strSuccessMsg="true";
+	         }
+     }
+     return strSuccessMsg;
+}
+	
+	private MaintenanceManager getMaintenanceManagerObject() throws TTKException
+	{
+		MaintenanceManager maintenanceManager = null;
+		try
+		{
+			if(maintenanceManager == null)
+			{
+				InitialContext ctx = new InitialContext();
+				maintenanceManager = (MaintenanceManager) ctx.lookup("java:global/TTKServices/business.ejb3/MaintenanceManagerBean!com.ttk.business.maintenance.MaintenanceManager");
+			}//end of if(preAuthSupportManager == null)
+		}//end of try
+		catch(Exception exp)
+		{
+			throw new TTKException(exp, "OmanNewTransaction");
+		}//end of catch
+		return maintenanceManager;
+	}//end getMaintenanceManagerObject()	
+
+}

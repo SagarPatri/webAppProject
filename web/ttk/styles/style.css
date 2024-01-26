@@ -1,0 +1,253 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: verdana, Helvetica, sans-serif;
+	height: 100%;
+	background: url(/ttk/images/bg.gif) left 93px repeat-y;
+}
+body#PreAuthNav a#PreAuthNav, body#ClaimsStatus a#ClaimsStatusNav {
+	color: #CC0000;
+}
+#MainWrapper {
+	min-height: 100%;
+}
+*html #MainWrapper {
+	height: 100%;
+}
+.mainContainerTable
+{
+  border-top:1px solid #f4a689;
+}
+#header {
+	border-bottom: 1px solid #f4a689;
+	width: 98%;
+	margin: 0 auto;
+	background: white;
+	height: 93px;
+}
+#header img {
+	float: left;
+	margin-top: 15px;
+}
+#header #User {
+	float: right;
+	text-align: right;
+	font-size: 12px;
+	margin: 10px 0 0 0;
+}
+
+#header #User ul {
+	list-style-type: none;
+}
+#header #User ul li {
+	float: left;
+	padding: 0 10px;
+	border-right: 1px solid black;
+	font-size: 13px;
+}
+#header #User ul li a {
+	color: black;
+	text-decoration: none;
+}
+#header #User ul li.last {
+	border: none;
+	font-weight: bold;
+}
+#header #User span {
+	font-weight: bold;
+}
+body{font-family: 'Segoe UI Regular';}
+.main-header {
+    background-image: url(../images/background.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    width: 100%;
+    height:100vh;  /* responsive height */
+}
+.login-block{
+	/*width: 460px;
+    height: 460px;*/
+	width: 320px;
+    height: 420px;
+    background: rgb(255 255 255 / 84%);
+    border-radius: 0 0 25px 25px;
+    position: absolute;
+    top: 0;
+    left: 10%;
+	padding: 30px;
+}
+.login-block .form-control{
+	border: 1px solid #72bf44;
+    padding: 12px;
+    border-radius: 100px;
+    text-align: center;
+}
+.login-block .btn {
+	margin-top: 2rem;
+	border-radius: 100px;
+	padding: 14px;
+	background-color: #72bf44;
+	border-color: #72bf44;
+	font-size: 20px;
+	box-shadow: 0px 1px 8px rgb(0 0 0 / 33%);
+	font-family: 'Segoe UI Bold';
+}
+.login-block .btn-primary:not(:disabled):not(.disabled).active, .show > .login-block .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #008c8d;
+    border-color: #008c8d;
+}
+.login-block .btn-primary:not(:disabled):not(.disabled):active, .login-block .btn-primary:not(:disabled):not(.disabled).active, .show > .login-block .btn-primary.dropdown-toggle{
+	color: #fff;
+    background-color: #008c8d;
+    border-color: #008c8d;
+}
+#LeftNav {
+	width: 200px;
+	margin: 10px 0 0 10px;
+	float: left;
+}
+#LeftNav ul {
+	list-style-type: none;
+}
+#LeftNav ul li {
+	clear: left;
+	cursor:default;
+}
+#LeftNav ul li a {
+	color: #ff1a41;
+	font-weight: bold;
+	font-size: 11px;
+	float: left;
+	padding: 5px 0;
+	cursor:default;
+}
+#LeftNav ul li a:hover {
+	text-decoration: none;
+}
+
+h2 {
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	margin:10px 0 0 0px;
+}
+*html h2 {
+	margin: 0;
+}
+#ContentArea {
+	width: 70%;
+	padding: 0 0 20px 0;
+	margin:0 0 0 200px;
+}
+*html #ContentArea {
+	margin: 0;
+}
+#ContentArea #grid {
+	border-left: 1px solid #d3d3d3;
+	border-top: 1px solid #d3d3d3;
+	margin: 10px 0 0 0;
+	width: 100%;
+}
+#ContentArea #grid th {
+	padding: 2px 5px;
+	font-weight: bold;
+	color: #000;
+	font-size: 12px;
+	background: #d3d3d3;
+	text-align: left;
+}
+#ContentArea #grid td {
+	border-right: 1px solid #d3d3d3;
+	border-bottom: 1px solid #d3d3d3;
+	background: white;
+	padding: 2px 5px;
+	color: #333;
+	font-size: 11px;
+}
+#ContentArea #grid td a {
+	color: #000099;
+}
+#ContentArea #grid td a:hover {
+	text-decoration: none;
+}
+#ContentArea #ButtonSection {
+	margin: 20px 0 20px 200px;
+	text-align: right;
+}
+#ContentArea #ButtonSection .button {
+	background: #999999;
+	border: none;
+	color: white;
+	font-weight: bold;
+	font-size: 11px;
+	padding: 2px;
+	cursor: pointer
+}
+#ContentArea fieldset {
+	border: 1px solid #d3d3d3;
+}
+#ContentArea fieldset legend {
+	font-size: 12px;
+	color: black;
+	font-weight: bold;
+	color: #b30419;
+	padding: 0 5px;
+}
+#ContentArea fieldset #labels {
+	color: black;
+	font-size: 11px;
+	margin: 20px 0 0 0;
+}
+#ContentArea fieldset #labels td {
+	padding: 5px;
+}
+#ContentArea fieldset #labels td.label {
+	font-weight: bold;
+}
+#ContentArea fieldset #labels td.labelText {
+	color: #ca162c;
+}
+.errorContainer
+{
+  color:#FF0000;
+  border: 1px solid #CCCCCC;
+  background-color:#FFFFFF;
+  margin-top:10px;
+  padding:5px 5px 5px 5px;
+  width:97%;
+  text-align:left;
+}
+
+.contentAreaProvider {
+    background-color: #E6F8E0;
+}
+
+.disabledfieldType{
+	font-size: 11px;
+	color: #A9A9A9;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-top:1px solid black; 
+	border-bottom: 1px solid black;
+}
+.home-footer .fwhitebg{
+	background: #fff;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+}
+.home-footer img
+{
+	position: fixed;
+    bottom: 0;
+    z-index: 2;
+    right: 0;
+}
+

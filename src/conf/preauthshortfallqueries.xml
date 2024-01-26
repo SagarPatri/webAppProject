@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shortfall>
+  <section name="Medical">     
+     <subsection name="MedicalQueries" displayName="MedicalQueries">
+     	 <query id="MedicalQuery.1" postlabel="Kindly provide duration of the ailment"  control="input" type="checkbox"  value="YES" received="NO"/>
+     	 <query id="MedicalQuery.2" postlabel="Kindly provide etiology"  control="input" type="checkbox"  value="YES"  received="NO" />
+     	 <query id="MedicalQuery.3" postlabel="Kindly provide details of treatment"  control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.4" postlabel="Kindly provide details of medical management"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.5" postlabel="Kindly provide investigation reports"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.6" postlabel="Kindly provide justification for prolonged stay in the facility"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.7" postlabel="Kindly provide interim case summary"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.8" postlabel="Kindly revert with active line of treatment justifying the hospitalisation.any h/o trauma  detailed circumstances leading to injury  any h/o rta if"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.9" postlabel="Kindly provide correct diagnosis codes" control="input" type="checkbox"  value="YES" received="NO"   />
+         <query id="MedicalQuery.10" postlabel="Kindly provide correct procedure codes"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.11" postlabel="Kindly provide correct dental codes"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.12" postlabel="Kindly provide cost estimate for the procedure"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="MedicalQuery.13" postlabel="Give reasons justifying medical necessity for the investigation requested"   control="input" type="checkbox"  value="YES" received="NO"/>
+         <query id="MedicalQuery.14" postlabel="Since when patient suffering from the ailment.Any h/o past illness relevant to the present ailment.If Yes give details and duration of the same"   control="input" type="checkbox"  value="YES" received="NO"/>
+       </subsection> 
+  </section> 
+  <section name="InvestigationQueries">
+   <subsection name="InvestigationQueries" displayName="Provide relevant investigation reports confirming the diagnosis">
+     	 <query id="InvestigationQueries.1" postlabel="ECG"  control="input" type="checkbox"  value="YES" received="NO"/>
+     	 <query id="InvestigationQueries.2" postlabel="X-RAY KNEE"  control="input" type="checkbox"  value="YES"  received="NO" />
+     	 <query id="InvestigationQueries.3" postlabel="BLOOD C And S"  control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.4" postlabel="ECHO"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.5" postlabel="BLOOD REPORTS"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.6" postlabel="URINE C And S"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.7" postlabel="USG"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.8" postlabel="BIOPSY REPORT"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.9" postlabel="RFT"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.10" postlabel="CBC"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.11" postlabel="X- RAY CHEST"   control="input" type="checkbox"  value="YES" received="NO" />
+         <query id="InvestigationQueries.12" postlabel="LFT"   control="input" type="checkbox"  value="YES" received="NO"/>
+       </subsection> 
+  </section> 
+  <section name="Others">
+    <subsection name="OtherQueries" displayName="OtherQueries">
+	 <query id="OtherQuery.1" postlabel=""  control="textArea" type="text"  value="" received="NO" cssClass="textBox textAreaLarge10Lines"/>
+   </subsection>
+  </section>
+</shortfall>

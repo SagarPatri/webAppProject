@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+    <clause id="" name="Family Level Limitations" allowed="NO" type="validation" execution="ENR">
+      <coverage id="" name="Family Size Limitation" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="family.size" op="LE" value="~" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. family size" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+        </condition>
+        <action id="" name="validationaction" Message="Family size violated:" />
+      </coverage>
+	  <coverage id="" name="Premium limits for a family upto 5" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="family.size" op="GE" value="1" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Min. number of members" operator="numeric" control="" type="" default="" postlabel="1" jscall="" />
+        </condition>
+        <condition id="" field="family.size" op="LE" value="5" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Max. number of members" operator="numeric" control="" type="" default="" postlabel="5" jscall="" />
+        </condition>
+        <!-- Field calc: fieldData={premium of the family}  -->
+        <condition id="" field="policy.familypremium" op="LE" value="" dynValue="get_minimum(~,~,'~')" clfactor="10" mandatory="YES" method="get_family_premium()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. premium per annum (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Family premium limits violated:" />
+      </coverage>
+      <coverage id="" name="Premium limits for a family upto 7" allowed="NO" module="P" clpercentage="" selected="">
+        <condition id="" field="family.size" op="GT" value="5" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Min. number of members" operator="numeric" control="" type="" default="" postlabel="5" jscall="" />
+        </condition>
+        <condition id="" field="family.size" op="LE" value="7" clfactor="10" mandatory="YES" method="get_family_size()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="" prelabel="Max. number of members" operator="numeric" control="" type="" default="" postlabel="7" jscall="" />
+        </condition>
+        <!-- Field calc: fieldData={premium of the family  -->
+        <condition id="" field="policy.familypremium" op="LE" value="" dynValue="get_minimum(~,~,'~')" clfactor="10" mandatory="YES" method="get_family_premium()" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. premium per annum (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Family premium limits violated:" />
+      </coverage>
+      <coverage id="" name="Sum Insured limits per family" allowed="NO" module="P" clpercentage="" selected="" autoselect="">
+        <condition id="" field="member.age" op="GE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Min. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="member.age" op="LE" value="~" clfactor="10" mandatory="YES" method="get_member_age('~')" source="PACKAGE" module="P" fieldData="" unit="" result="">
+          <display id="" target="value,1" prelabel="Max. age" operator="numeric" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="method,1;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="days,months,years" altText="days,months,years" optVal="DD,MM,YY" postlabel="" jscall="" />
+        </condition>
+        <condition id="" field="family.suminsured" op="LE" value="" dynValue="get_familysuminsured_limit(~,~,'~','~')" clfactor="10" mandatory="YES" method="FAMILY.SUMINSURED" source="TABLE" module="P" fieldData="" unit="" result="">
+          <display id="" target="dynValue,1" prelabel="Max. Sum insured limit (Rs)" operator="numeric" control="input" type="text" default="" postlabel="Fixed Amount" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,2" prelabel="OR" operator="" control="input" type="text" default="" postlabel="" jscall="onkeyup=isNumeric(this)" />
+          <display id="" target="dynValue,3" prelabel="% of" operator="" control="select" type="single" default="" optText="SI,Bonus,SI+Bonus,AA,CA" altText="SI,Bonus,SI+Bonus,AA,CA" optVal="SA,CB,SB,AA,CA" postlabel="" jscall="" />
+          <display id="" target="dynValue,4;unit,1" prelabel="" operator="" control="select" type="single" default="" optText="per Claim,per Total Policy Period,per Day,per Month,per Year" altText="per Claim,per Total Policy Period,per Day,per Month,per Year" optVal="PC,PP,PD,PM,PY" postlabel="" jscall="" />
+        </condition>
+        <action id="" name="validationaction" Message="Family Sum Insured limits violated:" />
+      </coverage>
+    </clause>

@@ -1,0 +1,4452 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "/home/tipsint/dtds/jasperreport.dtd">
+<jasperReport
+		 name="ApproveRejectPreAuthXLS"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Landscape"
+		 pageWidth="60070"
+		 pageHeight="595"
+		 columnWidth="2070"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="Scheme No." isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="Scheme No." postlabel="" control="input" type="text" source="" method="" class="textBoxWeblogin textBoxMediumWeblogin" value="" mandatory="YES" jscall=""/>]]></parameterDescription>
+	</parameter>
+	<parameter name="Report From" isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="Report From" postlabel="" control="date" type="" source="" method="" value="" mandatory="YES" jscall=""/>]]></parameterDescription>
+	</parameter>
+	<parameter name="Report TO" isForPrompting="true" class="java.lang.String">
+		<parameterDescription><![CDATA[<display prelabel="Report To" postlabel="" control="date" type="" source="" method="" value="" mandatory="YES" jscall=""/>]]></parameterDescription>
+	</parameter>
+
+	<field name="POLICY_NUMBER" class="java.lang.String"/>
+	<field name="POLICY_TYPE" class="java.lang.String"/>
+	<field name="POLICY_SUM_INSURED" class="java.math.BigDecimal"/>
+	<field name="SUM_INSURED" class="java.math.BigDecimal"/>
+	<field name="BONUS_SUM_INSURED" class="java.math.BigDecimal"/>
+	<field name="POLICY_START_DATE" class="java.lang.String"/>
+	<field name="POLICY_END_DATE" class="java.lang.String"/>
+	<field name="PROPOSER_CIGNA_ID" class="java.lang.String"/>
+	<field name="PROPOSER_NAME" class="java.lang.String"/>
+	<field name="INSURED_CIGNA_ID" class="java.lang.String"/>
+	<field name="INSURED_NAME" class="java.lang.String"/>
+	<field name="HOSPITAL_NAME" class="java.lang.String"/>
+	<field name="EMPANEL_NUMBER" class="java.lang.String"/>
+	<field name="ADDRESS_1" class="java.lang.String"/>
+	<field name="CITY_TYPE_ID" class="java.lang.String"/>
+	<field name="PIN_CODE" class="java.math.BigDecimal"/>
+	<field name="STATE_TYPE_ID" class="java.lang.String"/>
+	<field name="AUTH_NUMBER" class="java.lang.String"/>
+	<field name="MEM_AGE" class="java.math.BigDecimal"/>
+	<field name="INSURED_GENDER" class="java.lang.String"/>
+	<field name="RELATIONSHIP" class="java.lang.String"/>
+	<field name="ACCOUNT_NAME" class="java.lang.String"/>
+	<field name="BANK_ACCOUNT_NUMBER" class="java.lang.String"/>
+	<field name="BANK_NAME" class="java.lang.String"/>
+	<field name="BRANCH_NAME" class="java.lang.String"/>
+	<field name="BANK_BRANCH_CODE" class="java.lang.String"/>
+	<field name="CANCELLED_CHEQUE_RECEIVED" class="java.lang.String"/>
+	<field name="CLAIM_FILE_NUMBER" class="java.lang.String"/>
+	<field name="CLAIM_NUMBER" class="java.lang.String"/>
+	<field name="CLAIM_TYPE" class="java.lang.String"/>
+	<field name="TYPEOFREIMBURSEMENT" class="java.lang.String"/>
+	<field name="CLAIMCLASSIFICATION" class="java.lang.String"/>
+	<field name="DATE_OF_ADMISSION" class="java.lang.String"/>
+	<field name="TIME_OF_ADMISSION" class="java.lang.String"/>
+	<field name="DATE_OF_DISCHARGE" class="java.lang.String"/>
+	<field name="TIME_OF_DISCHARGE" class="java.lang.String"/>
+	<field name="DATE_OF_INJURY" class="java.lang.String"/>
+	<field name="CAUSEOFINJURY" class="java.lang.String"/>
+	<field name="GRAVIDASTATUS" class="java.math.BigDecimal"/>
+	<field name="STATUSATDISCHARGE" class="java.lang.String"/>
+	<field name="CLAIM_STATUS" class="java.lang.String"/>
+	<field name="CLAIMPROCESSEDDATE" class="java.lang.String"/>
+	<field name="QUERYREMINDERSENTDATE1" class="java.lang.String"/>
+	<field name="QUERYREMINDERSENTDATE2" class="java.lang.String"/>
+	<field name="QUERYREMINDERSENTDATE3" class="java.lang.String"/>
+	<field name="INVREQUESTSENTDATE" class="java.lang.String"/>
+	<field name="INVESTIGATIONREASON" class="java.lang.String"/>
+	<field name="INVRECOMMENDATION" class="java.lang.String"/>
+	<field name="INVRSPRCVDATE" class="java.lang.String"/>
+	<field name="POLICYBSI" class="java.math.BigDecimal"/>
+	<field name="MEMBERBSI" class="java.math.BigDecimal"/>
+	<field name="SYSTEMOFMEDICINE" class="java.lang.String"/>
+	<field name="DIAGNOSISCODELEVELI" class="java.lang.String"/>
+	<field name="PROCEDURECODELEVELI" class="java.lang.String"/>
+	<field name="PROCEDUREDESCRIPTIONLEVELI" class="java.lang.String"/>
+	<field name="MEDICALHISTORYLEVELI" class="java.lang.String"/>
+	<field name="HOSP_PAN_NUMBER" class="java.lang.String"/>
+	<field name="TOTALCLAIMAMOUNT" class="java.math.BigDecimal"/>
+	<field name="CLM_INT_DATE" class="java.lang.String"/>
+	<field name="SURGERYTYPE" class="java.lang.String"/>
+	<field name="WASPREAUTHPROVIDED" class="java.lang.String"/>
+	<field name="MEDICOLEGAL" class="java.lang.String"/>
+	<field name="OT_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="OT_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ANE_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ANE_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ANC_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ANC_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="SUF_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="SUF_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ROO_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="ROO_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="CON_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="CON_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="AMF_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="AMF_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="MED_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="MED_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="MIS_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="MIS_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="DAW_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="DAW_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="SGA_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="SGA_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="CIB_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="CIB_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="COB_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="COB_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="DISALLOWEDAMOUNT" class="java.math.BigDecimal"/>
+	<field name="CO_PAYMENT_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="CLAIMEDSERVICETAX" class="java.math.BigDecimal"/>
+	<field name="APPROVEDSERVICETAX" class="java.math.BigDecimal"/>
+	<field name="TDSAMOUNT" class="java.math.BigDecimal"/>
+	<field name="APPLICABLETDSRATE" class="java.math.BigDecimal"/>
+	<field name="NET_CLAIM_AMT_PAYABLE" class="java.math.BigDecimal"/>
+	<field name="TYPEOFADMISSION" class="java.lang.String"/>
+	<field name="MODEOFPAYMENT" class="java.lang.String"/>
+	<field name="DATEOFPAYMENT" class="java.lang.String"/>
+	<field name="PAYMENTREFERENCENUMBER" class="java.lang.String"/>
+	<field name="PAYMENTAMOUNT" class="java.math.BigDecimal"/>
+	<field name="PAYEE_NAME" class="java.lang.String"/>
+	<field name="PAYMENTBATCHID" class="java.math.BigDecimal"/>
+	<field name="CLMDOCRECEIVEDDATE" class="java.lang.String"/>
+	<field name="LASTDOCRECEIVEDDATE" class="java.lang.String"/>
+	<field name="PODNUMBER" class="java.math.BigDecimal"/>
+	<field name="COURIERNAME" class="java.lang.String"/>
+	<field name="DELIVERYSTATUS" class="java.lang.String"/>
+	<field name="DELIVERYDATETIME" class="java.lang.String"/>
+	<field name="HOSPITAL_NETWORKED" class="java.lang.String"/>
+	<field name="ROOM_TYPE_ID" class="java.lang.String"/>
+	<field name="INV_ALLOWED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="INV_REQUESTED_CHARGES" class="java.math.BigDecimal"/>
+	<field name="Health_Check_Up_Claimed" class="java.lang.String"/>
+	<field name="Health_Check_Up_Allowed" class="java.lang.String"/>
+	<field name="Pre_Hosp_Claimed" class="java.math.BigDecimal"/>
+	<field name="Pre_Hosp_Allowed" class="java.math.BigDecimal"/>
+	<field name="Post_Hosp_Claimed" class="java.math.BigDecimal"/>
+	<field name="Deductible_Amount_Per_claim" class="java.math.BigDecimal"/>
+	<field name="Rejection_Reason" class="java.lang.String"/>
+	<field name="Rejection_Description" class="java.lang.String"/>
+	<field name="Last_modified_date_time" class="java.lang.String"/>
+	<field name="RcmdToInsurerDate" class="java.lang.String"/>
+	<field name="ApprovedByInsurerDate" class="java.lang.String"/>
+	<field name="TATOfSettledClaim" class="java.math.BigDecimal"/>
+
+	<variable name="slno" class="java.lang.Integer" resetType="Report" calculation="Count">
+		<variableExpression><![CDATA[new Integer(0)]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="false" >
+				<staticText>
+					<reportElement
+						x="361"
+						y="0"
+						width="1642"
+						height="30"
+						forecolor="#022665"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="13" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim ]]></text>
+				</staticText>
+				<image  evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="47"
+						y="0"
+						width="314"
+						height="30"
+						key="image-1"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<graphicElement stretchType="RelativeToTallestObject"/>
+					<imageExpression class="java.lang.String"><![CDATA["ttk/images/TTLLogo.gif"]]></imageExpression>
+				</image>
+				<rectangle>
+					<reportElement
+						x="47"
+						y="29"
+						width="36207"
+						height="20"
+						backcolor="#CCCCCC"
+						key="rectangle-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<staticText>
+					<reportElement
+						x="48"
+						y="30"
+						width="187"
+						height="20"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="235"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Type]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="361"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme Start Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="487"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme End Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="613"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Sum Insured]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="865"
+						y="30"
+						width="130"
+						height="20"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme SI]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="995"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-17"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Proposer Cigna ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1121"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Proposer Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1247"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Cigna ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1373"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1499"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-23"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Age]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1625"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-24"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Beneficiary Gender]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1751"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Relationship with the proposer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2381"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-26"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[IFSC Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1877"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Proposer Name as per bank records]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2003"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-29"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Proposer Bank Account Number]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2129"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Bank Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2255"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Branch Name
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2507"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-32"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Is cancelled cheque received
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2633"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-34"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim file No
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2759"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-35"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Number
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2885"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-36"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Type of Claim
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3011"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-42"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Type of Reimbursement
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3137"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-43"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Classification
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3263"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-44"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Admission/OPD Treatment From
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3389"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-45"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Time of Admission
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3515"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-46"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Discharge/OPD Treatment To
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3641"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-47"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Time of Discharge
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3767"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-48"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Type of Admission
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="3893"
+						y="30"
+						width="266"
+						height="20"
+						key="staticText-49"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Injury/Date Disease First Detected/Date of Delivery
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4159"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-50"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Cause of Injury
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="739"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-55"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Bonus Sum Insured]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4285"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-56"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gravida Status
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4411"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-57"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Status at the time of discharge
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4537"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-58"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Was Cashless provided
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4663"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-60"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Authorisation Number
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4789"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-61"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Status
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4915"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-62"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim Processed Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5041"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-63"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Rejection Reopen Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5167"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-64"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Rejection Reopen Remarks
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5293"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-65"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Closure Reopen Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5419"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-66"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Closure Reopen Remarks]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5545"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-67"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query Reminder Sent Date 1
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5671"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-68"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query Reminder Sent Date 2
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5797"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-69"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query Reminder Sent Date 3
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="5923"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-70"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query Reminder Sent Date 4
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6049"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-71"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query Reminder Sent Date 5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6175"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-72"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Request Sent Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6301"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-73"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Reason
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6427"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-74"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Response Received Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6553"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-75"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Recommendation
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6679"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-76"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Scheme BSI
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6805"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-77"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Member BSI
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="6931"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-78"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[System of Medicine
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7057"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-79"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis Code Level I
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7183"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-80"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis Code Level II]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7309"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-81"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Diagnosis Code Level III
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7435"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-82"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Code Level I
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7561"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-83"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Description Level I
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7687"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-84"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Code Level II
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7813"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-85"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Description Level II
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="7939"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-86"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Code Level III
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8065"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-87"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Procedure Description Level III
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8191"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-88"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Medical History Level I
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8317"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-89"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Medical History Level II
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8443"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-90"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Medical History Level III
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8569"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-91"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[If present ailment a complication of PED
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8695"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-102"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8821"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-103"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Registration Number]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="8947"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-104"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital PAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9073"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-106"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital City]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9199"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-107"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital PIN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9325"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-108"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital State]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9451"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-109"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Is hospital networked]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9577"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-110"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total Claim Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9703"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-111"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Claim intimation
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9829"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-112"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Surgery Type
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9955"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-113"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Operation Theatre Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10081"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-114"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Operation Theatre Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10207"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-119"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Anesthesia - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10333"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-120"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Anesthesia - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10459"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-125"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Anesthetist Fees - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10585"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-126"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Anesthetist Fees - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10711"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-131"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Surgeon fees - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10837"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-132"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Surgeon fees - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="10963"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-137"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Room Category Occupied
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11089"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-138"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total Room Tariff  - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11215"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-139"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total Room Tariff  - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11341"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-144"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Consultation Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11467"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-145"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Consultation Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11593"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-150"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11719"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-151"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Investigation Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11845"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-156"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Medicine Charge - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11971"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-157"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Medicine Charge - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12097"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-162"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Miscellaneous Expenses - Type
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12223"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-163"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Miscellaneous Expenses - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12349"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-164"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Miscellaneous Expenses - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12475"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-169"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Health Check-up Cost - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12601"
+						y="30"
+						width="128"
+						height="20"
+						key="staticText-170"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Health Check-up Cost - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12729"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-175"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Ambulance Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12855"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-176"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Ambulance Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="12981"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-181"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Daily Cash - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13107"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-182"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Hospital Daily Cash - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13233"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-187"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Surgical Cash - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13359"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-188"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Surgical Cash - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13485"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-194"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Illness Benefit - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13611"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-195"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Critical Illness Benefit - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13737"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-200"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Convalescence - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13863"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-201"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Convalescence - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13989"
+						y="30"
+						width="276"
+						height="20"
+						key="staticText-206"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Pre-post Hospitalization Lump-sum benefit - Claimed Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14265"
+						y="30"
+						width="256"
+						height="20"
+						key="staticText-207"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Pre-post Hospitalization Lump-sum benefit - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14521"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-212"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Other Lump sum benefit - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14647"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-213"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Other Lump sum benefit - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14773"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-219"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Pre Hospitalisation Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14899"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-220"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Pre Hospitalisation Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15025"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-225"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Post Hospitalisation Charges - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15151"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-226"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Post Hospitalisation Charges - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15277"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-231"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Other Non Hospital Expenses - Claimed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15403"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-232"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Other Non Hospital Expenses - Allowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15529"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-237"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Disallowed Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15655"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-238"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Co-payment Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15781"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-240"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Deductible Amount (per claim/annual Excess)
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="15907"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-241"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claimed Service tax for Cashless Claim
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16033"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-242"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Approved Service Tax for Cashless Claim
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16159"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-243"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Applicable TDS Rate
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16285"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-244"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TDS Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16411"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-245"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Net Claim Amount Payable
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16537"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-246"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Payment]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16663"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-247"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payment Batch ID]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16789"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-248"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Mode of Payment
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="16915"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-249"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payment Amount
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17041"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-250"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payment Reference number/Instrument Number
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17167"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-251"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Payee Name
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17293"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-252"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[POD Number/Consignment Number
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17419"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-253"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Courier Name
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17545"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-254"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Delivery Status
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17671"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-255"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Delivery Date & Time
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17797"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-256"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Reason
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="17923"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-257"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query/Closure/Rejection Reason
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18049"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-258"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Query/Closure/Rejection Description
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18175"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-259"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Vidal health Remarks
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18301"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-260"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Last modified date time
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="19061"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-261"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Settlement Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18557"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-262"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Status Change Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18935"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-263"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Last Document Received Date
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18683"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-264"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Claim Intimation
+
+
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18809"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-265"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Claim document received date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="18427"
+						y="30"
+						width="130"
+						height="20"
+						key="staticText-266"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Deduction Reason
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="19313"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-267"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Approved by Insurer Date
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="19187"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-268"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Recommended to Insurer Date
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="19439"
+						y="30"
+						width="126"
+						height="20"
+						key="staticText-269"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TAT of settled claim
+]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="19"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="48"
+						y="0"
+						width="187"
+						height="19"
+						key="textField-8"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="235"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-9"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="361"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-10"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_START_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="487"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-11"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{POLICY_END_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="613"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-12"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUM_INSURED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="865"
+						y="0"
+						width="130"
+						height="19"
+						key="textField-13"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{POLICY_SUM_INSURED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="995"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-15"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROPOSER_CIGNA_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1121"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-16"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROPOSER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1247"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-18"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INSURED_CIGNA_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1373"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-19"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INSURED_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1499"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-21"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MEM_AGE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1625"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-22"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INSURED_GENDER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1751"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-23"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RELATIONSHIP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1877"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-24"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ACCOUNT_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2003"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-25"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BANK_ACCOUNT_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2129"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-26"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BANK_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2255"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-27"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BRANCH_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2381"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-28"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{BANK_BRANCH_CODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2507"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-30"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CANCELLED_CHEQUE_RECEIVED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2633"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-32"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_FILE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2759"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-33"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2885"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-34"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3011"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-39"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TYPEOFREIMBURSEMENT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3137"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-40"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIMCLASSIFICATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3263"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-41"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DATE_OF_ADMISSION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3389"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-42"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TIME_OF_ADMISSION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3515"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-43"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DATE_OF_DISCHARGE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3893"
+						y="0"
+						width="266"
+						height="19"
+						key="textField-44"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DATE_OF_INJURY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3641"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-45"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TIME_OF_DISCHARGE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3767"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-46"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{TYPEOFADMISSION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4159"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-47"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CAUSEOFINJURY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="739"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-52"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{BONUS_SUM_INSURED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4285"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-53"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{GRAVIDASTATUS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4411"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-54"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{STATUSATDISCHARGE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4537"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-55"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{WASPREAUTHPROVIDED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4663"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-57"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{AUTH_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4789"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-58"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIM_STATUS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4915"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-59"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIMPROCESSEDDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5041"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-60"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5167"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-61"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5293"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-62"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5419"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-63"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5545"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-64"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{QUERYREMINDERSENTDATE1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6049"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-65"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5923"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-66"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5797"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-67"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{QUERYREMINDERSENTDATE3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5671"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-68"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{QUERYREMINDERSENTDATE2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6175"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-69"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INVREQUESTSENTDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6301"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-70"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INVESTIGATIONREASON}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6427"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-71"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INVRSPRCVDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6553"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-72"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{INVRECOMMENDATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6679"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-73"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{POLICYBSI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6805"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-74"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MEMBERBSI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6931"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-75"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SYSTEMOFMEDICINE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7057"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-76"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DIAGNOSISCODELEVELI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7183"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-77"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7309"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-78"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7435"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-79"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROCEDURECODELEVELI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7561"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-80"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PROCEDUREDESCRIPTIONLEVELI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7687"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-81"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUM_INSURED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7813"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-82"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7939"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-83"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8065"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-84"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8191"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-85"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MEDICALHISTORYLEVELI}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8317"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-86"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8443"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-87"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8569"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-91"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8695"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-99"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8821"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-100"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMPANEL_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="8947"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-101"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSP_PAN_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9073"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-103"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CITY_TYPE_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9199"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-104"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PIN_CODE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9325"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-105"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{STATE_TYPE_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9451"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-106"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HOSPITAL_NETWORKED}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9577"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-107"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOTALCLAIMAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9703"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-108"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLM_INT_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9829"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-109"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SURGERYTYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="9955"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-110"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OT_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10081"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-114"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OT_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10207"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-116"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ANE_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10333"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-117"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ANE_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10459"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-122"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ANC_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10585"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-123"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ANC_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10711"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-128"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUF_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10837"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-129"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUF_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11215"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-135"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ROO_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11089"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-136"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ROO_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="10963"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-137"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ROOM_TYPE_ID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11341"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-141"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CON_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11467"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-142"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CON_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11593"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-147"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{INV_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11719"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-148"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{INV_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11845"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-153"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MED_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="11971"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-154"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MED_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12223"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-157"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MIS_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12097"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-158"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12349"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-161"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{MIS_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12475"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-166"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Health_Check_Up_Claimed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12729"
+						y="-1"
+						width="126"
+						height="19"
+						key="textField-172"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{AMF_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12855"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-173"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{AMF_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12981"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-178"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DAW_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13107"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-179"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DAW_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13233"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-184"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUF_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13359"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-185"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{SUF_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13485"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-191"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CIB_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13611"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-192"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CIB_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13737"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-197"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COB_REQUESTED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13863"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-198"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COB_ALLOWED_CHARGES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14265"
+						y="0"
+						width="256"
+						height="19"
+						key="textField-203"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13989"
+						y="0"
+						width="276"
+						height="19"
+						key="textField-204"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14521"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-210"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14647"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-211"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14773"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-216"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Pre_Hosp_Claimed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14899"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-217"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Pre_Hosp_Allowed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15025"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-222"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Post_Hosp_Claimed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15151"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-223"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15403"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-229"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15277"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-230"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15529"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-235"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DISALLOWEDAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15655"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-236"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CO_PAYMENT_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15781"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-237"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{Deductible_Amount_Per_claim}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="15907"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-238"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{CLAIMEDSERVICETAX}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16033"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-239"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{APPROVEDSERVICETAX}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16159"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-240"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TDSAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16285"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-241"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{APPLICABLETDSRATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16411"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-242"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NET_CLAIM_AMT_PAYABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16537"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-243"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DATEOFPAYMENT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16663"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-244"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PAYMENTBATCHID}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16789"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-245"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{MODEOFPAYMENT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="16915"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-246"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PAYMENTAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17041"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-247"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAYMENTREFERENCENUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17167"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-248"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAYEE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17419"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-249"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COURIERNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17293"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-250"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17293"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-251"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PODNUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17671"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-252"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DELIVERYDATETIME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17545"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-253"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DELIVERYSTATUS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17797"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-254"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="17923"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-255"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Rejection_Reason}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18049"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-256"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Rejection_Description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18175"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-257"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18301"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-258"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Last_modified_date_time}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="19061"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-259"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18557"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-260"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Last_modified_date_time}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18935"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-261"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{LASTDOCRECEIVEDDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18683"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-262"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLM_INT_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18809"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-263"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLMDOCRECEIVEDDATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="12601"
+						y="0"
+						width="128"
+						height="19"
+						key="textField-264"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{Health_Check_Up_Allowed}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="18427"
+						y="0"
+						width="130"
+						height="19"
+						key="textField-265"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="19187"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-266"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RcmdToInsurerDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="19313"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-267"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ApprovedByInsurerDate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="19439"
+						y="0"
+						width="126"
+						height="19"
+						key="textField-268"
+						stretchType="RelativeToTallestObject"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TATOfSettledClaim}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>
